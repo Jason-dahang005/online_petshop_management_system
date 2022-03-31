@@ -7,7 +7,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-3 col-7">
                         <!-- Start Header Logo -->
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="{{ route('/') }}">
                             <img src="{{ asset('/systemLogos/logo.png') }}" alt="Logo">
                         </a>
                         <!-- End Header Logo -->
@@ -138,7 +138,7 @@
 								<div class="mega-category-menu">
 									<span class="cat-button"><i class="lni lni-menu"></i>All Categories</span>
 									<ul class="sub-category">
-										<li><a href="product-grids.html">Electronics <i class="lni lni-chevron-right"></i></a>
+										{{-- <li><a href="product-grids.html">Electronics <i class="lni lni-chevron-right"></i></a>
 											<ul class="inner-sub-category">
 												<li><a href="product-grids.html">Digital Cameras</a></li>
 												<li><a href="product-grids.html">Camcorders</a></li>
@@ -151,18 +151,13 @@
 												<li><a href="product-grids.html">Batteries</a></li>
 												<li><a href="product-grids.html">Cables & Adapters</a></li>
 											</ul>
-										</li>
-										<li><a href="product-grids.html">accessories</a></li>
-										<li><a href="product-grids.html">Televisions</a></li>
-										<li><a href="product-grids.html">best selling</a></li>
-										<li><a href="product-grids.html">top 100 offer</a></li>
-										<li><a href="product-grids.html">sunglass</a></li>
-										<li><a href="product-grids.html">watch</a></li>
-										<li><a href="product-grids.html">man’s product</a></li>
-										<li><a href="product-grids.html">Home Audio & Theater</a></li>
-										<li><a href="product-grids.html">Computers & Tablets </a></li>
-										<li><a href="product-grids.html">Video Games </a></li>
-										<li><a href="product-grids.html">Home Appliances </a></li>
+										</li> --}}
+										<li><a href="product-grids.html">Accessories</a></li>
+										<li><a href="product-grids.html">Tools</a></li>
+										<li><a href="product-grids.html">Air Pumps</a></li>
+										<li><a href="product-grids.html">Water Pumps</a></li>
+										<li><a href="product-grids.html">Aquariums</a></li>
+										<li><a href="product-grids.html">Cleaning Tools</a></li>
 									</ul>
 								</div>
 								<!-- End Mega Category Menu -->
@@ -175,11 +170,11 @@
 									</button>
 									<div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
 										<ul id="nav" class="navbar-nav ms-auto">
-											<li class="nav-item"><a href="index.html" class="active" aria-label="Toggle navigation">Home</a></li>
-											<li class="nav-item"><a href="index.html" class="active" aria-label="Toggle navigation">Goldfish</a></li>
-											<li class="nav-item"><a href="index.html" class="active" aria-label="Toggle navigation">Shop</a></li>
-											<li class="nav-item"><a href="index.html" class="active" aria-label="Toggle navigation">About Us</a></li>
-											<li class="nav-item"><a href="contact.html" aria-label="Toggle navigation">Contact Us</a></li>
+											<li class="nav-item"><a href="{{ route('/') }}" class=" {{  request()->routeIs('/') ? 'active' : '' }}" aria-label="Toggle navigation">Home</a></li>
+											<li class="nav-item"><a href="{{ route('customer.goldfish') }}" class=" {{  request()->routeIs('customer.goldfish') ? 'active' : '' }}" aria-label="Toggle navigation">Goldfish</a></li>
+											<li class="nav-item"><a href="{{ route('customer.shop') }}" class=" {{  request()->routeIs('customer.shop') ? 'active' : '' }}" aria-label="Toggle navigation">Shop</a></li>
+											<li class="nav-item"><a href="{{ route('customer.about-us') }}" class=" {{  request()->routeIs('customer.about-us') ? 'active' : '' }}" aria-label="Toggle navigation">About Us</a></li>
+											<li class="nav-item"><a href="{{ route('customer.contact-us') }}" class=" {{  request()->routeIs('customer.contact-us') ? 'active' : '' }}" aria-label="Toggle navigation">Contact Us</a></li>
 										</ul>
 									</div> <!-- navbar collapse -->
 								</nav>

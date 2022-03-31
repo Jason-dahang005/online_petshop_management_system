@@ -2,13 +2,21 @@
 
 use Illuminate\Support\Facades\Route;
 
+// ADMIN LIVEWIRE
 use App\Http\Livewire\Admin\Dashboard;
 use App\Http\Livewire\Admin\Product;
 use App\Http\Livewire\Admin\Delivery;
 use App\Http\Livewire\Admin\Reservations;
 use App\Http\Livewire\Admin\Orders;
 use App\Http\Livewire\Admin\ProductCategrory;
+
+
+// CUSTOMER LIVEWIRE
 use App\Http\Livewire\Customer\Home;
+use App\Http\Livewire\Customer\Shop;
+use App\Http\Livewire\Customer\Goldfish;
+use App\Http\Livewire\Customer\AboutUs;
+use App\Http\Livewire\Customer\ContactUs;
 
 
 /*
@@ -37,6 +45,10 @@ use App\Http\Livewire\Customer\Home;
 // });
 
 Route::get('/', Home::class)->name('/');
+Route::get('customer/shop', Shop::class)->name('customer.shop');
+Route::get('customer/goldfish', Goldfish::class)->name('customer.goldfish');
+Route::get('customer/about-us', AboutUs::class)->name('customer.about-us');
+Route::get('customer/contact-us', ContactUs::class)->name('customer.contact-us');
 
 // CUSTOMER ROUTE
 Route::middleware(['auth:sanctum','verified'])->group(function () {
