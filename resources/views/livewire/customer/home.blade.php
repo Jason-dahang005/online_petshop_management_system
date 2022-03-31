@@ -11,14 +11,11 @@
                             <div class="single-slider"
                                 style="background-image: url(https://via.placeholder.com/800x500);">
                                 <div class="content">
-                                    <h2><span>No restocking fee ($35 savings)</span>
-                                        M75 Sport Watch
-                                    </h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut
-                                        labore dolore magna aliqua.</p>
-                                    <h3><span>Now Only</span> $320.99</h3>
+                                    <h2><span></span></h2>
+                                    <p></p>
+                                    <h3><span></span></h3>
                                     <div class="button">
-                                        <a href="product-grids.html" class="btn">Shop Now</a>
+                                        <a href="{{ route('customer.shop') }}" class="btn">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -27,14 +24,11 @@
                             <div class="single-slider"
                                 style="background-image: url(https://via.placeholder.com/800x500);">
                                 <div class="content">
-                                    <h2><span>Big Sale Offer</span>
-                                        Get the Best Deal on CCTV Camera
-                                    </h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut
-                                        labore dolore magna aliqua.</p>
-                                    <h3><span>Combo Only:</span> $590.00</h3>
+                                    <h2><span></span></h2>
+                                    <p></p>
+                                    <h3><span></span></h3>
                                     <div class="button">
-                                        <a href="product-grids.html" class="btn">Shop Now</a>
+                                        <a href="{{ route('customer.shop') }}" class="btn">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -51,10 +45,9 @@
                                 style="background-image: url('https://via.placeholder.com/370x250');">
                                 <div class="content">
                                     <h2>
-                                        <span>New line required</span>
-                                        iPhone 12 Pro Max
+                                        <span></span>
                                     </h2>
-                                    <h3>$259.99</h3>
+                                    <h3></h3>
                                 </div>
                             </div>
                             <!-- End Small Banner -->
@@ -63,10 +56,10 @@
                             <!-- Start Small Banner -->
                             <div class="hero-small-banner style2">
                                 <div class="content">
-                                    <h2>Weekly Sale!</h2>
-                                    <p>Saving up to 50% off all online store items this week.</p>
+                                    <h2></h2>
+                                    <p></p>
                                     <div class="button">
-                                        <a class="btn" href="product-grids.html">Shop Now</a>
+                                        <a class="btn" href="{{ route('customer.shop') }}">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -95,13 +88,13 @@
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Category -->
                     <div class="single-category">
-                        <h3 class="heading">TV & Audios</h3>
+                        <h3 class="heading">Product Category 1</h3>
                         <ul>
-                            <li><a href="product-grids.html">Smart Television</a></li>
-                            <li><a href="product-grids.html">QLED TV</a></li>
-                            <li><a href="product-grids.html">Audios</a></li>
-                            <li><a href="product-grids.html">Headphones</a></li>
-                            <li><a href="product-grids.html">View All</a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
                         </ul>
                         <div class="images">
                             <img src="https://via.placeholder.com/180x180" alt="#">
@@ -112,13 +105,13 @@
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Category -->
                     <div class="single-category">
-                        <h3 class="heading">Desktop & Laptop</h3>
+                        <h3 class="heading">Product Category 2</h3>
                         <ul>
-                            <li><a href="product-grids.html">Smart Television</a></li>
-                            <li><a href="product-grids.html">QLED TV</a></li>
-                            <li><a href="product-grids.html">Audios</a></li>
-                            <li><a href="product-grids.html">Headphones</a></li>
-                            <li><a href="product-grids.html">View All</a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
                         </ul>
                         <div class="images">
                             <img src="https://via.placeholder.com/180x180" alt="#">
@@ -129,13 +122,13 @@
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Category -->
                     <div class="single-category">
-                        <h3 class="heading">Cctv Camera</h3>
+                        <h3 class="heading">Product Category 3</h3>
                         <ul>
-                            <li><a href="product-grids.html">Smart Television</a></li>
-                            <li><a href="product-grids.html">QLED TV</a></li>
-                            <li><a href="product-grids.html">Audios</a></li>
-                            <li><a href="product-grids.html">Headphones</a></li>
-                            <li><a href="product-grids.html">View All</a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
                         </ul>
                         <div class="images">
                             <img src="https://via.placeholder.com/180x180" alt="#">
@@ -146,13 +139,13 @@
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Category -->
                     <div class="single-category">
-                        <h3 class="heading">Dslr Camera</h3>
+                        <h3 class="heading">Product Category 4</h3>
                         <ul>
-                            <li><a href="product-grids.html">Smart Television</a></li>
-                            <li><a href="product-grids.html">QLED TV</a></li>
-                            <li><a href="product-grids.html">Audios</a></li>
-                            <li><a href="product-grids.html">Headphones</a></li>
-                            <li><a href="product-grids.html">View All</a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
                         </ul>
                         <div class="images">
                             <img src="https://via.placeholder.com/180x180" alt="#">
@@ -163,13 +156,13 @@
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Category -->
                     <div class="single-category">
-                        <h3 class="heading">Smart Phones</h3>
+                        <h3 class="heading">Product Category 5</h3>
                         <ul>
-                            <li><a href="product-grids.html">Smart Television</a></li>
-                            <li><a href="product-grids.html">QLED TV</a></li>
-                            <li><a href="product-grids.html">Audios</a></li>
-                            <li><a href="product-grids.html">Headphones</a></li>
-                            <li><a href="product-grids.html">View All</a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
                         </ul>
                         <div class="images">
                             <img src="https://via.placeholder.com/180x180" alt="#">
@@ -180,13 +173,13 @@
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Category -->
                     <div class="single-category">
-                        <h3 class="heading">Game Console</h3>
+                        <h3 class="heading">Product Category 6</h3>
                         <ul>
-                            <li><a href="product-grids.html">Smart Television</a></li>
-                            <li><a href="product-grids.html">QLED TV</a></li>
-                            <li><a href="product-grids.html">Audios</a></li>
-                            <li><a href="product-grids.html">Headphones</a></li>
-                            <li><a href="product-grids.html">View All</a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
+                            <li><a href="product-grids.html"></a></li>
                         </ul>
                         <div class="images">
                             <img src="https://via.placeholder.com/180x180" alt="#">

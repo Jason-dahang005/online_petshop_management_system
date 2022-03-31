@@ -7,8 +7,8 @@
         <div class="row">
           <div class="col-lg-3 col-md-4 col-12">
             <div class="footer-logo">
-              <a href="index.html">
-                <img src="assets/images/logo/white-logo.svg" alt="#">
+              <a href="{{ route('/') }}">
+                <img src="{{ asset('/systemLogos/logo.png') }}" alt="#">
               </a>
             </div>
           </div>
