@@ -3,7 +3,7 @@
   <!-- Brand Logo -->
   <a href="index3.html" class="brand-link">
     <img src="/adminLTE/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-    <span class="brand-text font-weight-light">AdminLTE 3</span>
+    <span class="brand-text font-weight-light">Admin</span>
   </a>
 
   <!-- Sidebar -->
@@ -14,7 +14,7 @@
         <img src="/adminLTE/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">Alexander Pierce</a>
+        <a href="#" class="d-block">{{ Auth::user()->name }}</a>
       </div>
     </div>
 
@@ -38,21 +38,21 @@
         </li>
 
         <li class="nav-item">
-          <a href="{{ url('/admin/delivery-component') }}" class="nav-link {{  request()->routeIs('admin.delivery-component') ? 'active' : '' }}">
+          <a href="{{ url('/admin/delivery') }}" class="nav-link {{  request()->routeIs('admin.delivery') ? 'active' : '' }}">
             <i class="nav-icon fas fa-motorcycle"></i>
             <p>Delivery</p>
           </a>
         </li>
 
         <li class="nav-item">
-          <a href="{{ url('/admin/product-category-component') }}" class="nav-link {{  request()->routeIs('admin.product-category-component') ? 'active' : '' }}">
+          <a href="{{ url('/admin/product-category') }}" class="nav-link {{  request()->routeIs('admin.product-category') ? 'active' : '' }}">
             <i class="nav-icon fas fa-boxes"></i>
             <p>Product Category</p>
           </a>
         </li>
 
         <li class="nav-item">
-          <a href="{{ url('/admin/product-component') }}" class="nav-link {{  request()->routeIs('admin.product-component') ? 'active' : '' }}">
+          <a href="{{ url('/admin/product') }}" class="nav-link {{  request()->routeIs('admin.product') ? 'active' : '' }}">
             <i class="nav-icon fas fa-shopping-bag"></i>
             <p>Product</p>
           </a>
@@ -73,13 +73,13 @@
         </li>
         
         <li class="nav-item">
-        <a href="{{ url('/admin/reservation-component') }}" class="nav-link {{ 'admin/reservation-component' == request()->path() ? 'active' : '' }}">
+        <a href="{{ url('/admin/reservations') }}" class="nav-link {{ 'admin/reservations' == request()->path() ? 'active' : '' }}">
             <i class="nav-icon fas fa-clipboard"></i>
             <p>Reservations</p>
           </a>
         </li>
         <li class="nav-item">
-        <a href="{{ url('/admin/order-component') }}" class="nav-link {{ 'admin/order-component' == request()->path() ? 'active' : '' }}">
+        <a href="{{ url('/admin/orders') }}" class="nav-link {{ 'admin/orders' == request()->path() ? 'active' : '' }}">
             <i class="nav-icon fas fa-shopping-cart"></i>
             <p>Orders</p>
           </a>

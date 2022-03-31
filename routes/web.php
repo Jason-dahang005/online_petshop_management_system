@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Livewire\Admin\Dashboard;
+use App\Http\Livewire\Admin\Product;
+use App\Http\Livewire\Admin\Delivery;
+use App\Http\Livewire\Admin\Reservations;
+use App\Http\Livewire\Admin\Orders;
+use App\Http\Livewire\Admin\ProductCategrory;
 use App\Http\Livewire\Customer\Home;
 
 
@@ -40,7 +45,12 @@ Route::middleware(['auth:sanctum','verified'])->group(function () {
 
 // ADMIN ROUTE
 Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
-    Route::get('admin/dashboard', DAshboard::class)->name('admin.dashboard');
+    Route::get('admin/dashboard', Dashboard::class)->name('admin.dashboard');
+    Route::get('admin/product', Product::class)->name('admin.product');
+    Route::get('admin/delivery', Delivery::class)->name('admin.delivery');
+    Route::get('admin/reservations', Reservations::class)->name('admin.reservations');
+    Route::get('admin/orders', Orders::class)->name('admin.orders');
+    Route::get('admin/product-category', ProductCategrory::class)->name('admin.product-category');
 });
 
 // DELIVERY ROUTE
