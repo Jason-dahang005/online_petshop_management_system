@@ -31,7 +31,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="{{ url('/admin/user-component') }}" class="nav-link {{  request()->routeIs('admin.user-component') ? 'active' : '' }}">
+          <a href="{{ url('/admin/users') }}" class="nav-link {{  request()->routeIs('admin.users') ? 'active' : '' }}">
             <i class="nav-icon fas fa-users"></i>
             <p>User</p>
           </a>
@@ -45,7 +45,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="{{ url('/admin/product-category') }}" class="nav-link {{  request()->routeIs('admin.product-category') ? 'active' : '' }}">
+          <a href="{{ url('/admin/product-category-component') }}" class="nav-link {{  request()->routeIs('admin.product-category-component') ? 'active' : '' }}">
             <i class="nav-icon fas fa-boxes"></i>
             <p>Product Category</p>
           </a>
