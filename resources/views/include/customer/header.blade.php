@@ -8,7 +8,7 @@
                     <div class="col-lg-3 col-md-3 col-7">
                         <!-- Start Header Logo -->
                         <a class="navbar-brand" href="index.html">
-                            <img src="assets/images/logo/logo.svg" alt="Logo">
+                            <img src="{{ asset('/systemLogos/logo.png') }}" alt="Logo">
                         </a>
                         <!-- End Header Logo -->
                     </div>
