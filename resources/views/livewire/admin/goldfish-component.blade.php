@@ -129,7 +129,7 @@
                 <div class="form-group">
                       <label for="">Name</label>
                       <input type="text" class="form-control" placeholder="Enter Name" wire:model="upd_name" wire:keyup="generateeditslug">
-                      <span class="text-danger">@error('name') {{ $message }}@enderror</span>
+                      <span class="text-danger">@error('upd_name') {{ $message }}@enderror</span>
                   </div>
 
                   <div class="form-group">
@@ -140,13 +140,13 @@
                   <div class="form-group">
                       <label for="">Description</label>
                       <input type="text" class="form-control" placeholder="Enter Name" wire:model="upd_description">
-                      <span class="text-danger">@error('description') {{ $message }}@enderror</span>
+                      <span class="text-danger">@error('upd_description') {{ $message }}@enderror</span>
                   </div>
 
                   <div class="form-group">
                       <label for="">Price</label>
                       <input type="text" class="form-control" placeholder="Enter Name" wire:model="upd_price">
-                      <span class="text-danger">@error('price') {{ $message }}@enderror</span>
+                      <span class="text-danger">@error('upd_price') {{ $message }}@enderror</span>
                   </div>
 
                   <div class="form-group">
@@ -157,7 +157,7 @@
                         @else
                           <img src="{{ asset('/images/image') }}/{{ $image }}" width="120" alt="">
                         @endif
-                      <span class="text-danger">@error('image') {{ $message }}@enderror</span>
+                      <span class="text-danger">@error('upd_image') {{ $message }}@enderror</span>
                   </div>
 
                   <div class="form-group">
