@@ -66,7 +66,7 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="OpenProductCategoryModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="OpenProductCategoryModalLabel">Palihog ko add Product</h5>
               </div>
               <form wire:submit.prevent="store">
                 <div class="modal-body">
@@ -103,7 +103,7 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="OpenProductCategoryModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="OpenProductCategoryModalLabel">PAG ADD OG PRODUCT YOU MF!</h5>
               </div>
               <form wire:submit.prevent="update">
                 <input type="hidden" wire:model="upd_id">
