@@ -46,18 +46,19 @@
                                 <div class="cart-items">
 																	<a href="@guest{{ route('login') }}@endguest" class="main-btn">
 																		<i class="lni lni-cart"></i>
-																		<span class="total-items">2</span>
+																		<span class="total-items">0</span>
 																	</a>
 																	@auth
 																		<!-- Shopping Item -->
 																		<div class="shopping-item">
 																			<div class="dropdown-cart-header">
-																				<span>2 Items</span>
+																				<span></span>
 																				<a href="cart.html">View Cart</a>
 																			</div>
 																			<ul class="shopping-list">
 																				<li>
-																					<a href="javascript:void(0)" class="remove" title="Remove this item"><i class="lni lni-close"></i></a>
+																					<h6 class="text-center">Cart is empty</h6>
+																					{{-- <a href="javascript:void(0)" class="remove" title="Remove this item"><i class="lni lni-close"></i></a>
 																					<div class="cart-img-head">
 																						<a class="cart-img" href="product-details.html"><img src="assets/images/header/cart-items/item1.jpg" alt="#"></a>
 																					</div>
@@ -75,13 +76,13 @@
 																					<div class="content">
 																						<h4><a href="product-details.html">Wi-Fi Smart Camera</a></h4>
 																						<p class="quantity">1x - <span class="amount">$35.00</span></p>
-																					</div>
+																					</div> --}}
 																				</li>
 																			</ul>
 																			<div class="bottom">
 																				<div class="total">
 																					<span>Total</span>
-																					<span class="total-amount">$134.00</span>
+																					<span class="total-amount">0</span>
 																				</div>
 																				<div class="button">
 																					<a href="checkout.html" class="btn animate">Checkout</a>

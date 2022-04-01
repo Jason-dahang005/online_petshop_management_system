@@ -9,6 +9,6 @@ class User extends Component
     public function render()
     {
         $users = User::all();
-        return view('livewire.admin.user', ['users' => $users])->layout('layouts.admin');
+        return view('livewire.admin.user', ['users' => $users])->layout('layouts.admin', ['title'=>'Customers']);
     }
 }

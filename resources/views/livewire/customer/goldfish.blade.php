@@ -177,9 +177,9 @@
                                                 </div>
                                             </div>
                                             <div class="product-info">
-                                                <span class="category">Watches</span>
+                                                <span class="category"></span>
                                                 <h4 class="title">
-                                                    <a href="product-grids.html">Product 1</a>
+                                                    <a href="product-grids.html">Oranda</a>
                                                 </h4>
                                                 <ul class="review">
                                                     <li><i class="lni lni-star-filled"></i></li>
@@ -201,7 +201,6 @@
                                         <div class="single-product">
                                             <div class="product-image">
                                                 <img src="{{ asset('images/images/ryukin.jpg') }}" alt="#">
-                                                <span class="sale-tag">-25%</span>
                                                 <div class="button">
                                                     <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
                                                 </div>
@@ -261,14 +260,13 @@
                                         <div class="single-product">
                                             <div class="product-image">
                                                 <img src="https://via.placeholder.com/335x335" alt="#">
-                                                <span class="new-tag">New</span>
                                                 <div class="button">
                                                     <a href="product-details.html" class="btn"><i
                                                             class="lni lni-cart"></i> Add to Cart</a>
                                                 </div>
                                             </div>
                                             <div class="product-info">
-                                                <span class="category">Phones</span>
+                                                <span class="category"></span>
                                                 <h4 class="title">
                                                     <a href="product-grids.html">Product 4</a>
                                                 </h4>
@@ -298,7 +296,7 @@
                                                 </div>
                                             </div>
                                             <div class="product-info">
-                                                <span class="category">Headphones</span>
+                                                <span class="category"></span>
                                                 <h4 class="title">
                                                     <a href="product-grids.html">Product 5</a>
                                                 </h4>
@@ -328,7 +326,7 @@
                                                 </div>
                                             </div>
                                             <div class="product-info">
-                                                <span class="category">Speaker</span>
+                                                <span class="category"></span>
                                                 <h4 class="title">
                                                     <a href="product-grids.html">Product 6</a>
                                                 </h4>
@@ -352,14 +350,13 @@
                                         <div class="single-product">
                                             <div class="product-image">
                                                 <img src="https://via.placeholder.com/335x335" alt="#">
-                                                <span class="sale-tag">-50%</span>
                                                 <div class="button">
                                                     <a href="product-details.html" class="btn"><i
                                                             class="lni lni-cart"></i> Add to Cart</a>
                                                 </div>
                                             </div>
                                             <div class="product-info">
-                                                <span class="category">Headphones</span>
+                                                <span class="category"></span>
                                                 <h4 class="title">
                                                     <a href="product-grids.html">Product 7</a>
                                                 </h4>
@@ -390,7 +387,7 @@
                                                 </div>
                                             </div>
                                             <div class="product-info">
-                                                <span class="category">Laptop</span>
+                                                <span class="category"></span>
                                                 <h4 class="title">
                                                     <a href="product-grids.html">Product 8</a>
                                                 </h4>
@@ -414,14 +411,13 @@
                                         <div class="single-product">
                                             <div class="product-image">
                                                 <img src="https://via.placeholder.com/335x335" alt="#">
-                                                <span class="sale-tag">-25%</span>
                                                 <div class="button">
                                                     <a href="product-details.html" class="btn"><i
                                                             class="lni lni-cart"></i> Add to Cart</a>
                                                 </div>
                                             </div>
                                             <div class="product-info">
-                                                <span class="category">Speaker</span>
+                                                <span class="category"></span>
                                                 <h4 class="title">
                                                     <a href="product-grids.html">Product 9</a>
                                                 </h4>
@@ -477,7 +473,7 @@
                                                 </div>
                                                 <div class="col-lg-8 col-md-8 col-12">
                                                     <div class="product-info">
-                                                        <span class="category">Watches</span>
+                                                        <span class="category"></span>
                                                         <h4 class="title">
                                                             <a href="product-grids.html">Product 10</a>
                                                         </h4>
@@ -505,7 +501,6 @@
                                                 <div class="col-lg-4 col-md-4 col-12">
                                                     <div class="product-image">
                                                         <img src="https://via.placeholder.com/335x335" alt="#">
-                                                        <span class="sale-tag">-25%</span>
                                                         <div class="button">
                                                             <a href="product-details.html" class="btn"><i
                                                                     class="lni lni-cart"></i> Add to
@@ -515,7 +510,7 @@
                                                 </div>
                                                 <div class="col-lg-8 col-md-8 col-12">
                                                     <div class="product-info">
-                                                        <span class="category">Speaker</span>
+                                                        <span class="category"></span>
                                                         <h4 class="title">
                                                             <a href="product-grids.html">Product 11</a>
                                                         </h4>
@@ -553,7 +548,7 @@
                                                 </div>
                                                 <div class="col-lg-8 col-md-8 col-12">
                                                     <div class="product-info">
-                                                        <span class="category">Camera</span>
+                                                        <span class="category"></span>
                                                         <h4 class="title">
                                                             <a href="product-grids.html">Product 12</a>
                                                         </h4>
@@ -581,7 +576,6 @@
                                                 <div class="col-lg-4 col-md-4 col-12">
                                                     <div class="product-image">
                                                         <img src="https://via.placeholder.com/335x335" alt="#">
-                                                        <span class="new-tag">New</span>
                                                         <div class="button">
                                                             <a href="product-details.html" class="btn"><i
                                                                     class="lni lni-cart"></i> Add to
@@ -591,7 +585,7 @@
                                                 </div>
                                                 <div class="col-lg-8 col-md-8 col-12">
                                                     <div class="product-info">
-                                                        <span class="category">Phones</span>
+                                                        <span class="category"></span>
                                                         <h4 class="title">
                                                             <a href="product-grids.html">Product 13</a>
                                                         </h4>

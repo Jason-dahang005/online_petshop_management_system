@@ -38,7 +38,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="{{ url('/admin/delivery') }}" class="nav-link {{  request()->routeIs('admin.delivery') ? 'active' : '' }}">
+          <a href="{{ url('/admin/delivery-component') }}" class="nav-link {{  request()->routeIs('admin.delivery-component') ? 'active' : '' }}">
             <i class="nav-icon fas fa-motorcycle"></i>
             <p>Delivery</p>
           </a>
@@ -52,7 +52,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="{{ url('/admin/product') }}" class="nav-link {{  request()->routeIs('admin.product') ? 'active' : '' }}">
+          <a href="{{ url('/admin/product-component') }}" class="nav-link {{  request()->routeIs('admin.product-component') ? 'active' : '' }}">
             <i class="nav-icon fas fa-shopping-bag"></i>
             <p>Product</p>
           </a>

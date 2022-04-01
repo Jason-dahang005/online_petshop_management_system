@@ -13,7 +13,7 @@
                 <div class="col-lg-6 col-md-12 col-12">
                     <!-- content-1 start -->
                     <div class="content-right">
-                        <h2>ShopGrids - Your Trusted & Reliable Partner.</h2>
+                        <h2>Anrac's Goldfish & Aquatic Supplies</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id purus at risus
                             pellentesque faucibus a quis eros. In eu fermentum leo. Integer ut eros lacus. Proin ut
                             accumsan leo. Morbi vitae est eget dolor consequat aliquam eget quis dolor. Mauris rutrum

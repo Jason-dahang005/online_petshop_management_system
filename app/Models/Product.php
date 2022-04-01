@@ -5,24 +5,26 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Goldfish extends Model
+class Product extends Model
 {
     use HasFactory;
-    protected $table = 'goldfish';
+
+    protected $table = 'products';
 
     protected $fillable = [
         'name',
         'slug',
+        'product_category_id',
         'description',
         'price',
-        'image'
-        
+        'stock',
+        'image',
+        'status'
     ];
 
     public static function search($search){
         return empty($search) ? static::query()
         : static::query()->where('name', 'like', '%'.$search.'%')
-        ->orWhere('slug', 'like', '%'.$search.'%')
         ->orWhere('description', 'like', '%'.$search.'%')
         ->orWhere('status', 'like', '%'.$search.'%')
         ->orWhere('product_category_id', 'like', '%'.$search.'%')
@@ -31,4 +33,7 @@ class Goldfish extends Model
         ->orWhere('created_at', 'like', '%'.$search.'%');
     }
 
+    public function category(){
+        return $this->belongsTo(ProductCategory::class, 'product_category_id');
+    }
 }

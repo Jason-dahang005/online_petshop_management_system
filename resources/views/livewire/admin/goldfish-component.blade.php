@@ -21,29 +21,49 @@
             </div>
           </div>
           <hr>
-          <table class="table table-striped">
-            <thead class="bg-dark">
+          <table class="table table-striped table-sm table-bordered">
+            <thead>
               <tr>
                 <th width="10%">Name</th>
+                <th width="10%">Slug</th>
                 <th width="10%">Image</th>
-                <th width="30%">Description</th>
+                <th width="20%">Description</th>
                 <th width="10%">Price</th>
-                <th width="15%">Status</th>
-                <th width="12%">Date Added</th>
-                <th width="13%">Action</th>
+                <th width="10%">Status</th>
+                <th width="10%">Date Added</th>
+                <th width="20%">Action</th>
               </tr>
             </thead>
             <tbody>
-                @foreach ($goldF as $fish)
-                <tr>
-                    
-                  <td>{{ $fish->name }}</td>
-                  <td><img src="{{ asset('/images/image') }}/{{ $fish->image }}" alt="" style="max-width: 80px"></td>
-                  <td>{{ $fish->description }}</td>
-                  <td>{{ $fish->price }}</td>
-                  <td>{{ $fish->status }}</td>
-                </tr>
-                @endforeach
+                @if (count($goldF) > 0)
+                  @foreach ($goldF as $fish)
+                    <tr>
+                      <td>{{ $fish->name }}</td>
+                      <td>{{ $fish->slug }}</td>
+                      <td><img src="{{ asset('/images/image') }}/{{ $fish->image }}" alt="" style="max-width: 50px"></td>
+                      <td>{{ $fish->description }}</td>
+                      <td>{{ $fish->price }}</td>
+                      <td>
+                        @if ($fish->status)
+                          <span class="badge badge-success">Active</span>
+                        @else
+                          <span class="badge badge-danger">Inactive</span>
+                        @endif
+                      </td>
+                      <td>{{ date('M d,Y', strtotime($fish->created_at)) }}</td>
+                      <td>
+                        <button class="btn btn-sm btn-success"><i class="fas fa-eye"></i> View</button>
+                        <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Edit</button>
+                      </td>
+                    </tr>
+                  @endforeach
+                @else
+                  <tr>
+                    <td colspan="8">
+                      <h4 class="text-center">Table is empty</h4>
+                    </td>
+                  </tr>
+                @endif
             </tbody>
           </table>
           <hr>
@@ -56,11 +76,10 @@
 
     {{-- MODALS --}}
     <div class="modal fade" wire:ignore.self id="OpenGoldfishModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header text-center">
               <h5 class="modal-title" id="exampleModalLabel">Add Goldfish</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal" wire:submit.prevent="addGoldfish">
@@ -77,7 +96,7 @@
 
                     <div class="form-group">
                         <label for="">Description</label>
-                        <input type="text" class="form-control" placeholder="Enter Name" wire:model="description">
+                        <textarea  class="form-control" cols="30" rows="5" placeholder="Enter Name" wire:model="description"></textarea>
                         <span class="text-danger">@error('description') {{ $message }}@enderror</span>
                     </div>
 

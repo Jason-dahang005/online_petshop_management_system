@@ -8,6 +8,6 @@ class Reservations extends Component
 {
     public function render()
     {
-        return view('livewire.admin.reservations')->layout('layouts.admin');
+        return view('livewire.admin.reservations')->layout('layouts.admin', ['title'=>'Reservations']);
     }
 }
