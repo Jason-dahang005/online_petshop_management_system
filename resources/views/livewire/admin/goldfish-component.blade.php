@@ -27,11 +27,11 @@
                 <th width="10%">Name</th>
                 <th width="10%">Slug</th>
                 <th width="10%">Image</th>
-                <th width="20%">Description</th>
+                <th width="29%">Description</th>
                 <th width="10%">Price</th>
                 <th width="10%">Status</th>
                 <th width="10%">Date Added</th>
-                <th width="20%">Action</th>
+                <th width="11%">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -42,7 +42,7 @@
                       <td>{{ $fish->slug }}</td>
                       <td><img src="{{ asset('/images/image') }}/{{ $fish->image }}" alt="" style="max-width: 50px"></td>
                       <td>{{ $fish->description }}</td>
-                      <td>{{ $fish->price }}</td>
+                      <td>₱ {{ $fish->price }}</td>
                       <td>
                         @if ($fish->status)
                           <span class="badge badge-success">Active</span>
@@ -53,7 +53,7 @@
                       <td>{{ date('M d,Y', strtotime($fish->created_at)) }}</td>
                       <td>
                         <button class="btn btn-sm btn-success"><i class="fas fa-eye"></i> View</button>
-                        <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Edit</button>
+                        <button class="btn btn-sm btn-primary" wire:click="OpenEditGoldfishModal({{ $fish->id }})"><i class="fas fa-edit"></i> Edit</button>
                       </td>
                     </tr>
                   @endforeach
