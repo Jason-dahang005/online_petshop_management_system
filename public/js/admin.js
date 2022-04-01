@@ -1,5 +1,18 @@
 // OPEN && CLOSE ADMIN MODAL START =============
 
+// GOLDFISH STORE
+window.addEventListener('OpenGoldfishModal', function(){
+  $('#OpenGoldfishModal').find('span').html('');
+  //$('#OpenGoldfishModal').find('form')[0].reset();
+  $('#OpenGoldfishModal').modal('show');
+});
+
+window.addEventListener('CloseGoldfishModal', function(){
+  $('#OpenGoldfishModal').find('span').html('');
+  $('#OpenGoldfishModal').find('form')[0].reset();
+  $('#OpenGoldfishModal').modal('hide');
+  toastr.success("Goldfish Added Successfully!");
+});
 
 // PRODUCT CATEGORY STORE
 window.addEventListener('OpenProductCategoryModal', function(){

@@ -10,6 +10,7 @@ use App\Http\Livewire\Admin\Reservations;
 use App\Http\Livewire\Admin\Orders;
 use App\Http\Livewire\Admin\ProductCategoryComponent;
 use App\Http\Livewire\Admin\User;
+use App\Http\Livewire\Admin\GoldfishComponent;
 
 
 // CUSTOMER LIVEWIRE COMPONENTS
@@ -65,6 +66,7 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
     Route::get('admin/orders', Orders::class)->name('admin.orders');
     Route::get('admin/product-category-component', ProductCategoryComponent::class)->name('admin.product-category-component');
     Route::get('admin/users', User::class)->name('admin.users');
+    Route::get('admin/goldfish-component', GoldfishComponent::class)->name('admin.goldfish-component');
 });
 
 // DELIVERY ROUTE COMPONENTS

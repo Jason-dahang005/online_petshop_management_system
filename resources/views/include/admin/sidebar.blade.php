@@ -59,14 +59,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="{{ url('/admin/goldfish-category-component') }}" class="nav-link {{ 'admin/goldfish-category-component' == request()->path() ? 'active' : '' }}">
-            <i class="nav-icon fas fa-sitemap"></i>
-            <p>Goldfish Categories</p>
-          </a>
-        </li>
-
-        <li class="nav-item">
-        <a href="{{ url('/admin/goldfish-component') }}" class="nav-link {{ 'admin/goldfish-component' == request()->path() ? 'active' : '' }}">
+          <a href="{{ url('/admin/goldfish-component') }}" class="nav-link {{  request()->routeIs('admin.goldfish-component') ? 'active' : '' }}">
             <i class="nav-icon fas fa-fish"></i>
             <p>Goldfish</p>
           </a>
