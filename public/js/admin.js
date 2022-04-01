@@ -3,7 +3,7 @@
 // GOLDFISH STORE
 window.addEventListener('OpenGoldfishModal', function(){
   $('#OpenGoldfishModal').find('span').html('');
-  //$('#OpenGoldfishModal').find('form')[0].reset();
+  $('#OpenGoldfishModal').find('form')[0].reset();
   $('#OpenGoldfishModal').modal('show');
 });
 
@@ -12,6 +12,19 @@ window.addEventListener('CloseGoldfishModal', function(){
   $('#OpenGoldfishModal').find('form')[0].reset();
   $('#OpenGoldfishModal').modal('hide');
   toastr.success("Goldfish Added Successfully!");
+});
+
+// GOLDFISH UPDATE
+window.addEventListener('OpenEditGoldfishModal', function(){
+  $('#OpenEditGoldfishModal').find('span').html('');
+  $('#OpenEditGoldfishModal').modal('show');
+});
+
+window.addEventListener('CloseEditGoldfishModal', function(){
+  $('#OpenEditGoldfishModal').find('span').html('');
+  $('#OpenEditGoldfishModal').find('form')[0].reset();
+  $('#OpenEditGoldfishModal').modal('hide');
+  toastr.success("Goldfish Updated Successfully!");
 });
 
 // PRODUCT CATEGORY STORE

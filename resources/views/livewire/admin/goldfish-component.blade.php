@@ -75,11 +75,13 @@
 
 
     {{-- MODALS --}}
+
+    {{-- Open Create Modal --}}
     <div class="modal fade" wire:ignore.self id="OpenGoldfishModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header text-center">
-              <h5 class="modal-title" id="exampleModalLabel">Add Goldfish</h5>
+              <h5 class="modal-title w-100" id="exampleModalLabel">Add Goldfish</h5>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal" wire:submit.prevent="addGoldfish">
@@ -121,5 +123,69 @@
           </div>
         </div>
     </div>
+
+    {{-- Open Edit Modal --}}
+    <div class="modal fade" wire:ignore.self id="OpenEditGoldfishModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h5 class="modal-title w-100" id="exampleModalLabel">Add Goldfish</h5>
+          </div>
+          <div class="modal-body">
+              <form class="form-horizontal" wire:submit.prevent="updateGoldfish">
+                 
+                <input type="hidden" wire:model="upd_id">
+                <div class="form-group">
+                      <label for="">Name</label>
+                      <input type="text" class="form-control" placeholder="Enter Name" wire:model="upd_name" wire:keyup="generateeditslug">
+                      <span class="text-danger">@error('upd_name') {{ $message }}@enderror</span>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">Slug</label>
+                      <input type="text" class="form-control" placeholder="Enter Name" wire:model="upd_slug">
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">Description</label>
+                      <input type="text" class="form-control" placeholder="Enter Name" wire:model="upd_description">
+                      <span class="text-danger">@error('upd_description') {{ $message }}@enderror</span>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">Price</label>
+                      <input type="text" class="form-control" placeholder="Enter Name" wire:model="upd_price">
+                      <span class="text-danger">@error('upd_price') {{ $message }}@enderror</span>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">Image</label>
+                      <input type="file" class="input-file" wire:model="upd_image">
+                        @if ($upd_image)
+                          <img src="{{ $upd_image->temporaryUrl() }}" width="100" class="input-file">
+                        @else
+                          <img src="{{ asset('/images/image') }}/{{ $image }}" width="120" alt="">
+                        @endif
+                      <span class="text-danger">@error('upd_image') {{ $message }}@enderror</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="">Status</label>
+                    <select class="custom-select" wire:model="status">
+                      <option value="1">Active</option>
+                      <option value="0">Inactive</option>
+                    </select>
+                    <span class="text-danger">@error('upd_status') {{ $message }} @enderror</span>
+                  </div>
+              
+                  </div>
+                  <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Save changes</button>
+                  </div>
+              </form>
+        </div>
+      </div>
+  </div>
 
 </div>
