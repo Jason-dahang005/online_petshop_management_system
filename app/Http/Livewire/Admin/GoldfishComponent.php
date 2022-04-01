@@ -45,6 +45,8 @@ class GoldfishComponent extends Component
 		$upd_id = $this->upd_id;
 		$this->validate([
 			'upd_name'          => 'required|unique:goldfish,name,'.$upd_id,
+            'upd_description'   => 'required',
+            'upd_price'         => 'required',
 
 		],[
 			'upd_name.unique'=>'Name already exist'
