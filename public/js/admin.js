@@ -1,5 +1,19 @@
 // OPEN && CLOSE ADMIN MODAL START =============
 
+// DELIVERY USER STORE
+window.addEventListener('OpenAddUserModal', function(){
+  $('#OpenAddUserModal').find('span').html('');
+  $('#OpenAddUserModal').find('form')[0].reset();
+  $('#OpenAddUserModal').modal('show');
+});
+
+window.addEventListener('CloseAddUserhModal', function(){
+  $('#OpenAddUserModal').find('span').html('');
+  $('#OpenAddUserModal').find('form')[0].reset();
+  $('#OpenAddUserModal').modal('hide');
+  toastr.success("User Added Successfully!");
+});
+
 // GOLDFISH STORE
 window.addEventListener('OpenGoldfishModal', function(){
   $('#OpenGoldfishModal').find('span').html('');

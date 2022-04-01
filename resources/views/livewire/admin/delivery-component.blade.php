@@ -17,7 +17,7 @@
 
         </div>
         <div class="col-lg-2 col-md-3 col-sm-12">
-					<button type="button" class="btn btn-primary btn-sm btn-block h-100" wire:click="OpenAddProductModal()"><i class="fas fa-plus"></i>&nbsp;&nbsp;&nbsp;Register a new user</button>
+					<button type="button" class="btn btn-primary btn-sm btn-block h-100" wire:click="OpenAddUserModal()"><i class="fas fa-plus"></i>&nbsp;&nbsp;&nbsp;Register a new user</button>
 				</div>
       </div>
 
@@ -40,4 +40,43 @@
 			</table>
 		</div>
 	</div>
+
+	{{-- MODALS --}}
+
+    {{-- Open Create Modal --}}
+    <div class="modal fade" wire:ignore.self id="OpenAddUserModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+              <h5 class="modal-title w-100" id="exampleModalLabel">Add User</h5>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" wire:submit.prevent="addUser">
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" placeholder="Enter Name" wire:model="name" >
+                        <span class="text-danger">@error('name') {{ $message }}@enderror</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="email" name="" id="" placeholder="Enter Email" class="form-control" wire:model="email">
+                        <span class="text-danger">@error('email') {{ $message }}@enderror</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input type="password" class="form-control" placeholder="Enter Password" wire:model="password">
+                        <span class="text-danger">@error('password') {{ $message }}@enderror</span>
+                    </div>
+
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+          </div>
+        </div>
+    </div>
 </div>
