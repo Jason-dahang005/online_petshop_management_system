@@ -80,7 +80,7 @@
 														<div class="row align-items-end">
 																<div class="col-lg-4 col-md-4 col-12">
 																		<div class="button cart-button">
-																				<a href="#" class="btn" wire:click.prevent="addToCart({{ $product->id }}, '{{ $product->name }}', {{ $product->price }})">Add to Cart</a>
+																				<a href="#" class="btn" wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->price }})">Add to Cart</a>
 																		</div>
 																</div>
 																<div class="col-lg-4 col-md-4 col-12">
