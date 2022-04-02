@@ -36,11 +36,12 @@ class GoldfishComponent extends Component
 		$this->status               = $upc_fish->status;
 		$this->upd_id               = $upc_fish->id; 
         $this->image                = $upc_fish->image; 
+        
 		$this->dispatchBrowserEvent('OpenEditGoldfishModal',[
 			'id' => $id
 		]);
 	}
-
+// update goldfish
     public function updateGoldfish(){
 		$upd_id = $this->upd_id;
 		$this->validate([
@@ -77,7 +78,7 @@ class GoldfishComponent extends Component
     public function generateeditslug(){
         $this->upd_slug = Str::slug($this->upd_name);
     }
-
+// add goldfish
     public function addGoldfish(){
         $this->validate([
             'name'=> 'required',

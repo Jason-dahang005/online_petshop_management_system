@@ -82,6 +82,19 @@ window.addEventListener('CloseAddProductModal', function(){
   toastr.success("Product Added Successfully!");
 });
 
+//PRODUCT UPDATE
+window.addEventListener('OpenEditProductModal', function(){
+  $('#OpenEditProductModal').find('span').html('');
+  $('#OpenEditProductModal').modal('show');
+});
+
+window.addEventListener('CloseEditProductModal', function(){
+  $('#OpenEditProductModal').find('span').html('');
+  $('#OpenEditProductModal').find('form')[0].reset();
+  $('#OpenEditProductModal').modal('hide');
+  toastr.success("Product Added Successfully!");
+});
+
 // OPEN && CLOSE ADMIN MODAL CLOSE =============
 
 // ====== D A T A T A B L E 
