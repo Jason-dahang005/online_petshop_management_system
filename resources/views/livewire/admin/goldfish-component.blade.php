@@ -42,7 +42,7 @@
                       <td>{{ $fish->slug }}</td>
                       <td><img src="{{ asset('/images/image') }}/{{ $fish->image }}" alt="" style="max-width: 50px"></td>
                       <td>{{ $fish->description }}</td>
-                      <td>₱ {{ $fish->price }}</td>
+                      <td>₱{{ $fish->price }}</td>
                       <td>
                         @if ($fish->status)
                           <span class="badge badge-success">Active</span>
