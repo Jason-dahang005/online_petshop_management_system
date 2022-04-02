@@ -172,7 +172,6 @@
 									<div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
 										<ul id="nav" class="navbar-nav ms-auto">
 											<li class="nav-item"><a href="{{ route('/') }}" class=" {{  request()->routeIs('/') ? 'active' : '' }}" aria-label="Toggle navigation">Home</a></li>
-											<li class="nav-item"><a href="{{ route('customer.goldfish') }}" class=" {{  request()->routeIs('customer.goldfish') ? 'active' : '' }}" aria-label="Toggle navigation">Goldfish</a></li>
 											<li class="nav-item"><a href="{{ route('customer.shop') }}" class=" {{  request()->routeIs('customer.shop') ? 'active' : '' }}" aria-label="Toggle navigation">Shop</a></li>
 											<li class="nav-item"><a href="{{ route('customer.about-us') }}" class=" {{  request()->routeIs('customer.about-us') ? 'active' : '' }}" aria-label="Toggle navigation">About Us</a></li>
 											<li class="nav-item"><a href="{{ route('customer.contact-us') }}" class=" {{  request()->routeIs('customer.contact-us') ? 'active' : '' }}" aria-label="Toggle navigation">Contact Us</a></li>

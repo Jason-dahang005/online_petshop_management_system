@@ -16,7 +16,6 @@ use App\Http\Livewire\Admin\GoldfishComponent;
 // CUSTOMER LIVEWIRE COMPONENTS
 use App\Http\Livewire\Customer\Home;
 use App\Http\Livewire\Customer\Shop;
-use App\Http\Livewire\Customer\Goldfish;
 use App\Http\Livewire\Customer\AboutUs;
 use App\Http\Livewire\Customer\ContactUs;
 
@@ -48,7 +47,6 @@ use App\Http\Livewire\Customer\ContactUs;
 
 Route::get('/', Home::class)->name('/');
 Route::get('customer/shop', Shop::class)->name('customer.shop');
-Route::get('customer/goldfish', Goldfish::class)->name('customer.goldfish');
 Route::get('customer/about-us', AboutUs::class)->name('customer.about-us');
 Route::get('customer/contact-us', ContactUs::class)->name('customer.contact-us');
 

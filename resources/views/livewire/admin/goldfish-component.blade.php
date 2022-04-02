@@ -160,11 +160,11 @@
 
                   <div class="form-group">
                       <label for="">Image</label>
-                      <input type="file" class="input-file" wire:model="upd_image">
+                      <input type="file" class="form-control" wire:model="upd_image">
                         @if ($upd_image)
-                          <img src="{{ $upd_image->temporaryUrl() }}" width="100" class="input-file">
+                          <img class="text-center pt-1" src="{{ $upd_image->temporaryUrl() }}" width="100" class="input-file">
                         @else
-                          <img src="{{ asset('/images/image') }}/{{ $image }}" width="120" alt="">
+                          <img class="text-center pt-1" src="{{ asset('/images/image') }}/{{ $image }}" width="120" alt="">
                         @endif
                       <span class="text-danger">@error('upd_image') {{ $message }}@enderror</span>
                   </div>

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('product_category_id')->constrained();
             $table->string('name')->unique();
-            $table->string('slug')->unique();
+            $table->string('slug');
             $table->text('description');
             $table->string('image');
             $table->double('price');
