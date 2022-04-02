@@ -44,7 +44,7 @@
 								<img src="{{ asset('/images/images') }}/{{ $p->image }}" alt="" style="max-width: 50px">
 							</td>
 							<td>{{ $p->description }}</td>
-							<td>{{ $p->price }}</td>
+							<td>₱{{ $p->price }}</td>
 							<td>{{ $p->stock }}</td>
 							<td>
                 @if ($p->status == "1")
@@ -79,11 +79,19 @@
 					<div class="modal-body">
 						<div class="row">
 							<div class="col-lg-6">
+								
 								<div class="form-group">
 									<label for="">Name</label>
-									<input type="text" class="form-control" placeholder="Enter product name here" wire:model="name">
+									<input type="text" class="form-control" placeholder="Enter product name here" wire:model="name" wire:keyup="generateSlug()">
 									<span class="text-danger">@error('name') {{ $message }} @enderror</span>
 								</div>
+
+								<div class="form-group">
+									<label for="">Slug</label>
+									<input type="text" class="form-control" placeholder="Enter product slug" wire:model="slug">
+									<span class="text-danger">@error('slug') {{ $message }} @enderror</span>
+								</div>
+
 								<div class="form-group">
 									<label for="">Category</label>
 									<select class="custom-select" class="form-control" wire:model="product_category_id">
@@ -96,23 +104,28 @@
 									</select>
 									<span class="text-danger">@error('product_category_id') {{ $message }} @enderror</span>
 								</div>
+
 								<div class="form-group">
 									<label for="">Description</label>
 									<textarea cols="30" rows="5" class="form-control" placeholder="Enter product description here" wire:model="description"></textarea>
 									<span class="text-danger">@error('description') {{ $message }} @enderror</span>
 								</div>
 							</div>
+
 							<div class="col-lg-6">
+
 								<div class="form-group">
 									<label for="">Price</label>
 									<input type="text" class="form-control" placeholder="Enter product price here" wire:model="price">
 									<span class="text-danger">@error('price') {{ $message }} @enderror</span>
 								</div>
+
 								<div class="form-group">
 									<label for="">Stock</label>
 									<input type="text" class="form-control" placeholder="Enter product stock here" wire:model="stock">
 									<span class="text-danger">@error('stock') {{ $message }} @enderror</span>
 								</div>
+
 								<div class="form-group">
 									<label for="">Image</label>
 									<input type="file" class="form-control" wire:model="image">
@@ -121,6 +134,7 @@
 										<img src="{{ $image->temporaryUrl() }}" width="120px">
 									@endif
 								</div>
+
 							</div>
 						</div>
 					</div>

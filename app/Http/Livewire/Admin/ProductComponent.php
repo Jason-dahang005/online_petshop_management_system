@@ -15,6 +15,7 @@ class ProductComponent extends Component
 	use WithPagination;
 	use WithFileUploads;
 	public $name;
+	public $slug;
 	public $product_category_id;
 	public $description;
 	public $stock;
@@ -35,9 +36,18 @@ class ProductComponent extends Component
 		$this->dispatchBrowserEvent('OpenAddProductModal');
 	}
 
+	public function generateSlug(){
+		$this->slug = Str::slug($this->name);
+	}
+
+	public function generateEditSlug(){
+			$this->upd_slug = Str::slug($this->upd_name);
+	}
+
 	public function addProduct(){
 		$this->validate([
 			'name' => 'required|unique:products',
+			'slug' => 'required',
 			'description' => 'required',
 			'stock' => 'required',
 			'price' => 'required',
@@ -47,6 +57,7 @@ class ProductComponent extends Component
 
 		$prod = new Product();
 		$prod->name = $this->name;
+		$prod->slug = $this->slug;
 		$prod->description = $this->description;
 		$prod->stock = $this->stock;
 		$prod->price = $this->price;
