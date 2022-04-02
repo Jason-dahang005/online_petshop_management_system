@@ -158,20 +158,20 @@
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-grid" role="tabpanel" aria-labelledby="nav-grid-tab">
                                 <div class="row">
-                                    @foreach ($goldfish as $gf)
+                                    @foreach ($products as $p)
                                         <div class="col-lg-4 col-md-6 col-12">
                                             <!-- Start Single Product -->
                                             <div class="single-product">
                                                 <div class="product-image">
-                                                    <img src="{{ asset('/images/image') }}/{{ $gf->image }}" alt="#">
+                                                    <img src="{{ asset('/images/images') }}/{{ $p->image }}" alt="#">
                                                     <div class="button">
-                                                        <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+                                                        <a href="{{ route('product.product-details', ['slug'=>$p->slug]) }}" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
                                                     </div>
                                                 </div>
                                                 <div class="product-info">
                                                     <span class="category"></span>
                                                     <h4 class="title">
-                                                        <a href="product-grids.html">{{ $gf->name }}</a>
+                                                        <a href="product-grids.html">{{ $p->name }}</a>
                                                     </h4>
                                                     <ul class="review">
                                                         <li><i class="lni lni-star-filled"></i></li>
@@ -182,7 +182,7 @@
                                                         <li><span>4.0 Review(s)</span></li>
                                                     </ul>
                                                     <div class="price">
-                                                        <span>₱{{ $gf->price }}</span>
+                                                        <span>₱{{ $p->price }}</span>
                                                     </div>
                                                 </div>
                                             </div>

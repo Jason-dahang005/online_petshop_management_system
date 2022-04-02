@@ -18,6 +18,8 @@ use App\Http\Livewire\Customer\Home;
 use App\Http\Livewire\Customer\Shop;
 use App\Http\Livewire\Customer\AboutUs;
 use App\Http\Livewire\Customer\ContactUs;
+use App\Http\Livewire\Customer\ProductDetails;
+use App\Http\Livewire\Customer\ShoppingCart;
 
 
 /*
@@ -49,6 +51,8 @@ Route::get('/', Home::class)->name('/');
 Route::get('customer/shop', Shop::class)->name('customer.shop');
 Route::get('customer/about-us', AboutUs::class)->name('customer.about-us');
 Route::get('customer/contact-us', ContactUs::class)->name('customer.contact-us');
+Route::get('customer/product/{slug}', ProductDetails::class)->name('product.product-details');
+Route::get('customer/shopping-cart', ShoppingCart::class)->name('customer.shpping-cart');
 
 // CUSTOMER ROUTE COMPONENTS
 Route::middleware(['auth:sanctum','verified'])->group(function () {
