@@ -25,6 +25,7 @@ class ProductComponent extends Component
 	public $perPage = 6;
 	public $search = '';
 
+// for rendering the livewire component
 	public function render()
 	{
 		return view('livewire.admin.product-component', [
@@ -33,10 +34,13 @@ class ProductComponent extends Component
 		])->layout('layouts.admin', ['title'=>'Products']);
 	}
 
+// open create modal
 	public function OpenAddProductModal(){
+		$image = "";
 		$this->dispatchBrowserEvent('OpenAddProductModal');
 	}
 
+// open update modal
 	public function OpenEditProductModal($id){
 		$upd_prod               = product::find($id);
 		$this->upd_name             	= $upd_prod->name;
@@ -87,10 +91,11 @@ class ProductComponent extends Component
 		}
 	}
 
+// generates a slug for the create modal
 	public function generateSlug(){
 		$this->slug = Str::slug($this->name);
 	}
-
+// generates a slug for the update modal
 	public function generateEditSlug(){
 			$this->upd_slug = Str::slug($this->upd_name);
 	}
@@ -125,5 +130,21 @@ class ProductComponent extends Component
 		}
 	}
 
+// open view modal
+	public function OpenViewProductModal($id){
+		$upd_prod               = product::find($id);
+		$this->upd_name             	= $upd_prod->name;
+        $this->upd_slug             	= $upd_prod->slug;
+		$this->upd_description      	= $upd_prod->description;
+		$this->upd_product_category_id	= $upd_prod->product_category_id;
+        $this->upd_price            	= $upd_prod->price;
+		$this->status               	= $upd_prod->status;
+		$this->upd_stock 	            = $upd_prod->stock;
+		$this->upd_id               	= $upd_prod->id;   
+		$this->old_image                = $upd_prod->image;
 
+		$this->dispatchBrowserEvent('OpenViewProductModal',[
+			'id' => $id
+		]);
+	}
 }

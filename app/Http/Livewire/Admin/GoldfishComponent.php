@@ -41,6 +41,21 @@ class GoldfishComponent extends Component
 			'id' => $id
 		]);
 	}
+
+    public function OpenViewGoldfishModal($id){
+        $fish               = goldfish::find($id);
+		$this->name             = $fish->name;
+        $this->slug             = $fish->slug;
+		$this->description      = $fish->description;
+        $this->price            = $fish->price;
+		$this->status           = $fish->status;
+		$this->id               = $fish->id; 
+        $this->image            = $fish->image; 
+        
+		$this->dispatchBrowserEvent('OpenViewGoldfishModal',[
+			'id' => $id
+		]);
+    }
 // update goldfish
     public function updateGoldfish(){
 		$upd_id = $this->upd_id;
