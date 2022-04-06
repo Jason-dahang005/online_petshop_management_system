@@ -2,140 +2,61 @@
     <!-- Shopping Cart -->
     <div class="shopping-cart section">
         <div class="container">
+            @if (Session::has('AddToCart'))
+								<div class="alert alert-success">
+									{{ Session::get('AddToCart') }}
+								</div>
+							@endif
             <div class="cart-list-head">
                 <!-- Cart List Title -->
                 <div class="cart-list-title">
-                    <div class="row">
-                        <div class="col-lg-1 col-md-1 col-12">
-
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-12">
-                            <p>Product Name</p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>Quantity</p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>Subtotal</p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>Discount</p>
-                        </div>
-                        <div class="col-lg-1 col-md-2 col-12">
-                            <p>Remove</p>
-                        </div>
-                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Product Image</th>
+                                <th>Product Name</th>
+                                <th width="15%">Quantity</th>
+                                <th width="20%">Unit Price</th>
+                                <th>Subtotal</th>
+                                <th>Action<th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Cart::instance('cart')->content() as $item)
+                                <tr>
+                                    <td>
+                                        <img src="{{ asset('/images/images') }}/{{ $item->model->image }}" alt="#" style="max-width: 70px; max-height: 50px">
+                                    </td>
+                                    <td>{{ $item->model->name }}</td>
+                                    <td>
+                                        <div class="count-input">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <a href="#" class="btn btn-increase" wire:click.prevent="decreaseQuantity('{{ $item->rowId }}')"><i class="lni lni-circle-minus"></i></a>
+                                                    </span>
+                                                </div>
+                                                <input type="text" value="{{ $item->qty }}" class="form-control quantity text-center" min="1">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <a href="#" class="btn btn-reduce" wire:click.prevent="increaseQuantity('{{ $item->rowId }}')"><i class="lni lni-circle-plus"></i></a>
+                                                    </span>
+                                                  </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>₱{{ $item->model->price }}.00</td>
+                                    <td>₱{{ Cart::instance('cart')->subtotal() }}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger" wire:click.prevent="destroy('{{ $item->rowId }}')"><i class="lni lni-trash-can"></i></button>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
                 <!-- End Cart List Title -->
                 <!-- Cart Single List list -->
-                <div class="cart-single-list">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1 col-md-1 col-12">
-                            <a href="product-details.html"><img src="https://via.placeholder.com/220x200" alt="#"></a>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-12">
-                            <h5 class="product-name"><a href="product-details.html">
-                                    Canon EOS M50 Mirrorless Camera</a></h5>
-                            <p class="product-des">
-                                <span><em>Type:</em> Mirrorless</span>
-                                <span><em>Color:</em> Black</span>
-                            </p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <div class="count-input">
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>$910.00</p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>$29.00</p>
-                        </div>
-                        <div class="col-lg-1 col-md-2 col-12">
-                            <a class="remove-item" href="javascript:void(0)"><i class="lni lni-close"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single List list -->
-                <!-- Cart Single List list -->
-                <div class="cart-single-list">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1 col-md-1 col-12">
-                            <a href="product-details.html"><img src="https://via.placeholder.com/220x200" alt="#"></a>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-12">
-                            <h5 class="product-name"><a href="product-details.html">
-                                    Apple iPhone X 256 GB Space Gray</a></h5>
-                            <p class="product-des">
-                                <span><em>Memory:</em> 256 GB</span>
-                                <span><em>Color:</em> Space Gray</span>
-                            </p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <div class="count-input">
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>$1100.00</p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>—</p>
-                        </div>
-                        <div class="col-lg-1 col-md-2 col-12">
-                            <a class="remove-item" href="javascript:void(0)"><i class="lni lni-close"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single List list -->
-                <!-- Cart Single List list -->
-                <div class="cart-single-list">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1 col-md-1 col-12">
-                            <a href="product-details.html"><img src="https://via.placeholder.com/220x200" alt="#"></a>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-12">
-                            <h5 class="product-name"><a href="product-details.html">HP LaserJet Pro Laser Printer</a></h5>
-                            <p class="product-des">
-                                <span><em>Type:</em> Laser</span>
-                                <span><em>Color:</em> White</span>
-                            </p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <div class="count-input">
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>$550.00</p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>—</p>
-                        </div>
-                        <div class="col-lg-1 col-md-2 col-12">
-                            <a class="remove-item" href="javascript:void(0)"><i class="lni lni-close"></i></a>
-                        </div>
-                    </div>
-                </div>
                 <!-- End Single List list -->
             </div>
             <div class="row">
@@ -158,10 +79,10 @@
                             <div class="col-lg-4 col-md-6 col-12">
                                 <div class="right">
                                     <ul>
-                                        <li>Cart Subtotal<span>$2560.00</span></li>
+                                        <li>Subtotal<span>₱{{ Cart::instance('cart')->subtotal() }}</span></li>
+                                        <li>Tax<span>₱{{ Cart::instance('cart')->tax() }}</span></li>
                                         <li>Shipping<span>Free</span></li>
-                                        <li>You Save<span>$29.00</span></li>
-                                        <li class="last">You Pay<span>$2531.00</span></li>
+                                        <li class="last">You Pay<span>₱{{ Cart::instance('cart')->total() }}</span></li>
                                     </ul>
                                     <div class="button">
                                         <a href="checkout.html" class="btn">Checkout</a>

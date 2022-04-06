@@ -1,14 +1,9 @@
-<div>
+<div id="main">
 	<!-- Start Item Details -->
 	<section class="item-details section">
 		<div class="container">
 				<div class="top-area">
 						<div class="row align-items-center">
-							@if (Session::has('addToCart'))
-								<div class="alert success">
-									{{ Session::get('addToCart') }}
-								</div>
-							@endif
 								<div class="col-lg-6 col-md-12 col-12">
 										<div class="product-images">
 												<main id="gallery">
@@ -76,11 +71,14 @@
 																</div>
 														</div>
 												</div> --}}
+												@php
+													$witems = Cart::instance('wishlist')->content()->pluck('id');
+												@endphp
 												<div class="bottom-content">
 														<div class="row align-items-end">
 																<div class="col-lg-4 col-md-4 col-12">
 																		<div class="button cart-button">
-																				<a href="#" class="btn" wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->price }})">Add to Cart</a>
+																				<button type="button" class="btn" wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->price }})">Add to Cart</button>
 																		</div>
 																</div>
 																<div class="col-lg-4 col-md-4 col-12">
@@ -90,7 +88,12 @@
 																</div>
 																<div class="col-lg-4 col-md-4 col-12">
 																		<div class="wish-button">
-																				<button class="btn"><i class="lni lni-heart"></i> To Wishlist</button>
+																			@if ($witems->contains($product->id))
+																				<button class="btn" wire:click.prevent="removeFromWishlist({{ $product->id }})"><i class="lni lni-heart-filled"></i> To Wishlist</button>
+																			@else
+																				<button class="btn" wire:click.prevent="AddToWishlist({{ $product->id }}, '{{ $product->name }}', {{ $product->price }})"><i class="lni lni-heart"></i> To Wishlist</button>
+																			@endif
+																				
 																		</div>
 																</div>
 														</div>

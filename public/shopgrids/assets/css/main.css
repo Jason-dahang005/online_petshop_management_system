@@ -2053,7 +2053,7 @@ ol {
   }
 }
 
-.header .main-menu-search .navbar-search {
+.header .main-menu-search .navbar-search .navbar-search-form{
   position: relative;
   display: -moz-flex;
   display: -ms-flex;
@@ -6528,11 +6528,11 @@ blockquote span {
   }
 }
 
-.shopping-cart select.form-control:not([size]):not([multiple]) {
-  height: 46px;
+.shopping-cart .quantity.form-control:not([size]):not([multiple]) {
+  height: 40px;
   border: 1px solid #dbdbdb;
   border-radius: 4px;
-  width: 120px;
+  width: 35px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

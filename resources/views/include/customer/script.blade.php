@@ -3,6 +3,16 @@
 <script src="{{ asset('shopgrids/assets/js/tiny-slider.js') }}"></script>
 <script src="{{ asset('shopgrids/assets/js/glightbox.min.js') }}"></script>
 <script src="{{ asset('shopgrids/assets/js/main.js') }}"></script>
+@livewireScripts()
+@if (Session::has('addToCart'))
+    <script>
+        Swal.fire(
+            'Item Successfully Added To Cart!',
+            'You clicked the button!',
+            'success'
+            );
+    </script>
+@endif  
 <script type="text/javascript">
     //========= Hero Slider 
     tns({

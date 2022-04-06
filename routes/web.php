@@ -12,7 +12,6 @@ use App\Http\Livewire\Admin\ProductCategoryComponent;
 use App\Http\Livewire\Admin\User;
 use App\Http\Livewire\Admin\GoldfishComponent;
 
-
 // CUSTOMER LIVEWIRE COMPONENTS
 use App\Http\Livewire\Customer\Home;
 use App\Http\Livewire\Customer\Shop;
@@ -20,7 +19,8 @@ use App\Http\Livewire\Customer\AboutUs;
 use App\Http\Livewire\Customer\ContactUs;
 use App\Http\Livewire\Customer\ProductDetails;
 use App\Http\Livewire\Customer\ShoppingCart;
-
+use App\Http\Livewire\Customer\Category;
+use App\Http\Livewire\Customer\Search;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,11 +52,13 @@ Route::get('customer/shop', Shop::class)->name('customer.shop');
 Route::get('customer/about-us', AboutUs::class)->name('customer.about-us');
 Route::get('customer/contact-us', ContactUs::class)->name('customer.contact-us');
 Route::get('customer/product/{slug}', ProductDetails::class)->name('product.product-details');
-Route::get('customer/shopping-cart', ShoppingCart::class)->name('customer.shpping-cart');
+Route::get('customer/shopping-cart', ShoppingCart::class)->name('customer.shopping-cart');
+Route::get('customer/category/{category_slug}', Category::class)->name('customer.category');
+Route::get('customer/search', Search::class)->name('customer.search');
 
 // CUSTOMER ROUTE COMPONENTS
 Route::middleware(['auth:sanctum','verified'])->group(function () {
-    
+
 });
 
 // ADMIN ROUTE COMPONENTS
@@ -73,5 +75,5 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
 
 // DELIVERY ROUTE COMPONENTS
 Route::middleware(['auth:sanctum','verified'])->group(function () {
-    
+
 });

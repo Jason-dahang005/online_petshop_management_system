@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Customer;
 
 use Livewire\Component;
+use Cart;
+use Auth;
 
 class Home extends Component
 {
