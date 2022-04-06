@@ -52,7 +52,7 @@
                       </td>
                       <td>{{ date('M d,Y', strtotime($fish->created_at)) }}</td>
                       <td>
-                        <button class="btn btn-sm btn-success"><i class="fas fa-eye"></i> View</button>
+                        <button class="btn btn-sm btn-success" wire:click="OpenViewGoldfishModal({{ $fish->id }})"><i class="fas fa-eye"></i> View</button>
                         <button class="btn btn-sm btn-primary" wire:click="OpenEditGoldfishModal({{ $fish->id }})"><i class="fas fa-edit"></i> Edit</button>
                       </td>
                     </tr>
@@ -187,5 +187,59 @@
         </div>
       </div>
   </div>
+
+  {{-- Open View Modal --}}
+  <div class="modal fade" wire:ignore.self id="OpenViewGoldfishModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h5 class="modal-title w-100" id="exampleModalLabel">Goldfish</h5>
+        </div>
+        <div class="modal-body">
+            <form class="form-horizontal" >
+               
+              <input type="hidden" wire:model="id">
+              <div class="form-group">
+                    <label for="">Name</label>
+                    <input type="text" disabled class="form-control" placeholder="Enter Name" wire:model="name" wire:keyup="generateeditslug">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Slug</label>
+                    <input type="text" disabled class="form-control" placeholder="Enter Name" wire:model="slug">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Description</label>
+                    <input type="text" disabled class="form-control" placeholder="Enter Name" wire:model="description">
+                    
+                </div>
+
+                <div class="form-group">
+                    <label for="">Price</label>
+                    <input type="text" disabled class="form-control" placeholder="Enter Name" wire:model="price">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Image</label>
+                    <img class="text-center pt-1" src="{{ asset('/images/image') }}/{{ $image }}" width="120" alt="">
+                </div>
+
+                <div class="form-group">
+                  <label for="">Status</label>
+                  <select class="custom-select" disabled wire:model="status">
+                    <option value="1">Active</option>
+                    <option value="0">Inactive</option>
+                  </select>
+                </div>
+            
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+      </div>
+    </div>
+</div>
 
 </div>

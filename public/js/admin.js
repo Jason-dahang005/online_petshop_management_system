@@ -41,6 +41,18 @@ window.addEventListener('CloseEditGoldfishModal', function(){
   toastr.success("Goldfish Updated Successfully!");
 });
 
+// GOLDFISH VIEW
+window.addEventListener('OpenViewGoldfishModal', function(){
+  $('#OpenViewGoldfishModal').find('span').html('');
+  $('#OpenViewGoldfishModal').modal('show');
+});
+
+window.addEventListener('CloseViewGoldfishModal', function(){
+  $('#OpenViewGoldfishModal').find('span').html('');
+  $('#OpenViewGoldfishModal').find('form')[0].reset();
+  $('#OpenViewGoldfishModal').modal('hide');
+});
+
 // PRODUCT CATEGORY STORE
 window.addEventListener('OpenProductCategoryModal', function(){
   $('#OpenProductCategoryModal').find('span').html('');
@@ -80,6 +92,31 @@ window.addEventListener('CloseAddProductModal', function(){
   $('#AddNewProductModal').find('form')[0].reset();
   $('#AddNewProductModal').modal('hide');
   toastr.success("Product Added Successfully!");
+});
+
+//PRODUCT UPDATE
+window.addEventListener('OpenEditProductModal', function(){
+  $('#OpenEditProductModal').find('span').html('');
+  $('#OpenEditProductModal').modal('show');
+});
+
+window.addEventListener('CloseEditProductModal', function(){
+  $('#OpenEditProductModal').find('span').html('');
+  $('#OpenEditProductModal').find('form')[0].reset();
+  $('#OpenEditProductModal').modal('hide');
+  toastr.success("Product Added Successfully!");
+});
+
+//PRODUCT VIEW
+window.addEventListener('OpenViewProductModal', function(){
+  $('#OpenViewProductModal').find('span').html('');
+  $('#OpenViewProductModal').modal('show');
+});
+
+window.addEventListener('CloseViewProductModal', function(){
+  $('#OpenViewProductModal').find('span').html('');
+  $('#OpenViewProductModal').find('form')[0].reset();
+  $('#OpenViewProductModal').modal('hide');
 });
 
 // OPEN && CLOSE ADMIN MODAL CLOSE =============
