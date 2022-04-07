@@ -7,6 +7,7 @@
   <title>Online Petshop Management System</title>
 
   @include('/include/customer/style')
+  @livewireStyles()
 </head>
 <body>
   <div class="preloader">
@@ -21,5 +22,6 @@
   {{ $slot }}
   @include('/include/customer/footer')
   @include('/include/customer/script')
+  @livewireScripts()
 </body>
 </html>

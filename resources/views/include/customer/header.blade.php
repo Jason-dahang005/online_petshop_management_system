@@ -54,9 +54,9 @@
 																			@endguest
 						
 																			@auth
-																				<li><a href="">Profile</a></li>
-																				<li><a href="">Orders</a></li>
-																				<li><a href="">Wishlist</a></li>
+																				<li><a href="{{ route('customer.profile') }}">Profile</a></li>
+																				<li><a href="{{ route('customer.order') }}">Orders</a></li>
+																				<li><a href="{{ route('customer.wishlist') }}">Wishlist</a></li>
 																				<li><a href="">Followed Stores</a></li>
 																				{{-- <li><a href="{{ route('logout') }}">Logout</a></li> --}}
 																				<li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >Logout</a></li>

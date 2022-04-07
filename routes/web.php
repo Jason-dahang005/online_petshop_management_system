@@ -21,6 +21,9 @@ use App\Http\Livewire\Customer\ProductDetails;
 use App\Http\Livewire\Customer\ShoppingCart;
 use App\Http\Livewire\Customer\Category;
 use App\Http\Livewire\Customer\Search;
+use App\Http\Livewire\Customer\Order;
+use App\Http\Livewire\Customer\Profile;
+use App\Http\Livewire\Customer\Wishlist;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +58,9 @@ Route::get('customer/product/{slug}', ProductDetails::class)->name('product.prod
 Route::get('customer/shopping-cart', ShoppingCart::class)->name('customer.shopping-cart');
 Route::get('customer/category/{category_slug}', Category::class)->name('customer.category');
 Route::get('customer/search', Search::class)->name('customer.search');
+Route::get('customer/order', Order::class)->name('customer.order');
+Route::get('customer/profile', Profile::class)->name('customer.profile');
+Route::get('customer/wishlist', Wishlist::class)->name('customer.wishlist');
 
 // CUSTOMER ROUTE COMPONENTS
 Route::middleware(['auth:sanctum','verified'])->group(function () {
