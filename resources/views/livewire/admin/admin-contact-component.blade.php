@@ -22,14 +22,13 @@
                     <tbody>
                         @if (count($contacts) > 0)
                           @foreach ($contacts as $contact)
-                              
-                          @endforeach
                             <tr>
                               <td>{{ $contact->name }}</td>
                               <td>{{ $contact->email }}</td>
                               <td>{{ $contact->phone }}</td>
                               <td>{{ $contact->comment }}</td>
                               <td>{{ date('M d,Y', strtotime($contact->created_at)) }}</td>
+                          @endforeach
                     
                         @else
                           <tr>

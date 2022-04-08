@@ -5,14 +5,14 @@
             <div class="col-md-12">
                 <div class="card-header">
                         Change Password
-                    <div class="card-body" wire:click.prevent="changePassword">
+                    <div class="card-body" >
                         @if (Session::has('password_success'))
                             <div class="alert alert-success" role="alert">{{ Session::get('password_success') }}</div>
                         @endif
                         @if (Session::has('password_error'))
                             <div class="alert alert-success" role="alert">{{ Session::get('password_error') }}</div>
                         @endif
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" >
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Current Password</label>
                                 <div class="col-md-4">
@@ -40,7 +40,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label"></label>
                                 <div class="col-md-4">
-                                    <button type="submit" btn btn-primary">Submit</button>
+                                    <button wire:click.prevent="changePassword" class="btn btn-primary">Submit</button>
                                 </div>
                             </div>
                         </form>
