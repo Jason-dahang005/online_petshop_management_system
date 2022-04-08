@@ -91,6 +91,21 @@
             <p>Sales</p>
           </a>
         </li>
+
+        <li class="nav-item">
+          <a href="{{ url('/admin/contact-component') }}" class="nav-link {{ 'admin/contact-component' == request()->path() ? 'active' : '' }}">
+            <i class="nav-icon fas fa-envelope"></i>
+            <p>Contact Messages</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="{{ url('/admin/contact-component') }}" class="nav-link {{ 'admin/contact-component' == request()->path() ? 'active' : '' }}">
+            <i class="nav-icon fas fa-screwdriver-wrench"></i>
+            <p>Settings</p>
+          </a>
+        </li>
+
         <li class="nav-item">
           <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             <i class="nav-icon fas fa-sign-out-alt"></i>

@@ -55,6 +55,7 @@
 						
 																			@auth
 																				<li><a href="{{ route('customer.profile') }}">Profile</a></li>
+																				<li><a href="{{ route('customer.change-password') }}">Change Password</a></li>
 																				<li><a href="{{ route('customer.order') }}">Orders</a></li>
 																				<li><a href="{{ route('customer.wishlist') }}">Wishlist</a></li>
 																				<li><a href="">Followed Stores</a></li>

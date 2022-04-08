@@ -73,8 +73,7 @@ class ProductCategoryComponent extends Component
 			'upd_description'   => 'required',
             'upd_slug'          => 'required',
 			'status'            => 'required'
-		],[
-			'upd_name.unique'=>'Name already exist'
+		
 		]);
 
 		$prod_cat = ProductCategory::find($upd_id);
