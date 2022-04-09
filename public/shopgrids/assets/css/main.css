@@ -3400,7 +3400,7 @@ ol {
 
 .single-product .product-image .button {
   position: absolute;
-  left: 50%;
+  left: 52%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   bottom: -60px;
@@ -3408,19 +3408,20 @@ ol {
   transition: all 0.4s ease;
   opacity: 0;
   visibility: hidden;
+  width: 100%;
 }
 
 .single-product .product-image .button .btn {
   padding: 12px 20px;
   font-size: 13px;
   font-weight: 600;
-  width: 140px;
 }
 
 .single-product .product-image .button .btn i {
   font-size: 18px;
   position: relative;
   top: 2px;
+  left: 2px;
 }
 
 .single-product .product-image img {
@@ -6606,11 +6607,9 @@ blockquote span {
   font-weight: 600;
   line-height: 40px;
   position: relative;
-  cursor: pointer;
   border: 1px solid #e6e6e6;
   border-radius: 4px 4px 0 0;
   padding: 8px 25px;
-  color: #0167F3;
   background-color: #fff;
 }
 
@@ -6619,19 +6618,7 @@ blockquote span {
   color: #081828;
 }
 
-.checkout-steps-form-style-1 .title:before {
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  font-family: "Lineicons";
-  content: "\ea5e";
-  font-size: 13px;
-  color: #7D7D7D;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-}
+
 
 .checkout-steps-form-style-1 .checkout-steps-form-content {
   padding: 25px;
@@ -6947,6 +6934,19 @@ blockquote span {
 }
 
 .checkout-sidebar-price-table .sub-total-price .total-price {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 4px 0;
+}
+
+.checkout-sidebar-price-table .select-payment-method .payment-radio-btn {
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;

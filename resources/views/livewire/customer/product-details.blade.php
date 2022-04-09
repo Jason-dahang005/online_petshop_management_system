@@ -3,6 +3,11 @@
 	<section class="item-details section">
 		<div class="container">
 				<div class="top-area">
+					@if (Session::has('AddToCart'))
+					<script>
+						alert("{{ Session::get('AddToCart') }}")
+					</script>
+							@endif
 						<div class="row align-items-center">
 								<div class="col-lg-6 col-md-12 col-12">
 										<div class="product-images">

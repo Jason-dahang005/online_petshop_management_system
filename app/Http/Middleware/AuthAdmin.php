@@ -18,7 +18,14 @@ class AuthAdmin
     {
         if (session('user_type') === 'admin') {
             return $next($request);
-        }else{
+        }
+        elseif (session('user_type') === 'customer') {
+            return $next($request);
+        }
+        elseif (session('user_type') === 'delivery') {
+            return $next($request);
+        }
+        else{
             session()->flush();
             return redirect()->route('login');
         }

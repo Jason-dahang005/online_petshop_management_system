@@ -21,6 +21,10 @@ use App\Http\Livewire\Customer\ProductDetails;
 use App\Http\Livewire\Customer\ShoppingCart;
 use App\Http\Livewire\Customer\Category;
 use App\Http\Livewire\Customer\Search;
+use App\Http\Livewire\Customer\Wishlist;
+use App\Http\Livewire\Customer\Checkout;
+use App\Http\Livewire\Customer\Thankyou;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -52,13 +56,16 @@ Route::get('customer/shop', Shop::class)->name('customer.shop');
 Route::get('customer/about-us', AboutUs::class)->name('customer.about-us');
 Route::get('customer/contact-us', ContactUs::class)->name('customer.contact-us');
 Route::get('customer/product/{slug}', ProductDetails::class)->name('product.product-details');
-Route::get('customer/shopping-cart', ShoppingCart::class)->name('customer.shopping-cart');
 Route::get('customer/category/{category_slug}', Category::class)->name('customer.category');
 Route::get('customer/search', Search::class)->name('customer.search');
+Route::get('customer/thankyou', Thankyou::class)->name('customer.thankyou');
+
 
 // CUSTOMER ROUTE COMPONENTS
 Route::middleware(['auth:sanctum','verified'])->group(function () {
-
+    Route::get('customer/shopping-cart', ShoppingCart::class)->name('customer.shopping-cart');
+    Route::get('customer/wishlist', Wishlist::class)->name('customer.wishlist');
+    Route::get('customer/checkout', Checkout::class)->name('customer.checkout');
 });
 
 // ADMIN ROUTE COMPONENTS

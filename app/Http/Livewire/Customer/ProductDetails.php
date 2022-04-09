@@ -17,8 +17,8 @@ class ProductDetails extends Component
 
     public function store($product_id, $product_name, $product_price){
         Cart::instance('cart')->add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
+        $this->emitTo('customer.cart-count', 'refreshComponent');
         session()->flash('AddToCart', 'Item Added To Cart Succesfully!');
-        $this->emitTo('customer.cart-count', 'refreshComponent'); 
     }
 
     public function AddToWishlist($product_id, $product_name, $product_price){
@@ -38,7 +38,10 @@ class ProductDetails extends Component
 
     public function render()
     {
+
         $product = Product::where('slug', $this->slug)->first();
+
+
         return view('livewire.customer.product-details', ['product'=>$product])->layout('layouts.customer');
     }
 }

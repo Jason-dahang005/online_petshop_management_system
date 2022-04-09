@@ -2,11 +2,6 @@
     <!-- Shopping Cart -->
     <div class="shopping-cart section">
         <div class="container">
-            @if (Session::has('AddToCart'))
-								<div class="alert alert-success">
-									{{ Session::get('AddToCart') }}
-								</div>
-							@endif
             <div class="cart-list-head">
                 <!-- Cart List Title -->
                 <div class="cart-list-title">
@@ -65,28 +60,21 @@
                     <div class="total-amount">
                         <div class="row">
                             <div class="col-lg-8 col-md-6 col-12">
-                                <div class="left">
-                                    <div class="coupon">
-                                        <form action="#" target="_blank">
-                                            <input name="Coupon" placeholder="Enter Your Coupon">
-                                            <div class="button">
-                                                <button class="btn">Apply Coupon</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+                                
                             </div>
                             <div class="col-lg-4 col-md-6 col-12">
                                 <div class="right">
                                     <ul>
+                                        <li><h5 class="title">Order Summary</h5></li>
+                                        <hr>
                                         <li>Subtotal<span>₱{{ Cart::instance('cart')->subtotal() }}</span></li>
                                         <li>Tax<span>₱{{ Cart::instance('cart')->tax() }}</span></li>
                                         <li>Shipping<span>Free</span></li>
                                         <li class="last">You Pay<span>₱{{ Cart::instance('cart')->total() }}</span></li>
                                     </ul>
                                     <div class="button">
-                                        <a href="checkout.html" class="btn">Checkout</a>
-                                        <a href="product-grids.html" class="btn btn-alt">Continue shopping</a>
+                                        <a href="#" class="btn" wire:click.prevent="checkout">Checkout</a>
+                                        <a href="{{ route('customer.shop') }}" class="btn btn-alt">Continue shopping</a>
                                     </div>
                                 </div>
                             </div>

@@ -144,12 +144,29 @@
                                 <div class="row">
                                     @foreach ($products as $p)
                                         <div class="col-lg-4 col-md-6 col-12">
+                                            @php
+													$witems = Cart::instance('wishlist')->content()->pluck('id');
+												@endphp
                                             <!-- Start Single Product -->
                                             <div class="single-product">
                                                 <div class="product-image">
                                                     <img src="{{ asset('/images/images') }}/{{ $p->image }}" alt="#">
                                                     <div class="button">
-                                                        <a href="{{ route('product.product-details', ['slug'=>$p->slug]) }}" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <a href="{{ route('product.product-details', ['slug'=>$p->slug]) }}" class="btn"><i class="lni lni-eye"></i></a>
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <a href="#" class="btn" wire:click.prevent="store({{ $p->id }}, '{{ $p->name }}', {{ $p->price }})"><i class="lni lni-cart"></i></a>
+                                                            </div>
+                                                            <div class="col-4">
+                                                                @if ($witems->contains($p->id))
+                                                                    <button class="btn" wire:click.prevent="removeFromWishlist({{ $p->id }})"><i class="lni lni-heart-filled"></i></button>
+                                                                @else
+                                                                    <button class="btn" wire:click.prevent="AddToWishlist({{ $p->id }}, '{{ $p->name }}', {{ $p->price }})"><i class="lni lni-heart"></i></button>
+                                                                @endif
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="product-info">
