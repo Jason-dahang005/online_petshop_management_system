@@ -11,6 +11,7 @@ use App\Http\Livewire\Admin\Orders;
 use App\Http\Livewire\Admin\ProductCategoryComponent;
 use App\Http\Livewire\Admin\User;
 use App\Http\Livewire\Admin\GoldfishComponent;
+use App\Http\Livewire\Admin\AdminContactComponent;
 
 // CUSTOMER LIVEWIRE COMPONENTS
 use App\Http\Livewire\Customer\Home;
@@ -25,6 +26,9 @@ use App\Http\Livewire\Customer\Wishlist;
 use App\Http\Livewire\Customer\Checkout;
 use App\Http\Livewire\Customer\Thankyou;
 
+use App\Http\Livewire\Customer\Order;
+use App\Http\Livewire\Customer\Profile;
+use App\Http\Livewire\Customer\UserChangePassword;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,11 +65,16 @@ Route::get('customer/search', Search::class)->name('customer.search');
 Route::get('customer/thankyou', Thankyou::class)->name('customer.thankyou');
 
 
+
 // CUSTOMER ROUTE COMPONENTS
 Route::middleware(['auth:sanctum','verified'])->group(function () {
     Route::get('customer/shopping-cart', ShoppingCart::class)->name('customer.shopping-cart');
     Route::get('customer/wishlist', Wishlist::class)->name('customer.wishlist');
     Route::get('customer/checkout', Checkout::class)->name('customer.checkout');
+    Route::get('customer/order', Order::class)->name('customer.order');
+    Route::get('customer/profile', Profile::class)->name('customer.profile');
+    Route::get('customer/wishlist', Wishlist::class)->name('customer.wishlist');
+    Route::get('customer/change-password', UserChangePassword::class)->name('customer.change-password');
 });
 
 // ADMIN ROUTE COMPONENTS
@@ -78,6 +87,7 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
     Route::get('admin/product-category-component', ProductCategoryComponent::class)->name('admin.product-category-component');
     Route::get('admin/users', User::class)->name('admin.users');
     Route::get('admin/goldfish-component', GoldfishComponent::class)->name('admin.goldfish-component');
+    Route::get('admin/contact-component', AdminContactComponent::class)->name('admin.contact-component');
 });
 
 // DELIVERY ROUTE COMPONENTS
