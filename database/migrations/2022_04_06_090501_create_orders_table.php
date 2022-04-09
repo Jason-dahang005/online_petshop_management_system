@@ -27,7 +27,7 @@ class CreateOrdersTable extends Migration
             $table->string('province');
             $table->string('zipcode');
             $table->string('barangay');
-            $table->enum('status', ['ordered', 'delivered', 'cancelled'])->default('ordered');
+            $table->string('status')->default('ordered');
             $table->timestamps();
         });
     }

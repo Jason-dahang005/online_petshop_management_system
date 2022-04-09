@@ -17,8 +17,8 @@ class CreateTransactionsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('order_id')->constrained();
-            $table->enum('paymentmode', ['cod', 'card', 'paypal', 'gcash']);
-            $table->enum('status', ['pending', 'approved', 'declined', 'refunded'])->default('pending');
+            $table->string('paymentmode');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

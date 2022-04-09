@@ -2,6 +2,11 @@
     <!--====== Checkout Form Steps Part Start ======-->
     <section class="checkout-wrapper section">
 			<div class="container">
+				@if (Session::has('stripe_error'))
+					<div class="alert alert-succe" role="alert">
+						{{ Session::get('stripe_error') }}
+					</div>
+				@endif
 				<form wire:submit.prevent="placeOrder">
 					<div class="row justify-content-center">
 						<div class="col-lg-8">
@@ -105,49 +110,64 @@
 											</div>
 										</section>
 									</li>
-									<li>
-										<h6 class="title collapsed" >Payment Info</h6>
-										<section class="checkout-steps-form-content collapse show" id="collapsefive" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-											<div class="row">
-												<div class="col-12">
-													<div class="checkout-payment-form">
-														<div class="single-form form-default">
-															<label class="small">Cardholder Name <span class="text-danger">*</span></label>
-															<div class="form-input form">
-																<input type="text" placeholder="Cardholder Name">
-															</div>
-														</div>
-														<div class="single-form form-default">
-															<label class="small">Card Number <span class="text-danger">*</span></label>
-															<div class="form-input form">
-																<input id="credit-input" type="text" placeholder="0000 0000 0000 0000">
-																<img src="assets/images/payment/card.png" alt="card">
-															</div>
-														</div>
-														<div class="payment-card-info">
-															<div class="single-form form-default mm-yy">
-																<label class="small">Expiration <span class="text-danger">*</span></label>
-																<div class="expiration d-flex">
-																	<div class="form-input form">
-																		<input type="text" placeholder="MM">
-																	</div>
-																	<div class="form-input form">
-																		<input type="text" placeholder="YYYY">
-																	</div>
+									@if ($paymentmode == 'card')
+										<li>
+											<h6 class="title collapsed" >Payment Info</h6>
+											<section class="checkout-steps-form-content collapse show" id="collapsefive" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+												<div class="row">
+													<div class="col-12">
+														<div class="checkout-payment-form">
+															<div class="single-form form-default">
+																<label class="small">Card Number <span class="text-danger">*</span></label>
+																<div class="form-input form">
+																	<input id="credit-input" type="text" placeholder="0000 0000 0000 0000" wire:model="card_no">
+																	@error('card_no')
+																	<span class="text-danger">
+																		{{ $message }}
+																	</span>
+																@enderror
 																</div>
 															</div>
-															<div class="single-form form-default">
-																<label class="small">CVC/CVV <span><i  class="mdi mdi-alert-circle"></i></span> <span class="text-danger">*</span></label>
-																<div class="form-input form">
-																	<input type="text" placeholder="***">
+															<div class="payment-card-info">
+																<div class="single-form form-default mm-yy">
+																	<label class="small">Expiration <span class="text-danger">*</span></label>
+																	<div class="expiration d-flex">
+																		<div class="form-input form">
+																			<input type="text" placeholder="MM" wire:model="exp_month">
+																			@error('exp_month')
+																			<span class="text-danger">
+																				{{ $message }}
+																			</span>
+																		@enderror
+																		</div>
+																		<div class="form-input form">
+																			<input type="text" placeholder="YYYY" wire:model="exp_year">
+																			@error('exp_year')
+																			<span class="text-danger">
+																				{{ $message }}
+																			</span>
+																		@enderror
+																		</div>
+																	</div>
+																</div>
+																<div class="single-form form-default">
+																	<label class="small">CVC/CVV <span><i  class="mdi mdi-alert-circle"></i></span> <span class="text-danger">*</span></label>
+																	<div class="form-input form">
+																		<input type="password" placeholder="***" wire:model="cvc">
+																		@error('cvc')
+																		<span class="text-danger">
+																			{{ $message }}
+																		</span>
+																	@enderror
+																	</div>
 																</div>
 															</div>
 														</div>
 													</div>
 												</div>
-											</div>
-										</section>
-									</li>
+											</section>
+										</li>
+									@endif
 								</ul>
 							</div>
 						</div>
@@ -158,11 +178,11 @@
 									<div class="select-payment-method">
 										<div class="payment-radio-btn">
 											<label class="custom-control-label" for="customRadio1">Cash on Delivery <span class="text-danger">*</span></label>
-											<input type="radio" id="payment-method-cod" name="payment-method" value="cod" class="custom-control-input" wire:model="paymentmode">
+											<input type="radio" id="payment-method-cod" required name="payment-method" value="cod" class="custom-control-input" wire:model="paymentmode">
 										</div>
 										<div class="payment-radio-btn">
 											<label class="custom-control-label" for="customRadio1">Debit/Credit Card <span class="text-danger">*</span></label>
-											<input type="radio" id="payment-method-card" name="payment-method" value="card" class="custom-control-input" wire:model="paymentmode">
+											<input type="radio" id="payment-method-card" required name="payment-method" value="card" class="custom-control-input" wire:model="paymentmode">
 										</div>
 									</div>
 								</div>
