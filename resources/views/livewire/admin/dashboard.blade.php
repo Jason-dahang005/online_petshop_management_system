@@ -62,9 +62,8 @@
           <!-- small box -->
           <div class="small-box bg-dark" >
             <div class="inner">
-              <h3>150</h3>
-
-              <p>New Orders</p>
+              <h3>{{ count($products) }}</h3>
+              <p>Products</p>
             </div>
             <div class="icon">
               <i class="fas fa-shopping-bag"></i>

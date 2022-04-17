@@ -8,6 +8,6 @@ class Sales extends Component
 {
     public function render()
     {
-        return view('livewire.admin.sales')>layout('layouts.admin', ['title'=>'Sales']);
+        return view('livewire.admin.sales')->layout('layouts.admin', ['title'=>'Sales']);
     }
 }

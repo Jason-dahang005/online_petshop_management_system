@@ -7,16 +7,21 @@ use App\Http\Livewire\Admin\Dashboard;
 use App\Http\Livewire\Admin\ProductComponent;
 use App\Http\Livewire\Admin\DeliveryComponent;
 use App\Http\Livewire\Admin\Reservations;
-use App\Http\Livewire\Admin\Orders;
+use App\Http\Livewire\Admin\OrderComponent;
 use App\Http\Livewire\Admin\ProductCategoryComponent;
 use App\Http\Livewire\Admin\User;
+use App\Http\Livewire\Admin\UserComponent;
 use App\Http\Livewire\Admin\GoldfishComponent;
 use App\Http\Livewire\Admin\AdminContactComponent;
+use App\Http\Livewire\Admin\InventoryComponent;
+use App\Http\Livewire\Admin\SalesComponent;
+use App\http\Livewire\Admin\OrderDetailComponent;
 
 // CUSTOMER LIVEWIRE COMPONENTS
 use App\Http\Livewire\Customer\Home;
 use App\Http\Livewire\Customer\Shop;
 use App\Http\Livewire\Customer\AboutUs;
+use App\Http\Livewire\Customer\Goldfish;
 use App\Http\Livewire\Customer\ContactUs;
 use App\Http\Livewire\Customer\ProductDetails;
 use App\Http\Livewire\Customer\ShoppingCart;
@@ -59,6 +64,7 @@ Route::get('/', Home::class)->name('/');
 Route::get('customer/shop', Shop::class)->name('customer.shop');
 Route::get('customer/about-us', AboutUs::class)->name('customer.about-us');
 Route::get('customer/contact-us', ContactUs::class)->name('customer.contact-us');
+Route::get('customer/goldfish', Goldfish::class)->name('customer.goldfish');
 Route::get('customer/product/{slug}', ProductDetails::class)->name('product.product-details');
 Route::get('customer/category/{category_slug}', Category::class)->name('customer.category');
 Route::get('customer/search', Search::class)->name('customer.search');
@@ -83,11 +89,15 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
     Route::get('admin/product-component', ProductComponent::class)->name('admin.product-component');
     Route::get('admin/delivery-component', DeliveryComponent::class)->name('admin.delivery-component');
     Route::get('admin/reservations', Reservations::class)->name('admin.reservations');
-    Route::get('admin/orders', Orders::class)->name('admin.orders');
+    Route::get('admin/order-component', OrderComponent::class)->name('admin.order-component');
     Route::get('admin/product-category-component', ProductCategoryComponent::class)->name('admin.product-category-component');
     Route::get('admin/users', User::class)->name('admin.users');
+    Route::get('admin/user-component', UserComponent::class)->name('admin.user-component');
     Route::get('admin/goldfish-component', GoldfishComponent::class)->name('admin.goldfish-component');
     Route::get('admin/contact-component', AdminContactComponent::class)->name('admin.contact-component');
+    Route::get('admin/inventory-component', InventoryComponent::class)->name('admin.inventory-component');
+    Route::get('admin/sales-component', SalesComponent::class)->name('admin.sales-component');
+    Route::get('admin/order/{order_id}', OrderDetailComponent::class)->name('admin.order-detail-component');
 });
 
 // DELIVERY ROUTE COMPONENTS

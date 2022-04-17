@@ -18,7 +18,7 @@ class GoldfishComponent extends Component
     {
         return view('livewire.admin.goldfish-component',[
             'goldF' => goldfish::orderBy('name', 'desc')->get()
-            ])->layout('layouts.admin', ['title'=>'Goldfish']);
+            ])->layout('layouts.admin', ['title'=>'Goldfish List']);
     }
 
     // create modal

@@ -80,33 +80,6 @@
 					<div class="row align-items-center">
 						<div class="col-lg-8 col-md-6 col-12">
 							<div class="nav-inner">
-								<!-- Start Mega Category Menu -->
-								<div class="mega-category-menu">
-									<span class="cat-button"><i class="lni lni-menu"></i>All Categories</span>
-									<ul class="sub-category">
-										{{-- <li><a href="product-grids.html">Electronics <i class="lni lni-chevron-right"></i></a>
-											<ul class="inner-sub-category">
-												<li><a href="product-grids.html">Digital Cameras</a></li>
-												<li><a href="product-grids.html">Camcorders</a></li>
-												<li><a href="product-grids.html">Camera Drones</a></li>
-												<li><a href="product-grids.html">Smart Watches</a></li>
-												<li><a href="product-grids.html">Headphones</a></li>
-												<li><a href="product-grids.html">MP3 Players</a></li>
-												<li><a href="product-grids.html">Microphones</a></li>
-												<li><a href="product-grids.html">Chargers</a></li>
-												<li><a href="product-grids.html">Batteries</a></li>
-												<li><a href="product-grids.html">Cables & Adapters</a></li>
-											</ul>
-										</li> --}}
-										<li><a href="product-grids.html">Accessories</a></li>
-										<li><a href="product-grids.html">Tools</a></li>
-										<li><a href="product-grids.html">Air Pumps</a></li>
-										<li><a href="product-grids.html">Water Pumps</a></li>
-										<li><a href="product-grids.html">Aquariums</a></li>
-										<li><a href="product-grids.html">Cleaning Tools</a></li>
-									</ul>
-								</div>
-								<!-- End Mega Category Menu -->
 								<!-- Start Navbar -->
 								<nav class="navbar navbar-expand-lg">
 									<button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -116,7 +89,8 @@
 									</button>
 									<div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
 										<ul id="nav" class="navbar-nav ms-auto">
-											<li class="nav-item"><a href="{{ route('/') }}" class=" {{  request()->routeIs('/') ? 'active' : '' }}" aria-label="Toggle navigation">Home</a></li>
+											<li class="nav-item"><a href="{{ route('/') }}" class=" {{  request()->routeIs('/') ? 'active' : '' }}" aria-label="Toggle navigation"><i class="lni lni-home"></i>Home</a></li>
+											{{-- <li class="nav-item"><a href="{{ route('customer.goldfish') }}" class=" {{  request()->routeIs('customer.goldfish') ? 'active' : '' }}" aria-label="Toggle navigation"> <i class="fas fa-home"></i> Goldfish</a></li> --}}
 											<li class="nav-item"><a href="{{ route('customer.shop') }}" class=" {{  request()->routeIs('customer.shop') ? 'active' : '' }}" aria-label="Toggle navigation">Shop</a></li>
 											<li class="nav-item"><a href="{{ route('customer.about-us') }}" class=" {{  request()->routeIs('customer.about-us') ? 'active' : '' }}" aria-label="Toggle navigation">About Us</a></li>
 											<li class="nav-item"><a href="{{ route('customer.contact-us') }}" class=" {{  request()->routeIs('customer.contact-us') ? 'active' : '' }}" aria-label="Toggle navigation">Contact Us</a></li>

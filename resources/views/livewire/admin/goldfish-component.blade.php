@@ -27,11 +27,11 @@
                 <th width="10%">Name</th>
                 <th width="10%">Slug</th>
                 <th width="10%">Image</th>
-                <th width="29%">Description</th>
+                <th width="28%">Description</th>
                 <th width="10%">Price</th>
                 <th width="10%">Status</th>
                 <th width="10%">Date Added</th>
-                <th width="11%">Action</th>
+                <th width="12%">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -53,7 +53,7 @@
                       <td>{{ date('M d,Y', strtotime($fish->created_at)) }}</td>
                       <td>
                         <button class="btn btn-sm btn-success" wire:click="OpenViewGoldfishModal({{ $fish->id }})"><i class="fas fa-eye"></i> View</button>
-                        <button class="btn btn-sm btn-primary" wire:click="OpenEditGoldfishModal({{ $fish->id }})"><i class="fas fa-edit"></i> Edit</button>
+                        <button class="btn btn-sm btn-primary" wire:click="OpenEditGoldfishModal({{ $fish->id }})"><i class="fas fa-edit"></i> Update</button>
                       </td>
                     </tr>
                   @endforeach
@@ -116,8 +116,8 @@
                 
                     </div>
                     <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </form>
           </div>
@@ -129,7 +129,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header text-center">
-            <h5 class="modal-title w-100" id="exampleModalLabel">Add Goldfish</h5>
+            <h5 class="modal-title w-100" id="exampleModalLabel">Update Goldfish</h5>
           </div>
           <div class="modal-body">
               <form class="form-horizontal" wire:submit.prevent="updateGoldfish">
@@ -180,8 +180,8 @@
               
                   </div>
                   <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Update</button>
                   </div>
               </form>
         </div>
@@ -235,7 +235,7 @@
             
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </form>
       </div>

@@ -62,7 +62,7 @@ class Checkout extends Component
         $order->city        = $this->city;
         $order->barangay    = $this->barangay;
         $order->zipcode     = $this->zipcode;
-        $order->status      = 'ordered';
+        $order->status      = 'pending';
         $order->save();
 
         foreach(Cart::instance('cart')->content() as $item){

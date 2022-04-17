@@ -49,11 +49,11 @@ class Shop extends Component
         $product_category = ProductCategory::all();
 
         if ($this->sorting == 'date') {
-            $products = Product::orderBy('created_at', 'desc')->paginate(12);
+            $products = Product::orderBy('created_at', 'desc')->where('status', 1)->paginate(12);
         }elseif ($this->sorting == 'price') {
-            $products = Product::orderBy('price', 'asc')->paginate(12);
+            $products = Product::orderBy('price', 'asc')->where('status', 1)->paginate(12);
         }else{
-            $products = Product::paginate(12);
+            $products = Product::where('status', 1)->paginate(12);
         }
         return view('livewire.customer.shop', ['goldfish'=>$goldfish, 'products'=>$products, 'product_category'=>$product_category])->layout('layouts.customer');
     }

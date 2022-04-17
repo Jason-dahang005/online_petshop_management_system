@@ -31,7 +31,7 @@ class ProductComponent extends Component
 		return view('livewire.admin.product-component', [
 			'prod_cat' => ProductCategory::all(),
 			'prod' => Product::search($this->search)->orderBy('created_at', 'desc')->simplePaginate($this->perPage)
-		])->layout('layouts.admin', ['title'=>'Products']);
+		])->layout('layouts.admin', ['title'=>'Product List']);
 	}
 
 // open create modal

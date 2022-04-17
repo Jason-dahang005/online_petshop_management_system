@@ -1,5 +1,19 @@
 // OPEN && CLOSE ADMIN MODAL START =============
 
+// ORDER DETAILS SHOW
+window.addEventListener('OpenOrderDetailsModal', function(){
+  $('#OpenOrderDetailsModal').modal('show');
+})
+
+// ORDER STATUS UPDATE
+window.addEventListener('OpenUpdateOrderStatusModal', function(){
+  $('#OpenUpdateOrderStatusModal').modal('show');
+});
+
+window.addEventListener('CloseUpdateOrderStatusModal', function(){
+  $('#OpenUpdateOrderStatusModal').modal('hide');
+})
+
 // DELIVERY USER STORE
 window.addEventListener('OpenAddUserModal', function(){
   $('#OpenAddUserModal').find('span').html('');

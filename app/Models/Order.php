@@ -11,6 +11,17 @@ class Order extends Model
 
     protected $table = 'orders';
 
+    public static function search($search){
+        return empty($search) ? static::query()
+        : static::query()->where('name', 'like', '%'.$search.'%')
+        ->orWhere('description', 'like', '%'.$search.'%')
+        ->orWhere('status', 'like', '%'.$search.'%')
+        ->orWhere('product_category_id', 'like', '%'.$search.'%')
+        ->orWhere('price', 'like', '%'.$search.'%')
+        ->orWhere('stock', 'like', '%'.$search.'%')
+        ->orWhere('created_at', 'like', '%'.$search.'%');
+    }
+
     public function user(){
         return $this->belongsTo(User::class);
     }

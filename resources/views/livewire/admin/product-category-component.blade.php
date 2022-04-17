@@ -4,7 +4,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-lg-4 col-md-3 col-sm-12">
-                <input wire:model.debounce.300ms="search" type="text" class="form-control" placeholder="Search for product category here">
+                <input wire:model.debounce.300ms="search" type="text" class="form-control" placeholder="Search for category here">
               </div>
               <div class="col-lg-1 col-md-2 col-sm-12">
                 {{-- <select class="custom-select" wire:model="perPage">
@@ -22,15 +22,23 @@
               </div>
             </div>
             <hr>
-            <table class="table table-striped" id="product_category_table">
+            <table class="table table-striped table-bordered table-sm" id="product_category_table">
+              <colgroup>
+                <col width="15%">
+                <col width="10%">
+                <col width="47%">
+                <col width="5%">
+                <col width="10%">
+                <col width="13%">
+              </colgroup>
               <thead class="bg-dark">
                 <tr>
-                  <th width="20%">Name</th>
-									<th width="20%">Slug</th>
-                  <th width="30%">Description</th>
-                  <th width="7%">Status</th>
-                  <th width="10%">Date Added</th>
-                  <th width="13%">Action</th>
+                  <th>Name</th>
+									<th>Slug</th>
+                  <th>Description</th>
+                  <th>Status</th>
+                  <th>Date Added</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -48,7 +56,7 @@
                     </td>
                     <td>{{ date('M d,Y', strtotime($pc->created_at)) }}</td>
                     <td>
-                      <button class="btn btn-sm btn-success"><i class="fas fa-eye"></i> View</button>
+                      <button class="btn btn-sm btn-success"><i class="fas fa-eye"></i> Details</button>
                       <button class="btn btn-sm btn-primary" wire:click="OpenEditProductCategoryModal({{ $pc->id }})"><i class="fas fa-edit"></i> Update</button>
                     </td>
                   </tr>

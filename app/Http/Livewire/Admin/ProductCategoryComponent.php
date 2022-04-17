@@ -11,9 +11,9 @@ class ProductCategoryComponent extends Component
 {
 	use WithPagination;
 	public $name;
-    public $slug;
+  public $slug;
 	public $description;
-    public $upd_slug;
+  public $upd_slug;
 	public $upd_name;
 	public $upd_description;
 	public $upd_id;
@@ -92,7 +92,7 @@ class ProductCategoryComponent extends Component
 	{
 		return view('livewire.admin.product-category-component', [
 			'prod_cat' => ProductCategory::search($this->search)->orderBy('created_at', 'desc')->simplePaginate($this->perPage)
-		])->layout('layouts.admin', ['title'=>'Product Category']);
+		])->layout('layouts.admin', ['title'=>'Category List']);
 	}
 
 }

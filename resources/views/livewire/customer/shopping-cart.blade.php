@@ -40,8 +40,8 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td>₱{{ $item->model->price }}.00</td>
-                                    <td>₱{{ Cart::instance('cart')->subtotal() }}</td>
+                                    <td>&#8369; {{ $item->model->price }}.00</td>
+                                    <td>&#8369; {{ Cart::instance('cart')->subtotal() }}</td>
                                     <td>
                                         <button type="button" class="btn btn-danger" wire:click.prevent="destroy('{{ $item->rowId }}')"><i class="lni lni-trash-can"></i></button>
                                     </td>
@@ -67,10 +67,10 @@
                                     <ul>
                                         <li><h5 class="title">Order Summary</h5></li>
                                         <hr>
-                                        <li>Subtotal<span>₱{{ Cart::instance('cart')->subtotal() }}</span></li>
-                                        <li>Tax<span>₱{{ Cart::instance('cart')->tax() }}</span></li>
+                                        <li>Subtotal<span>&#8369; {{ Cart::instance('cart')->subtotal() }}</span></li>
+                                        <li>Tax<span>&#8369; {{ Cart::instance('cart')->tax() }}</span></li>
                                         <li>Shipping<span>Free</span></li>
-                                        <li class="last">You Pay<span>₱{{ Cart::instance('cart')->total() }}</span></li>
+                                        <li class="last">You Pay<span>&#8369; {{ Cart::instance('cart')->total() }}</span></li>
                                     </ul>
                                     <div class="button">
                                         <a href="#" class="btn" wire:click.prevent="checkout">Checkout</a>

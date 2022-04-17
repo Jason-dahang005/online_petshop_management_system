@@ -3,7 +3,7 @@
 		<div class="card-body">
 			<div class="row">
         <div class="col-lg-4 col-md-3 col-sm-12">
-          <input wire:model.debounce.300ms="search" type="text" class="form-control" placeholder="Search for product category here">
+          <input wire:model.debounce.300ms="search" type="text" class="form-control" placeholder="Search for product here">
         </div>
         <div class="col-lg-1 col-md-2 col-sm-12">
           {{-- <select class="custom-select" wire:model="perPage">
@@ -21,17 +21,17 @@
 				</div>
       </div>
 			<hr>
-			<table class="table stable-striped">
+			<table class="table table-striped table-bordered table-sm">
 				<thead class="bg-dark">
 					<tr>
-						<th>Name</th>
-						<th>Category</th>
-						<th>Image</th>
-						<th>Description</th>
-						<th>Price</th>
-						<th>Stock</th>
-						<th width="10%">Status</th>
-            <th width="12%">Date Added</th>
+						<th width="15%">Name</th>
+						<th width="8%">Category</th>
+						<th width="8%">Image</th>
+						{{-- <th width="">Description</th> --}}
+						<th width="5%">Price</th>
+						<th width="5%">Stock</th>
+						<th width="8%">Status</th>
+            <th width="8%">Date Added</th>
             <th width="13%">Action</th>
 					</tr>
 				</thead>
@@ -43,8 +43,8 @@
 							<td>
 								<img src="{{ asset('/images/images') }}/{{ $p->image }}" alt="" style="max-width: 50px">
 							</td>
-							<td>{{ $p->description }}</td>
-							<td>₱{{ $p->price }}</td>
+							{{-- <td>{{ $p->description }}</td> --}}
+							<td>&#8369; {{ $p->price }}</td>
 							<td>{{ $p->stock }}</td>
 							<td>
                 @if ($p->status == "1")
