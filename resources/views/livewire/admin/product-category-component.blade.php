@@ -42,25 +42,33 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach ($prod_cat as $pc)
+                @if (count($prod_cat) > 0)
+                  @foreach ($prod_cat as $pc)
+                    <tr>
+                      <td>{{ $pc->name }}</td>
+                      <td>{{ $pc->slug }}</td>
+                      <td>{{ $pc->description }}</td>
+                      <td>
+                        @if ($pc->status == "1")
+                          <span class="badge badge-success">Active</span>
+                        @else
+                          <span class="badge badge-danger">Inactive</span>
+                        @endif
+                      </td>
+                      <td>{{ date('M d,Y', strtotime($pc->created_at)) }}</td>
+                      <td>
+                        <button class="btn btn-sm btn-success"><i class="fas fa-eye"></i> Details</button>
+                        <button class="btn btn-sm btn-primary" wire:click="OpenEditProductCategoryModal({{ $pc->id }})"><i class="fas fa-edit"></i> Update</button>
+                      </td>
+                    </tr>
+                  @endforeach
+                @else
                   <tr>
-                    <td>{{ $pc->name }}</td>
-										<td>{{ $pc->slug }}</td>
-                    <td>{{ $pc->description }}</td>
-                    <td>
-                      @if ($pc->status == "1")
-                        <span class="badge badge-success">Active</span>
-                      @else
-                        <span class="badge badge-danger">Inactive</span>
-                      @endif
-                    </td>
-                    <td>{{ date('M d,Y', strtotime($pc->created_at)) }}</td>
-                    <td>
-                      <button class="btn btn-sm btn-success"><i class="fas fa-eye"></i> Details</button>
-                      <button class="btn btn-sm btn-primary" wire:click="OpenEditProductCategoryModal({{ $pc->id }})"><i class="fas fa-edit"></i> Update</button>
+                    <td colspan="8">
+                      <h4 class="text-center py-3">Table is empty</h4>
                     </td>
                   </tr>
-                @endforeach
+                @endif
               </tbody>
             </table>
             <hr>

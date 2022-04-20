@@ -5,12 +5,17 @@
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
-              <h3>150</h3>
-
-              <p>New Orders</p>
+              <h3>{{ count($orders) }}</h3>
+              <p>
+                @if (count($orders) > 0)
+                  New Orders
+                @else
+                  No Orders
+                @endif
+              </p>
             </div>
             <div class="icon">
-              <i class="fas fa-shopping-bag"></i>
+              <i class="fas fa-shopping-cart"></i>
             </div>
             <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
@@ -48,11 +53,17 @@
           <!-- small box -->
           <div class="small-box bg-danger">
             <div class="inner">
-              <h3>65</h3>
-              <p>Unique Visitors</p>
+              <h3>{{ count($goldfish) }}</h3>
+              <p>
+                @if (count($goldfish) > 0)
+                  Goldfish
+                @else
+                  No goldfish
+                @endif
+              </p>
             </div>
             <div class="icon">
-              <i class="ion ion-pie-graph"></i>
+              <i class="fas fa-fish"></i>
             </div>
             <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
@@ -63,7 +74,13 @@
           <div class="small-box bg-dark" >
             <div class="inner">
               <h3>{{ count($products) }}</h3>
-              <p>Products</p>
+              <p>
+                @if (count($products) > 0)
+                  Products
+                @else
+                  No products
+                @endif
+              </p>
             </div>
             <div class="icon">
               <i class="fas fa-shopping-bag"></i>

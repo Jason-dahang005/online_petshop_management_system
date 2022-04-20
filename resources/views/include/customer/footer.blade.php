@@ -95,11 +95,11 @@
             <div class="single-footer f-link">
               <h3>Shop Departments</h3>
               <ul>
-                <li><a href="javascript:void(0)">Computers & Accessories</a></li>
-                <li><a href="javascript:void(0)">Smartphones & Tablets</a></li>
-                <li><a href="javascript:void(0)">TV, Video & Audio</a></li>
-                <li><a href="javascript:void(0)">Cameras, Photo & Video</a></li>
-                <li><a href="javascript:void(0)">Headphones</a></li>
+                <li><a href="javascript:void(0)">Accessories</a></li>
+                <li><a href="javascript:void(0)">Aquariums</a></li>
+                <li><a href="javascript:void(0)">Fish Foods</a></li>
+                <li><a href="javascript:void(0)">Cleaning Tools</a></li>
+                <li><a href="javascript:void(0)">Goldfish</a></li>
               </ul>
             </div>
             <!-- End Single Widget -->
