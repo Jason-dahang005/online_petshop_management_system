@@ -68,7 +68,7 @@ class AttemptToAuthenticate
             elseif (Auth::user()->user_type === 'delivery')
             {
                 session(['user_type' => 'delivery']);
-                return redirect()->route('delivery.dashboard');
+                return redirect()->route('delivery.main');
             }
             return $next($request);
         }

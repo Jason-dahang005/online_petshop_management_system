@@ -8,7 +8,7 @@ class DeliveryHistory extends Component
 {
     public function render()
     {
-        return view('livewire.delivery.delivery-history')->layout('layouts.delivery');
+        return view('livewire.delivery.delivery-history')->layout('layouts.delivery', ['title'=>'List of History']);
     
     }
 }
