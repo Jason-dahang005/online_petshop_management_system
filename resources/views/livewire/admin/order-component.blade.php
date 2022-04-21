@@ -40,35 +40,43 @@
 					</tr>
 				</thead>
 				<tbody>
-					@foreach ($orders as $order)
-						<tr>
-							<td class="text-center">{{ $order->id }}</td>
-							<td>{{ date("Y-m-d H:i", strtotime($order->created_at)) }}</td>
-							<td>{{ $order->fullname }}</td>
-							<td>&#8369; {{ $order->total }}</td>
-							<td>{{ $order->transaction->paymentmode }}</td>
-							<td>
-								@if ($order->status == 'pending')
-									<span class="badge badge-secondary">Pending</span>
-								@elseif($order->status == 'approved')
-									<span class="badge badge-success">Approved</span>
-								@elseif($order->status == 'shipping')
-									<span class="badge badge-primary">Shipping</span>
-								@elseif($order->status == 'ordered')
-									<span class="badge badge-info">Ordered</span>
-								@elseif($order->status == 'declined')
-									<span class="badge badge-danger">Decline</span>
-								@elseif($order->status == 'shipped')
-									<span class="badge bg-navy">Shipped</span>
-								@endif
-							</td>
-							<td>
-								<a href="{{ route('admin.order-detail-component', ['order_id'=>$order->id]) }}">view details</a>
-								<button class="btn btn-sm btn-success" wire:click="OpenOrderDetailsModal({{ $order->id }})"><i class="fas fa-eye"></i> Details</button>
-								<button class="btn btn-sm btn-primary" wire:click="OpenUpdateOrderStatusModal({{ $order->id }})"><i class="fas fa-edit"></i> Update</button>
-							</td>
-						</tr>
-					@endforeach
+					@if (count($orders) > 0)
+						@foreach ($orders as $order)
+							<tr>
+								<td class="text-center">{{ $order->id }}</td>
+								<td>{{ date("Y-m-d H:i", strtotime($order->created_at)) }}</td>
+								<td>{{ $order->fullname }}</td>
+								<td>&#8369; {{ $order->total }}</td>
+								<td>{{ $order->transaction->paymentmode }}</td>
+								<td>
+									@if ($order->status == 'pending')
+										<span class="badge badge-secondary">Pending</span>
+									@elseif($order->status == 'approved')
+										<span class="badge badge-success">Approved</span>
+									@elseif($order->status == 'shipping')
+										<span class="badge badge-primary">Shipping</span>
+									@elseif($order->status == 'ordered')
+										<span class="badge badge-info">Ordered</span>
+									@elseif($order->status == 'declined')
+										<span class="badge badge-danger">Decline</span>
+									@elseif($order->status == 'shipped')
+										<span class="badge bg-navy">Shipped</span>
+									@endif
+								</td>
+								<td>
+									<a href="{{ route('admin.order-detail-component', ['order_id'=>$order->id]) }}">view details</a>
+									<button class="btn btn-sm btn-success" wire:click="OpenOrderDetailsModal({{ $order->id }})"><i class="fas fa-eye"></i> Details</button>
+									<button class="btn btn-sm btn-primary" wire:click="OpenUpdateOrderStatusModal({{ $order->id }})"><i class="fas fa-edit"></i> Update</button>
+								</td>
+							</tr>
+						@endforeach
+					@else
+					<tr>
+						<td colspan="8">
+							<h4 class="text-center py-3">Table is empty</h4>
+						</td>
+					</tr>
+					@endif
 				</tbody>
 			</table>
 		</div>

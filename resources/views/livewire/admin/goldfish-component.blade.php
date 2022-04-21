@@ -60,7 +60,7 @@
                 @else
                   <tr>
                     <td colspan="8">
-                      <h4 class="text-center">Table is empty</h4>
+                      <h4 class="text-center py-3">Table is empty</h4>
                     </td>
                   </tr>
                 @endif

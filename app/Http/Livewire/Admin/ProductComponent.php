@@ -79,15 +79,14 @@ class ProductComponent extends Component
 		$prod->product_category_id      = $this->upd_product_category_id;
         $prod->price        			= $this->upd_price;
 		if($this->upd_image){
-            $imageName = Carbon::now()->timestamp. '.'. $this->upd_image->extension();
-            $this->upd_image->storeAs('images', $imageName);
-            $prod->image = $imageName;
-        }
+			$imageName = Carbon::now()->timestamp. '.'. $this->upd_image->extension();
+			$this->upd_image->storeAs('images', $imageName);
+			$prod->image = $imageName;
+    }
 		$pc = $prod->save();
 
 		if ($pc) {
 			$this->dispatchBrowserEvent('CloseEditProductModal');
-			
 		}
 	}
 
