@@ -35,6 +35,9 @@ use App\Http\Livewire\Customer\Order;
 use App\Http\Livewire\Customer\Profile;
 use App\Http\Livewire\Customer\UserChangePassword;
 
+use App\Http\Livewire\Delivery\Main;
+use App\Http\Livewire\Delivery\DeliveryHistory;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -102,5 +105,7 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
 
 // DELIVERY ROUTE COMPONENTS
 Route::middleware(['auth:sanctum','verified'])->group(function () {
+    Route::get('delivery/main', Main::class)->name('delivery.main');
+    Route::get('delivery/delivery-history', DeliveryHistory::class)->name('delivery.delivery-history');
 
 });
