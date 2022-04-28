@@ -1,10 +1,12 @@
 <div>
-    <a href="@guest{{ route('login') }}@endguest" class="main-btn">
+    <a href="
+        @guest{{ route('login') }}@endguest
+        @auth{{ route('customer.shopping-cart') }} @endauth" class="main-btn">
         <i class="lni lni-cart"></i>
         <span class="total-items">{{ Cart::instance('cart')->count() }}</span>
     </a>
     @auth
-        <!-- Shopping Item -->
+        {{-- <!-- Shopping Item -->
         <div class="shopping-item">
             <div class="dropdown-cart-header">
                 <span></span>
@@ -44,6 +46,6 @@
                 </div>
             </div>
         </div>
-        <!--/ End Shopping Item -->
+        <!--/ End Shopping Item --> --}}
     @endauth
 </div>

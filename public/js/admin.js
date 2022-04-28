@@ -1,5 +1,19 @@
 // OPEN && CLOSE ADMIN MODAL START =============
 
+// RECEIVED DELIVERY UPDATE
+window.addEventListener('ReceivedModal', function(){
+  alert('hello');
+})
+
+// DELIVERY STATUS UPDATE
+window.addEventListener('OpenDeliveryStatusModal', function(){
+  $('#OpenDeliveryStatusModal').modal('show');
+});
+
+window.addEventListener('CloseDeliveryStatusModal', function(){
+  $('#OpenDeliveryStatusModal').modal('hide');
+});
+
 // ORDER DETAILS SHOW
 window.addEventListener('OpenOrderDetailsModal', function(){
   $('#OpenOrderDetailsModal').modal('show');
@@ -12,6 +26,7 @@ window.addEventListener('OpenUpdateOrderStatusModal', function(){
 
 window.addEventListener('CloseUpdateOrderStatusModal', function(){
   $('#OpenUpdateOrderStatusModal').modal('hide');
+  toastr.success("Order Approved Successfully!");
 })
 
 // DELIVERY USER STORE

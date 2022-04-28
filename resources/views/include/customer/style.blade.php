@@ -4,4 +4,5 @@
 <link rel="stylesheet" href="{{ asset("shopgrids/assets/css/tiny-slider.css") }}" />
 <link rel="stylesheet" href="{{ asset("shopgrids/assets/css/glightbox.min.css") }}" />
 <link rel="stylesheet" href="{{ asset("shopgrids/assets/css/main.css") }}" />
+<link rel="stylesheet" href="{{ asset('/adminLTE/plugins/fontawesome-free/css/all.min.css') }}">
 @livewireStyles()

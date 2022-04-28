@@ -8,9 +8,9 @@
               <h3>{{ count($orders) }}</h3>
               <p>
                 @if (count($orders) > 0)
-                  New Orders
+                  Pending Orders
                 @else
-                  No Orders
+                  No Pending Orders
                 @endif
               </p>
             </div>

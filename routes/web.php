@@ -31,12 +31,16 @@ use App\Http\Livewire\Customer\Wishlist;
 use App\Http\Livewire\Customer\Checkout;
 use App\Http\Livewire\Customer\Thankyou;
 
-use App\Http\Livewire\Customer\Order;
+use App\Http\Livewire\Customer\MyOrder;
 use App\Http\Livewire\Customer\Profile;
 use App\Http\Livewire\Customer\UserChangePassword;
 
+
+// DELIVERY LIVEWIRE COMPONENTS
 use App\Http\Livewire\Delivery\Main;
 use App\Http\Livewire\Delivery\DeliveryHistory;
+use App\http\Livewire\Delivery\CustomerOrderDetailComponent;
+use App\Http\Livewire\Delivery\DeliveryList;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,7 +84,7 @@ Route::middleware(['auth:sanctum','verified'])->group(function () {
     Route::get('customer/shopping-cart', ShoppingCart::class)->name('customer.shopping-cart');
     Route::get('customer/wishlist', Wishlist::class)->name('customer.wishlist');
     Route::get('customer/checkout', Checkout::class)->name('customer.checkout');
-    Route::get('customer/order', Order::class)->name('customer.order');
+    Route::get('customer/my-order', MyOrder::class)->name('customer.my-order');
     Route::get('customer/profile', Profile::class)->name('customer.profile');
     Route::get('customer/wishlist', Wishlist::class)->name('customer.wishlist');
     Route::get('customer/change-password', UserChangePassword::class)->name('customer.change-password');
@@ -107,5 +111,7 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
 Route::middleware(['auth:sanctum','verified'])->group(function () {
     Route::get('delivery/main', Main::class)->name('delivery.main');
     Route::get('delivery/delivery-history', DeliveryHistory::class)->name('delivery.delivery-history');
+    Route::get('delivery/order/{order_id}', CustomerOrderDetailComponent::class)->name('delivery.customer-order-detail-component');
+    Route::get('delivery/delivery-list', DeliveryList::class)->name('delivery.delivery-list');
 
 });

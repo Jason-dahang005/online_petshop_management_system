@@ -17,28 +17,15 @@
           <a href="#" class="d-block">{{ Auth::user()->name }}</a>
         </div>
       </div>
-
-      <!-- SidebarSearch Form -->
-      {{-- <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
-        </div>
-      </div> --}}
-
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
               with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="{{ url('/delivery/dashboard') }}" class="nav-link {{ 'delivery/dashboard' == request()->path() ? 'active' : '' }}">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>Dashboard</p>
+            <a href="{{ url('/delivery/main') }}" class="nav-link {{ 'delivery/main' == request()->path() ? 'active' : '' }}">
+              <i class="nav-icon fas fa-home"></i>
+              <p>Home</p>
             </a>
           </li>
           <li class="nav-item">
@@ -48,15 +35,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ url('/delivery/ToDel') }}" class="nav-link {{ 'delivery/ToDel' == request()->path() ? 'active' : '' }}">
-              <i class="nav-icon fas fa-shipping-fast"></i>
-              <p>List of Delivery</p>
+            <a href="{{ route('delivery.delivery-list') }}" class="nav-link {{ 'delivery/delivery-list' == request()->path() ? 'active' : '' }}">
+              <i class="nav-icon fas fa-clipboard-list"></i>
+              <p>Delivery List</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ url('/delivery/delivery-history') }}" class="nav-link {{ 'delivery-history' == request()->path() ? 'active' : '' }}">
-              <i class="nav-icon fas fa-boxes"></i>
-              <p>Order History</p>
+            <a href="{{ route('delivery.delivery-history') }}" class="nav-link {{ 'delivery/delivery-history' == request()->path() ? 'active' : '' }}">
+              <i class="nav-icon fas fa-history"></i>
+              <p>Delivery History</p>
             </a>
           </li>        
           <li class="nav-item">

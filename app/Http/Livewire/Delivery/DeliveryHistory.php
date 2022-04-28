@@ -3,12 +3,14 @@
 namespace App\Http\Livewire\Delivery;
 
 use Livewire\Component;
+use App\Models\Order;
 
 class DeliveryHistory extends Component
 {
     public function render()
     {
-        return view('livewire.delivery.delivery-history')->layout('layouts.delivery', ['title'=>'List of History']);
+        $delivery = Order::all();
+        return view('livewire.delivery.delivery-history', ['delivery'=>$delivery])->layout('layouts.delivery', ['title'=>'Delivery History']);
     
     }
 }

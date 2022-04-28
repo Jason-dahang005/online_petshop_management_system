@@ -53,20 +53,21 @@
 										<span class="badge badge-secondary">Pending</span>
 									@elseif($order->status == 'approved')
 										<span class="badge badge-success">Approved</span>
-									@elseif($order->status == 'shipping')
-										<span class="badge badge-primary">Shipping</span>
-									@elseif($order->status == 'ordered')
-										<span class="badge badge-info">Ordered</span>
-									@elseif($order->status == 'declined')
-										<span class="badge badge-danger">Decline</span>
-									@elseif($order->status == 'shipped')
-										<span class="badge bg-navy">Shipped</span>
+									@elseif($order->status == 'delivering')
+										<span class="badge badge-primary">Delivering</span>
+									@elseif($order->status == 'completed')
+										<span class="badge badge-dark">Completed</span>
+									@elseif($order->status == 'cancelled')
+										<span class="badge badge-danger">Cancelled</span>
 									@endif
 								</td>
 								<td>
-									<a href="{{ route('admin.order-detail-component', ['order_id'=>$order->id]) }}">view details</a>
-									<button class="btn btn-sm btn-success" wire:click="OpenOrderDetailsModal({{ $order->id }})"><i class="fas fa-eye"></i> Details</button>
-									<button class="btn btn-sm btn-primary" wire:click="OpenUpdateOrderStatusModal({{ $order->id }})"><i class="fas fa-edit"></i> Update</button>
+									@if ($order->status == 'pending')
+										<a href="{{ route('admin.order-detail-component', ['order_id'=>$order->id]) }}" class="btn btn-sm btn-success"><i class="fas fa-eye"></i> Details</a>
+										<button class="btn btn-sm btn-primary" wire:click="OpenUpdateOrderStatusModal({{ $order->id }})"><i class="fas fa-edit"></i> Update</button>
+									@else
+										<a href="{{ route('admin.order-detail-component', ['order_id'=>$order->id]) }}" class="btn btn-sm btn-success"><i class="fas fa-eye"></i> Details</a>
+									@endif
 								</td>
 							</tr>
 						@endforeach
@@ -94,13 +95,22 @@
 				<form wire:submit.prevent="update">
 					<div class="modal-body">
 						<input type="hidden" wire:model="upd_id">
-						<select class="custom-select" wire:model="upd_status">
-							<option value="pending">{{ ucfirst($upd_status) }}</option>
-							<option value="approved">Approve</option>
-							<option value="declined">Decline</option>
-							<option value="ordered">Ordered</option>
-							<option value="shipped">Shipped</option>
-						</select>
+						<div class="form-group">
+							<label for="">Delivery Rider</label>
+							<select class="custom-select" wire:model="upd_delivery">
+								<option value="{{ $upd_delivery }}">Select delivery rider</option>
+								@foreach ($delivery as $dlvy)
+									<option value="{{ $dlvy->name }}">{{ $dlvy->name }}</option>
+								@endforeach
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="">Order Status</label>
+							<select class="custom-select" wire:model="upd_status">
+								<option value="{{ $upd_status }}">{{ ucfirst($upd_status) }}</option>
+								<option value="approved">Approve</option>
+							</select>
+						</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Close</button>

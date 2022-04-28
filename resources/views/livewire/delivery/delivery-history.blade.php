@@ -1,47 +1,102 @@
-<div class="card">
-  <div class="card-header">
-    <div class="d-flex justify-content-end">
+<div>
+  @foreach ($delivery as $d)
+    @if ($d->status == 'completed' || $d->status == 'received')
+      <article class="card">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <h5><b>Order ID: </b>{{ $d->order_code }}</h5>
+            <h5><b>Date Delivered: </b>{{ date("Y-m-d h:i a", strtotime($d->updated_at)) }}</h5>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-12">
+              <article class="card">
+                <div class="card-body">
+                  <div class="text-center">
+                    <strong>Delivery Details</strong>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6 col-6">
+                      <i class="fas fa-user px-2"></i>
+                      <strong>Ordered By:</strong>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-6">
+                      {{ $d->fullname }}
+                    </div>
       
-    </div>
-  </div>
-  <div class="card-body">
-    <table id="example1" class="table table-bordered table-striped table-sm">
-      <thead>
-        <tr>
-          <th>Order ID</th>
-          <th>Date Ordered</th>
-          <th>Status</th>
-          <th>Ordered By</th>
-          <th>Phone</th>
-          <th>Location</th>
-          <th>Zip Code</th>
-          <th>Action</th>
-          
-          
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-            <td>10032</td> 
-            <td>03/25/2022</td>
-            <td>
-            <span class="badge badge-success " style="padding-top: 0.6em !important;">Order Received</span>
-            </td>
-            
-            <td>Venz Carna</td>
-            <td>09556841222</td>
-            <td>Kauswagan Cdo</td>
-            <td>
-                9000
-            </td>
-            <td>
-              <a href="#" class="btn btn-success btn-sm"><i class="fas fa-eye"></i> Details</a>
-              <a href="#" class="btn btn-sm bg-navy"><i class="fas fa-edit"></i> Status</a>
-            </td>
-            
-            
-        </tr>
-      </tbody>
-    </table>
-  </div>
+                    <div class="col-lg-6 col-md-6 col-6">
+                      <i class="fas fa-phone-alt px-2"></i>
+                      <strong>Contact No:</strong>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-6">
+                      {{ $d->mobile }}
+                    </div>
+      
+                    <div class="col-lg-6 col-md-6 col-6">
+                      <i class="fas fa-map-marker-alt px-2"></i>
+                      <strong>Address:</strong>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-6">
+                      {{ $d->address }},{{ $d->city }},{{ $d->province }}
+                    </div>
+      
+                    <div class="col-lg-6 col-md-6 col-6">
+                      @if ($d->transaction->paymentmode == 'cod')
+                      <i class="fas fa-coins px-2"></i>
+                      @else
+                      <i class="fas fa-money-check-alt"></i>
+                      @endif
+                      <strong>Payment Mode:</strong>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-6">
+                      @if ($d->transaction->paymentmode == 'cod')
+                        Cash on Delivery
+                      @else
+                        Online Payment (Paid)
+                      @endif
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+              <article class="card">
+                <div class="card-body">
+                  <div class="text-center">
+                    <strong>Delivery Items</strong>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    @foreach ($d->orderitems as $item)
+                      <div class="col-lg-4 col-md-4 col-4">
+                        <strong>{{ $item->product->name }}</strong>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-4">
+                        <strong>x{{ $item->quantity }}</strong>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-4">
+                        <strong>&#8369;{{ $item->price }}</strong>
+                      </div>
+                    @endforeach
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-4"><strong>Subtotal:</strong></div>
+                    <div class="col-4"></div>
+                    <div class="col-4">&#8369;{{ $d->subtotal }}</div>
+                    <div class="col-4"><strong>Tax:</strong></div>
+                    <div class="col-4"></div>
+                    <div class="col-4">&#8369;{{ $d->tax }}</div>
+                    <div class="col-4"><strong>Total:</strong></div>
+                    <div class="col-4"></div>
+                    <div class="col-4"><strong>&#8369;{{ $d->total }}</strong></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </article>
+    @endif
+	@endforeach
 </div>

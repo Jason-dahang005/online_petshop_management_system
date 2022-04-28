@@ -149,7 +149,7 @@ class Checkout extends Component
             return redirect()->route('login');
         }
         elseif ($this->thankyou) {
-            return redirect()->route('customer.thankyou');
+            return redirect()->route('customer.my-order');
         }
         elseif (!session()->get('checkout')) {
             return redirect()->route('customer.shopping-cart');

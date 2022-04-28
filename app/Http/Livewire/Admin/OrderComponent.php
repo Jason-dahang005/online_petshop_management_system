@@ -16,6 +16,7 @@ class OrderComponent extends Component
 	public $perPage = 9;
 	public $search = '';
 	public $upd_id;
+	public $upd_delivery;
 	public $upd_status;
 	public $order_details_id;
 	public $order_details_customer;
@@ -35,6 +36,7 @@ class OrderComponent extends Component
 		$upd_order 							= Order::find($id);
 		$this->upd_status 			= $upd_order->status;
 		$this->upd_id						= $upd_order->id;
+		$this->upd_delivery			= $upd_order->delivery;
 		$this->dispatchBrowserEvent('OpenUpdateOrderStatusModal', [
 			'id' => $id
 		]);
@@ -44,6 +46,7 @@ class OrderComponent extends Component
 		$upd_id 							= $this->upd_id;
 		$upd_order 						= Order::find($upd_id);
 		$upd_order->status		= $this->upd_status;
+		$upd_order->delivery	= $this->upd_delivery;
 		$uo 									= $upd_order->save();
 
 		if ($uo) {
@@ -51,10 +54,12 @@ class OrderComponent extends Component
 		}
 	}
 
+
 	public function render()
 	{
 		$orders = Order::search($this->search)->orderBy('created_at', 'desc')->simplePaginate($this->perPage);
 		$order_details = OrderItem::all();
-		return view('livewire.admin.order-component', ['orders'=>$orders, 'order_details'=>$order_details])->layout('layouts.admin', ['title'=>'Order List']);
+		$delivery = User::where('user_type', 'delivery')->get();
+		return view('livewire.admin.order-component', ['orders'=>$orders, 'order_details'=>$order_details, 'delivery'=>$delivery])->layout('layouts.admin', ['title'=>'Order List']);
 	}
 }

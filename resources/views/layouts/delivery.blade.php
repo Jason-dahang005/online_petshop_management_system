@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title></title>
+  <title>{{ $title }}</title>
   @livewireStyles()
   @include('/include/delivery/style')
 </head>
@@ -23,6 +23,6 @@
   @include('/include/delivery/footer')
   @include('/include/delivery/script')
   @livewireScripts()
-  <script src="{{ asset('/js/delivery.js') }}"></script>
+  <script src="{{ asset('/js/admin.js') }}"></script>
 </body>
 </html>

@@ -15,7 +15,9 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('order_code')->unique();
             $table->foreignId('user_id')->constrained();
+            $table->string('delivery')->nullable();
             $table->string('subtotal');
             $table->string('discount')->default(0);
             $table->string('tax');
