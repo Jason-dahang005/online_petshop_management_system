@@ -19,7 +19,7 @@
     </div>
   </div>
   @include('/include/customer/header')
-  @if (request()->routeIs('customer.profile') || request()->routeIs('customer.wishlist') || request()->routeIs('customer.my-order') || request()->routeIs('customer.user-change-password'))
+  @if (request()->routeIs('customer.order-history') || request()->routeIs('customer.cancel-order') || request()->routeIs('customer.profile') || request()->routeIs('customer.wishlist') || request()->routeIs('customer.my-order') || request()->routeIs('customer.user-change-password'))
     <div class="my-order-container">
       <div class="container" style="margin-top: .5in; margin-bottom: .5in;">
         <div class="row">

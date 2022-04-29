@@ -35,6 +35,10 @@ class DeliveryList extends Component
 	public function render()
 	{
 		$orders = Order::where('delivery', Auth::user()->name)->get();
-		return view('livewire.delivery.delivery-list', ['orders'=>$orders])->layout('layouts.delivery', ['title' => 'List of Deliveries']);
+		$ord = Order::all();
+		$x = Order::where('status', 'approved')->count();
+		$y = Order::where('status', 'delivering')->count();
+		$ord = $x + $y; 
+		return view('livewire.delivery.delivery-list', ['orders'=>$orders], ['ord'=>$ord])->layout('layouts.delivery', ['title' => 'List of Deliveries']);
 	}
 }

@@ -1,9 +1,5 @@
 <div id="main">
     <!-- Start Product Grids -->
-    <section class="product-grids section">
-        <div class="container">
-        </div>
-    </section>
     <div class="row">
         @if (Cart::instance('wishlist')->count() > 0)
             @foreach (Cart::instance('wishlist')->content() as $item)
@@ -38,7 +34,7 @@
                 </div>
             @endforeach
         @else
-                <p class="text-center">Wishlist is Empty!</p>
+            <h3 class="text-center py-5">Wishlist is Empty</h3>
         @endif
     </div>
 </div>

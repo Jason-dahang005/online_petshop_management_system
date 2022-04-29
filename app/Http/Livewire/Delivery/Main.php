@@ -37,6 +37,14 @@ class Main extends Component
     public function render()
     {
         $orders = Order::where('delivery', Auth::user()->name)->get();
-        return view('livewire.delivery.main', ['orders'=>$orders])->layout('layouts.delivery', ['title' => 'Home']);
+
+        $count_pending = Order::where('status','pending')->count();
+        $count_delivering = Order::where('status','delivering')->count();
+        $delivery_list = $count_pending + $count_delivering;
+
+        $delivery_completed = Order::where('status','completed')->count();
+        $delivery_received = Order::where('status','received')->count();
+        $orders = $delivery_completed + $delivery_received;
+        return view('livewire.delivery.main', ['orders'=>$orders], ['delivery_list'=>$delivery_list])->layout('layouts.delivery', ['title' => 'Home']);
     }
 }

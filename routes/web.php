@@ -30,6 +30,8 @@ use App\Http\Livewire\Customer\Search;
 use App\Http\Livewire\Customer\Wishlist;
 use App\Http\Livewire\Customer\Checkout;
 use App\Http\Livewire\Customer\Thankyou;
+use App\Http\Livewire\Customer\OrderHistory;
+use App\Http\Livewire\Customer\CancelOrder;
 
 use App\Http\Livewire\Customer\MyOrder;
 use App\Http\Livewire\Customer\Profile;
@@ -76,6 +78,7 @@ Route::get('customer/product/{slug}', ProductDetails::class)->name('product.prod
 Route::get('customer/category/{category_slug}', Category::class)->name('customer.category');
 Route::get('customer/search', Search::class)->name('customer.search');
 Route::get('customer/thankyou', Thankyou::class)->name('customer.thankyou');
+Route::get('customer/order-history', OrderHistory::class)->name('customer.order-history');
 
 
 
@@ -88,6 +91,7 @@ Route::middleware(['auth:sanctum','verified'])->group(function () {
     Route::get('customer/profile', Profile::class)->name('customer.profile');
     Route::get('customer/wishlist', Wishlist::class)->name('customer.wishlist');
     Route::get('customer/change-password', UserChangePassword::class)->name('customer.change-password');
+    Route::get('customer/cancel-order', CancelOrder::class)->name('customer.cancel-order');
 });
 
 // ADMIN ROUTE COMPONENTS

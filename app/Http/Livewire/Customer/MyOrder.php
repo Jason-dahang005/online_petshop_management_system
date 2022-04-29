@@ -35,6 +35,18 @@ class MyOrder extends Component
 			$this->dispatchBrowserEvent('CloseDeliveryStatusModal');
 		}
 	}
+    public function cancelOrder($id){
+        $order = Order::find($id);
+        $order->status = 'cancelled';
+        $order->save();
+    }
+
+    public function receivedOrder($id){
+        $order = Order::find($id);
+        $order->status = 'received';
+        $order->save();
+    }
+
     public function render()
     {
         // $delivering = Order::where('user_id', Auth::user()->id)->where('status', 'delivering')->get();
