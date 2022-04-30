@@ -38,9 +38,9 @@ class Main extends Component
     {
         $orders = Order::where('delivery', Auth::user()->name)->get();
 
-        $count_pending = Order::where('status','pending')->count();
+        $count_approved = Order::where('status','approved')->count();
         $count_delivering = Order::where('status','delivering')->count();
-        $delivery_list = $count_pending + $count_delivering;
+        $delivery_list = $count_approved + $count_delivering;
 
         $delivery_completed = Order::where('status','completed')->count();
         $delivery_received = Order::where('status','received')->count();

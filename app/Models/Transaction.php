@@ -11,6 +11,10 @@ class Transaction extends Model
 
     protected $table = 'transactions';
 
+    protected $fillable = [
+        'status'
+    ];
+
     public function order(){
         return $this->belongsTo(Order::class, 'order_id');
     }

@@ -8,6 +8,7 @@ use App\Models\OrderItem;
 use Livewire\WithPagination;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use App\Models\Transaction;
 
 class OrderComponent extends Component
 {
@@ -34,7 +35,9 @@ class OrderComponent extends Component
 	// ORDER UPDATE FUNCTION
 	public function OpenUpdateOrderStatusModal($id){
 		$upd_order 							= Order::find($id);
+		$upd_trans							= Transaction::find($id);
 		$this->upd_status 			= $upd_order->status;
+		$this->upd_status				= $upd_trans->status;
 		$this->upd_id						= $upd_order->id;
 		$this->upd_delivery			= $upd_order->delivery;
 		$this->dispatchBrowserEvent('OpenUpdateOrderStatusModal', [
@@ -45,6 +48,8 @@ class OrderComponent extends Component
 	public function update(){
 		$upd_id 							= $this->upd_id;
 		$upd_order 						= Order::find($upd_id);
+		$upd_trans						= Transaction::find($upd_id);
+		$upd_trans->status		= $this->upd_status;
 		$upd_order->status		= $this->upd_status;
 		$upd_order->delivery	= $this->upd_delivery;
 		$uo 									= $upd_order->save();

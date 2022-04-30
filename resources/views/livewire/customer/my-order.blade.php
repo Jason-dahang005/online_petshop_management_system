@@ -98,22 +98,22 @@
 					<div class="track">
             @if ($order->status == 'pending')
               <div class="step active"><span class="icon"><i class="fas fa-history"></i></span><span class="text">Pending</span></div>
-							<div class="step"><span class="icon"><i class="fas fa-box"></i></span><span class="text">Approved</span></div>
+							<div class="step"><span class="icon"><i class="fas fa-thumbs-up"></i></span><span class="text">Approved</span></div>
 							<div class="step"><span class="icon"><i class="fas fa-shipping-fast"></i></span><span class="text">Delivering</span></div>
 							<div class="step"><span class="icon"><i class="fas fa-check"></i></span><span class="text">Completed </span></div>
 						@elseif ($order->status == 'approved')
               <div class="step active"><span class="icon"><i class="fas fa-history"></i></span><span class="text">Pending</span></div>
-							<div class="step active"><span class="icon"><i class="fas fa-box"></i></span><span class="text">Approved</span></div>
+							<div class="step active"><span class="icon"><i class="fas fa-thumbs-up"></i></span><span class="text">Approved</span></div>
 							<div class="step"><span class="icon"><i class="fas fa-shipping-fast"></i></span><span class="text">Delivering</span></div>
 							<div class="step"><span class="icon"><i class="fas fa-check"></i></span><span class="text">Completed </span></div>
 						@elseif ($order->status == 'delivering')
               <div class="step active"><span class="icon"><i class="fas fa-history"></i></span><span class="text">Pending</span></div>
-							<div class="step active"><span class="icon"><i class="fas fa-box"></i></span><span class="text">Approved</span></div>
+							<div class="step active"><span class="icon"><i class="fas fa-thumbs-up"></i></span><span class="text">Approved</span></div>
 							<div class="step active"><span class="icon"><i class="fas fa-shipping-fast"></i></span><span class="text">Delivering</span></div>
 							<div class="step"><span class="icon"><i class="fas fa-check"></i></span><span class="text">Completed </span></div>
 						@elseif ($order->status == 'completed')
               <div class="step active"><span class="icon"><i class="fas fa-history"></i></span><span class="text">Pending</span></div>
-							<div class="step active"><span class="icon"><i class="fas fa-box"></i></span><span class="text">Approved</span></div>
+							<div class="step active"><span class="icon"><i class="fas fa-thumbs-up"></i></span><span class="text">Approved</span></div>
 							<div class="step active"><span class="icon"><i class="fas fa-shipping-fast"></i></span><span class="text">Delivering</span></div>
 							<div class="step active"><span class="icon"><i class="fas fa-check"></i></span><span class="text">Completed </span></div>
 						@endif

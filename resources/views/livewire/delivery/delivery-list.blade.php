@@ -99,7 +99,7 @@
 						</div>
 						<div class="track">
 							@if ($order->status == 'approved')
-								<div class="step active"><span class="icon"><i class="fas fa-box"></i></span><span class="text">Order approved</span></div>
+								<div class="step active"><span class="icon"><i class="fas fa-thumbs-up"></i></span><span class="text">Order approved</span></div>
 								<div class="step"><span class="icon"><i class="fas fa-shipping-fast"></i></span><span class="text">delivering</span></div>
 								<div class="step"><span class="icon"><i class="fas fa-check"></i></span><span class="text">Completed </span></div>
 							@elseif ($order->status == 'delivering')

@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Delivery;
 
 use Livewire\Component;
 use App\Models\Order;
+use App\Models\Transaction;
 use Auth;
 
 
@@ -28,7 +29,11 @@ class DeliveryList extends Component
 			'status' => $this->del_status
 		]);
 
-		if ($update_del) {
+		$update_trans = Transaction::find($del_id)->update([
+			'status' => $this->del_status
+		]);
+
+		if ($update_del && $update_trans) {
 			$this->dispatchBrowserEvent('CloseDeliveryStatusModal');
 		}
 	}
