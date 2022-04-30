@@ -29,9 +29,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ url('/admin/users') }}" class="nav-link {{ 'admin/users' == request()->path() ? 'active' : '' }}">
+            <a href="{{ url('/delivery/delivery-profile') }}" class="nav-link {{ 'delivery/delivery-profile' == request()->path() ? 'active' : '' }}">
               <i class="nav-icon fas fa-users"></i>
-              <p>Pofile</p>
+              <p>Profile</p>
             </a>
           </li>
           <li class="nav-item">
