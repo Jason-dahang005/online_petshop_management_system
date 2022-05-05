@@ -7,14 +7,14 @@ namespace Composer\Autoload;
 class ComposerStaticInitc7d3825b17406e030d693462bab5931e
 {
     public static $files = array (
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
-        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
+        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
@@ -25,6 +25,7 @@ class ComposerStaticInitc7d3825b17406e030d693462bab5931e
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
+        '40275907c8566c390185147049ef6e5d' => __DIR__ . '/..' . '/livewire/livewire/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
@@ -35,7 +36,6 @@ class ComposerStaticInitc7d3825b17406e030d693462bab5931e
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        '40275907c8566c390185147049ef6e5d' => __DIR__ . '/..' . '/livewire/livewire/src/helpers.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
     );
 
@@ -137,6 +137,7 @@ class ComposerStaticInitc7d3825b17406e030d693462bab5931e
         array (
             'Jenssegers\\Agent\\' => 17,
             'Jaybizzle\\CrawlerDetect\\' => 24,
+            'Jantinnerezo\\LivewireAlert\\' => 27,
         ),
         'I' => 
         array (
@@ -450,6 +451,10 @@ class ComposerStaticInitc7d3825b17406e030d693462bab5931e
         array (
             0 => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src',
         ),
+        'Jantinnerezo\\LivewireAlert\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jantinnerezo/livewire-alert/src',
+        ),
         'Illuminate\\Support\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Macroable',
@@ -606,10 +611,10 @@ class ComposerStaticInitc7d3825b17406e030d693462bab5931e
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Livewire\\Admin\\AdminContactComponent' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/AdminContactComponent.php',
+        'App\\Http\\Livewire\\Admin\\AdminProfile' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/AdminProfile.php',
         'App\\Http\\Livewire\\Admin\\Dashboard' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Dashboard.php',
         'App\\Http\\Livewire\\Admin\\DeliveryComponent' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/DeliveryComponent.php',
         'App\\Http\\Livewire\\Admin\\GoldfishComponent' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/GoldfishComponent.php',
-        'App\\Http\\Livewire\\Admin\\Inventory' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Inventory.php',
         'App\\Http\\Livewire\\Admin\\InventoryComponent' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/InventoryComponent.php',
         'App\\Http\\Livewire\\Admin\\OrderComponent' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/OrderComponent.php',
         'App\\Http\\Livewire\\Admin\\OrderDetailComponent' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/OrderDetailComponent.php',
@@ -622,6 +627,7 @@ class ComposerStaticInitc7d3825b17406e030d693462bab5931e
         'App\\Http\\Livewire\\Admin\\User' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/User.php',
         'App\\Http\\Livewire\\Admin\\UserComponent' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/UserComponent.php',
         'App\\Http\\Livewire\\Customer\\AboutUs' => __DIR__ . '/../..' . '/app/Http/Livewire/Customer/AboutUs.php',
+        'App\\Http\\Livewire\\Customer\\CancelOrder' => __DIR__ . '/../..' . '/app/Http/Livewire/Customer/CancelOrder.php',
         'App\\Http\\Livewire\\Customer\\CartCount' => __DIR__ . '/../..' . '/app/Http/Livewire/Customer/CartCount.php',
         'App\\Http\\Livewire\\Customer\\Category' => __DIR__ . '/../..' . '/app/Http/Livewire/Customer/Category.php',
         'App\\Http\\Livewire\\Customer\\Checkout' => __DIR__ . '/../..' . '/app/Http/Livewire/Customer/Checkout.php',
@@ -631,6 +637,7 @@ class ComposerStaticInitc7d3825b17406e030d693462bab5931e
         'App\\Http\\Livewire\\Customer\\Home' => __DIR__ . '/../..' . '/app/Http/Livewire/Customer/Home.php',
         'App\\Http\\Livewire\\Customer\\MyAccountSidebar' => __DIR__ . '/../..' . '/app/Http/Livewire/Customer/MyAccountSidebar.php',
         'App\\Http\\Livewire\\Customer\\MyOrder' => __DIR__ . '/../..' . '/app/Http/Livewire/Customer/MyOrder.php',
+        'App\\Http\\Livewire\\Customer\\OrderHistory' => __DIR__ . '/../..' . '/app/Http/Livewire/Customer/OrderHistory.php',
         'App\\Http\\Livewire\\Customer\\ProductDetails' => __DIR__ . '/../..' . '/app/Http/Livewire/Customer/ProductDetails.php',
         'App\\Http\\Livewire\\Customer\\Profile' => __DIR__ . '/../..' . '/app/Http/Livewire/Customer/Profile.php',
         'App\\Http\\Livewire\\Customer\\Search' => __DIR__ . '/../..' . '/app/Http/Livewire/Customer/Search.php',
@@ -640,7 +647,10 @@ class ComposerStaticInitc7d3825b17406e030d693462bab5931e
         'App\\Http\\Livewire\\Customer\\UserChangePassword' => __DIR__ . '/../..' . '/app/Http/Livewire/Customer/UserChangePassword.php',
         'App\\Http\\Livewire\\Customer\\Wishlist' => __DIR__ . '/../..' . '/app/Http/Livewire/Customer/Wishlist.php',
         'App\\Http\\Livewire\\Customer\\WishlistCount' => __DIR__ . '/../..' . '/app/Http/Livewire/Customer/WishlistCount.php',
+        'App\\Http\\Livewire\\Delivery\\CustomerOrderDetailComponent' => __DIR__ . '/../..' . '/app/Http/Livewire/Delivery/CustomerOrderDetailComponent.php',
         'App\\Http\\Livewire\\Delivery\\DeliveryHistory' => __DIR__ . '/../..' . '/app/Http/Livewire/Delivery/DeliveryHistory.php',
+        'App\\Http\\Livewire\\Delivery\\DeliveryList' => __DIR__ . '/../..' . '/app/Http/Livewire/Delivery/DeliveryList.php',
+        'App\\Http\\Livewire\\Delivery\\DeliveryProfile' => __DIR__ . '/../..' . '/app/Http/Livewire/Delivery/DeliveryProfile.php',
         'App\\Http\\Livewire\\Delivery\\Main' => __DIR__ . '/../..' . '/app/Http/Livewire/Delivery/Main.php',
         'App\\Http\\Middleware\\AuthAdmin' => __DIR__ . '/../..' . '/app/Http/Middleware/AuthAdmin.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -2975,6 +2985,9 @@ class ComposerStaticInitc7d3825b17406e030d693462bab5931e
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
+        'Jantinnerezo\\LivewireAlert\\Exceptions\\AlertException' => __DIR__ . '/..' . '/jantinnerezo/livewire-alert/src/Exceptions/AlertException.php',
+        'Jantinnerezo\\LivewireAlert\\LivewireAlert' => __DIR__ . '/..' . '/jantinnerezo/livewire-alert/src/LivewireAlert.php',
+        'Jantinnerezo\\LivewireAlert\\LivewireAlertServiceProvider' => __DIR__ . '/..' . '/jantinnerezo/livewire-alert/src/LivewireAlertServiceProvider.php',
         'Jaybizzle\\CrawlerDetect\\CrawlerDetect' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/CrawlerDetect.php',
         'Jaybizzle\\CrawlerDetect\\Fixtures\\AbstractProvider' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/AbstractProvider.php',
         'Jaybizzle\\CrawlerDetect\\Fixtures\\Crawlers' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/Crawlers.php',

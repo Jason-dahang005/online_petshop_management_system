@@ -5,9 +5,12 @@ namespace App\Http\Livewire\Customer;
 use Livewire\Component;
 use Cart;
 use Auth;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class ShoppingCart extends Component
 {
+    use LivewireAlert;
+
     public function increaseQuantity($rowId){
         $product = Cart::instance('cart')->get($rowId);
         $qty = $product->qty + 1;
@@ -23,9 +26,15 @@ class ShoppingCart extends Component
     }
 
     public function destroy($rowId){
+        $this->alert('question', 'How are you today?', [
+            'showConfirmButton' => true,
+            'confirmButtonText' => 'Good',
+            'onConfirmed' => 'confirmed' 
+        ]);
         Cart::instance('cart')->remove($rowId);
         session()->flash('addToCart', 'Item Successfully Removed From Cart');
         $this->emitTo('customer.cart-count', 'refreshComponent');
+        
     }
 
     public function checkout(){

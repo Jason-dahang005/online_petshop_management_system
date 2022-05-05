@@ -3,16 +3,17 @@
 <script src="{{ asset('shopgrids/assets/js/tiny-slider.js') }}"></script>
 <script src="{{ asset('shopgrids/assets/js/glightbox.min.js') }}"></script>
 <script src="{{ asset('shopgrids/assets/js/main.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 @livewireScripts()
 @if (Session::has('addToCart'))
     <script>
-        Swal.fire(
-            'Item Successfully Added To Cart!',
-            'You clicked the button!',
-            'success'
-            );
+        swal("{!! Session::get('addToCart') !!}", "success",{
+            button:"OK",
+        })
     </script>
-@endif  
+@endif 
+
+
 <script type="text/javascript">
     //========= Hero Slider 
     tns({

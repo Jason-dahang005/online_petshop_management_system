@@ -6,9 +6,11 @@ use Livewire\Component;
 use App\Models\Product;
 use Cart;
 use Auth;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class ProductDetails extends Component
 {
+    use LivewireAlert;
     public $slug;
 
     public function mount($slug){
@@ -18,12 +20,19 @@ class ProductDetails extends Component
     public function store($product_id, $product_name, $product_price){
         Cart::instance('cart')->add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
         $this->emitTo('customer.cart-count', 'refreshComponent');
-        session()->flash('AddToCart', 'Item Added To Cart Succesfully!');
+        $this->alert('success', 'Item Added to Cart!', [
+            'toast' => false,
+            'position' => 'center'
+        ]);
     }
 
     public function AddToWishlist($product_id, $product_name, $product_price){
         Cart::instance('wishlist')->add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
         $this->emitTo('customer.wishlist-count', 'refreshComponent');
+        $this->alert('success', 'Item Added to Wishlist!', [
+            'toast' => false,
+            'position' => 'center'
+        ]);
     }
 
     public function removeFromWishlist($product_id){

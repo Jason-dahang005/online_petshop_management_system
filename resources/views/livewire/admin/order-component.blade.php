@@ -53,8 +53,8 @@
 										<span class="badge badge-secondary">Pending</span>
 									@elseif($order->status == 'approved')
 										<span class="badge badge-success">Approved</span>
-									@elseif($order->status == 'delivering')
-										<span class="badge badge-primary">Delivering</span>
+									@elseif($order->status == 'received')
+										<span class="badge badge-primary">Received</span>
 									@elseif($order->status == 'completed')
 										<span class="badge badge-dark">Completed</span>
 									@elseif($order->status == 'cancelled')

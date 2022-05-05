@@ -82,7 +82,7 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="OpenProductCategoryModalLabel">Palihog ko add Product</h5>
+                <h5 class="modal-title" id="OpenProductCategoryModalLabel">ADD NEW CATEGORY</h5>
               </div>
               <form wire:submit.prevent="store">
                 <div class="modal-body">
@@ -94,8 +94,8 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="">Slug</label>
-                    <input type="text" class="form-control" placeholder="Enter product category slug" wire:model="slug">
+                    {{-- <label for="">Slug</label> --}}
+                    <input type="hidden" class="form-control" placeholder="Enter product category slug" wire:model="slug">
                     <span class="text-danger">@error('slug') {{ $message }} @enderror</span>
                   </div>
 
@@ -119,7 +119,7 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="OpenProductCategoryModalLabel">PAG ADD OG PRODUCT YOU MF!</h5>
+                <h5 class="modal-title" id="OpenProductCategoryModalLabel">UPDATE CATEGORY</h5>
               </div>
               <form wire:submit.prevent="update">
                 <input type="hidden" wire:model="upd_id">
@@ -132,8 +132,8 @@
                   </div>
 
 									<div class="form-group">
-                    <label for="">Slug</label>
-                    <input type="text" class="form-control" placeholder="Enter product category slug" wire:model="upd_slug">
+                    {{-- <label for="">Slug</label> --}}
+                    <input type="hidden" class="form-control" placeholder="Enter product category slug" wire:model="upd_slug">
                     <span class="text-danger">@error('upd_slug') {{ $message }} @enderror</span>
                   </div>
 

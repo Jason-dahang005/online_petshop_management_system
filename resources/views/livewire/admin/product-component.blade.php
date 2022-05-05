@@ -90,7 +90,7 @@
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="AddNewProductModalLabel">Modal title</h5>
+					<h5 class="modal-title" id="AddNewProductModalLabel">ADD NEW PRODUCT</h5>
 				</div>
 				<form enctype="multipart/form-data" wire:submit.prevent="addProduct">
 					<div class="modal-body">
@@ -104,8 +104,8 @@
 								</div>
 
 								<div class="form-group">
-									<label for="">Slug</label>
-									<input type="text" class="form-control" placeholder="Enter product slug" wire:model="slug">
+									{{-- <label for="">Slug</label> --}}
+									<input type="hidden" class="form-control" placeholder="Enter product slug" wire:model="slug">
 									<span class="text-danger">@error('slug') {{ $message }} @enderror</span>
 								</div>
 
@@ -172,7 +172,7 @@
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="OpenEditProductModalLabel">Modal title</h5>
+					<h5 class="modal-title" id="OpenEditProductModalLabel">UPDATE PRODUCT</h5>
 				</div>
 				<form enctype="multipart/form-data" wire:submit.prevent="updateProduct">
 					<input type="hidden" wire:model="upd_id">
@@ -188,8 +188,8 @@
 								</div>
 
 								<div class="form-group">
-									<label for="">Slug</label>
-									<input type="text" class="form-control" placeholder="Enter product slug" wire:model="upd_slug">
+									{{-- <label for="">Slug</label> --}}
+									<input type="hidden" class="form-control" placeholder="Enter product slug" wire:model="upd_slug">
 									<span class="text-danger">@error('upd_slug') {{ $message }} @enderror</span>
 								</div>
 
@@ -268,7 +268,7 @@
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="OpenEditProductModalLabel">Modal title</h5>
+					<h5 class="modal-title" id="OpenEditProductModalLabel">PRODUCT DETAILS</h5>
 				</div>
 				<form enctype="multipart/form-data" >
 
@@ -282,8 +282,8 @@
 								</div>
 
 								<div class="form-group">
-									<label for="">Slug</label>
-									<input type="text" disabled class="form-control" placeholder="Enter product slug" wire:model="upd_slug">
+									{{-- <label for="">Slug</label> --}}
+									<input type="hidden" disabled class="form-control" placeholder="Enter product slug" wire:model="upd_slug">
 								</div>
 
 								<div class="form-group">

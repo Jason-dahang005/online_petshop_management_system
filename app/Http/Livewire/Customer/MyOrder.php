@@ -49,19 +49,7 @@ class MyOrder extends Component
 
     public function render()
     {
-        // $delivering = Order::where('user_id', Auth::user()->id)->where('status', 'delivering')->get();
-        // $pending = Order::where('user_id', Auth::user()->id)->where('status', 'pending')->get();
-        // $approved = Order::where('user_id', Auth::user()->id)->where('status', 'approved')->get();
-        // $completed = Order::where('user_id', Auth::user()->id)->get();
-        // $cancelled = Order::where('user_id', Auth::user()->id)->where('status', 'cancelled')->get();
-        $orders = Order::all();
-        return view('livewire.customer.my-order', [
-            // 'delivering'    => $delivering,
-            // 'pending'       => $pending,
-            // 'approved'       => $approved,
-            // 'completed'       => $completed,
-            // 'cancelled'       => $cancelled,
-            'orders'            => $orders
-            ])->layout('layouts.customer');
+        $orders = Order::where('status', 'pending')->orWhere('status', 'approved')->orWhere('status', 'delivering')->orWhere('status', 'completed')->get();
+        return view('livewire.customer.my-order', ['orders' => $orders])->layout('layouts.customer');
     }
 }

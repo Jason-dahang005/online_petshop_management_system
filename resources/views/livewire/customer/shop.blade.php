@@ -34,16 +34,9 @@
 											<option value="date">New Products</option>
 											<option value="price">Price Low to High</option>
 										</select>
-										<h3 class="total-show-product">Showing: <span>1 - 12 items</span></h3>
 									</div>
 								</div>
 								<div class="col-lg-5 col-md-4 col-12">
-									<nav>
-										<div class="nav nav-tabs" id="nav-tab" role="tablist">
-											<button class="nav-link active" id="nav-grid-tab" data-bs-toggle="tab" data-bs-target="#nav-grid" type="button" role="tab" aria-controls="nav-grid" aria-selected="true"><i class="lni lni-grid-alt"></i></button>
-											<button class="nav-link" id="nav-list-tab" data-bs-toggle="tab" data-bs-target="#nav-list" type="button" role="tab" aria-controls="nav-list" aria-selected="false"><i class="lni lni-list"></i></button>
-										</div>
-									</nav>
 								</div>
 							</div>
 						</div>
@@ -103,13 +96,7 @@
 									<div class="col-12">
 										<!-- Pagination -->
 										<div class="pagination left">
-											<ul class="pagination-list">
-												<li><a href="javascript:void(0)">1</a></li>
-												<li class="active"><a href="javascript:void(0)">2</a></li>
-												<li><a href="javascript:void(0)">3</a></li>
-												<li><a href="javascript:void(0)">4</a></li>
-												<li><a href="javascript:void(0)"><i class="lni lni-chevron-right"></i></a></li>
-											</ul>
+											{!! $products->links() !!}
 										</div>
 										<!--/ End Pagination -->
 									</div>

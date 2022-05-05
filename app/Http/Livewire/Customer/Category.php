@@ -53,11 +53,11 @@ class Category extends Component
         $category_name = $category->name;
 
         if ($this->sorting == 'date') { 
-            $products = Product::where('product_category_id', $category_id)->orderBy('created_at', 'desc')->paginate(12);
+            $products = Product::where('product_category_id', $category_id)->where('status', 1)->orderBy('created_at', 'desc')->paginate(12);
         }elseif ($this->sorting == 'price') {
-            $products = Product::where('product_category_id', $category_id)->orderBy('price', 'asc')->paginate(12);
+            $products = Product::where('product_category_id', $category_id)->where('status', 1)->orderBy('price', 'asc')->paginate(12);
         }else{
-            $products = Product::where('product_category_id', $category_id)->paginate(12);
+            $products = Product::where('product_category_id', $category_id)->where('status', 1)->paginate(12);
         }
         
         $product_category = ProductCategory::all();

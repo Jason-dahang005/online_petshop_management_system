@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '1eca4d92cee99c95cb849e229cba2cbf9cceb3c7',
+        'reference' => '89b6ee62a82575ad40e0b1e6c10c003e19a1ab50',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -433,6 +433,15 @@
                 0 => 'v8.83.7',
             ),
         ),
+        'jantinnerezo/livewire-alert' => array(
+            'pretty_version' => '2.2.6',
+            'version' => '2.2.6.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../jantinnerezo/livewire-alert',
+            'aliases' => array(),
+            'reference' => '352d13719741fce537893bd9372504385bc99d5c',
+            'dev_requirement' => false,
+        ),
         'jaybizzle/crawler-detect' => array(
             'pretty_version' => 'v1.2.111',
             'version' => '1.2.111.0',
@@ -490,7 +499,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '1eca4d92cee99c95cb849e229cba2cbf9cceb3c7',
+            'reference' => '89b6ee62a82575ad40e0b1e6c10c003e19a1ab50',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(

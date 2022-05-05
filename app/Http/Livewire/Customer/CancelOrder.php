@@ -9,7 +9,7 @@ class CancelOrder extends Component
 {
     public function render()
     {
-        $orders = Order::where('status', 'cancelled')->get();
+        $orders = Order::where('status', 'cancelled')->orderBy('updated_at', 'DESC')->get();
         return view('livewire.customer.cancel-order', ['orders'=>$orders])->layout('layouts.customer');
     }
 }

@@ -81,7 +81,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header text-center">
-              <h5 class="modal-title w-100" id="exampleModalLabel">Add Goldfish</h5>
+              <h5 class="modal-title w-100" id="exampleModalLabel">ADD NEW GOLDFISH</h5>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal" wire:submit.prevent="addGoldfish">
@@ -92,8 +92,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="">Slug</label>
-                        <input type="text" class="form-control" placeholder="Enter Name" wire:model="slug">
+                        {{-- <label for="">Slug</label> --}}
+                        <input type="hidden" class="form-control" placeholder="Enter Name" wire:model="slug">
                     </div>
 
                     <div class="form-group">
@@ -129,7 +129,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header text-center">
-            <h5 class="modal-title w-100" id="exampleModalLabel">Update Goldfish</h5>
+            <h5 class="modal-title w-100" id="exampleModalLabel">UPDATE GOLDFISH</h5>
           </div>
           <div class="modal-body">
               <form class="form-horizontal" wire:submit.prevent="updateGoldfish">
@@ -142,8 +142,8 @@
                   </div>
 
                   <div class="form-group">
-                      <label for="">Slug</label>
-                      <input type="text" class="form-control" placeholder="Enter Name" wire:model="upd_slug">
+                      {{-- <label for="">Slug</label> --}}
+                      <input type="hidden" class="form-control" placeholder="Enter Name" wire:model="upd_slug">
                   </div>
 
                   <div class="form-group">
@@ -193,7 +193,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header text-center">
-          <h5 class="modal-title w-100" id="exampleModalLabel">Goldfish</h5>
+          <h5 class="modal-title w-100" id="exampleModalLabel">GOLDFISH DETAILS</h5>
         </div>
         <div class="modal-body">
             <form class="form-horizontal" >
@@ -205,8 +205,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="">Slug</label>
-                    <input type="text" disabled class="form-control" placeholder="Enter Name" wire:model="slug">
+                    {{-- <label for="">Slug</label> --}}
+                    <input type="hidden" disabled class="form-control" placeholder="Enter Name" wire:model="slug">
                 </div>
 
                 <div class="form-group">

@@ -13,8 +13,7 @@ class OrderHistory extends Component
         $y = Order::where('status', 'received')->count();
         $z = $x + $y;
 
-        $a = Order::where('status', 'completed')->get();
-        $b = Order::where('status', 'received')->get();
-        return view('livewire.customer.order-history', ['z' => $z, 'a' => $a, 'b' => $b])->layout('layouts.customer');
+        $orders = Order::where('status', 'received')->orderBy('updated_at', 'DESC')->get();
+        return view('livewire.customer.order-history', ['z' => $z, 'orders' => $orders])->layout('layouts.customer');
     }
 }
