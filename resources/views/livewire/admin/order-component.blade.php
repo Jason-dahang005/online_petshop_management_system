@@ -100,7 +100,9 @@
 							<select class="custom-select" wire:model="upd_delivery">
 								<option value="{{ $upd_delivery }}">Select delivery rider</option>
 								@foreach ($delivery as $dlvy)
-									<option value="{{ $dlvy->name }}">{{ $dlvy->name }}</option>
+									@if (auth()->check())
+										<option value="{{ $dlvy->name }}">{{ $dlvy->name }}</option>
+									@endif
 								@endforeach
 							</select>
 						</div>
