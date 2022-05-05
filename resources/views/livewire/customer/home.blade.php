@@ -8,8 +8,7 @@
                         <!-- Start Hero Slider -->
                         <div class="hero-slider">
                             <!-- Start Single Slider -->
-                            <div class="single-slider"
-                                style="background-image: url(https://via.placeholder.com/800x500);">
+                            <div class="single-slider" style="background-image: url(/systemLogos/slider_image_1.jpg);">
                                 <div class="content">
                                     <h2><span></span></h2>
                                     <p></p>
@@ -21,8 +20,7 @@
                             </div>
                             <!-- End Single Slider -->
                             <!-- Start Single Slider -->
-                            <div class="single-slider"
-                                style="background-image: url(https://via.placeholder.com/800x500);">
+                            <div class="single-slider" style="background-image: url(/systemLogos/slider_image_2.jpg);">
                                 <div class="content">
                                     <h2><span></span></h2>
                                     <p></p>
@@ -42,7 +40,7 @@
                         <div class="col-lg-12 col-md-6 col-12 md-custom-padding">
                             <!-- Start Small Banner -->
                             <div class="hero-small-banner"
-                                style="background-image: url('https://via.placeholder.com/370x250');">
+                                style="background-image: url(/systemLogos/slider_image_3.jpg);">
                                 <div class="content">
                                     <h2>
                                         <span></span>
@@ -54,7 +52,7 @@
                         </div>
                         <div class="col-lg-12 col-md-6 col-12">
                             <!-- Start Small Banner -->
-                            <div class="hero-small-banner style2">
+                            <div class="hero-small-banner mt-3" style="background-image: url(/systemLogos/slider_image_4.jpg);">
                                 <div class="content">
                                     <h2></h2>
                                     <p></p>
@@ -73,7 +71,7 @@
     <!-- End Hero Area -->
 
     <!-- Start Featured Categories Area -->
-    <section class="featured-categories section">
+    {{-- <section class="featured-categories section">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -189,6 +187,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- End Features Area -->
+    <div class="my-4"></div>
 </div>
