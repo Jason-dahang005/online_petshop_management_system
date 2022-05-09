@@ -50,6 +50,7 @@ class MyOrder extends Component
     public function render()
     {
         $orders = Order::where('status', 'pending')->orWhere('status', 'approved')->orWhere('status', 'delivering')->orWhere('status', 'completed')->get();
+        
         return view('livewire.customer.my-order', ['orders' => $orders])->layout('layouts.customer');
     }
 }

@@ -47,7 +47,7 @@
 								<td>{{ date("Y-m-d H:i", strtotime($order->created_at)) }}</td>
 								<td>{{ $order->fullname }}</td>
 								<td>&#8369; {{ $order->total }}</td>
-								<td>{{ $order->transaction->paymentmode }}</td>
+								<td>{{ $order->transaction->paymentmode ??  'Error' }}</td>
 								<td>
 									@if ($order->status == 'pending')
 										<span class="badge badge-secondary">Pending</span>
@@ -55,6 +55,8 @@
 										<span class="badge badge-success">Approved</span>
 									@elseif($order->status == 'received')
 										<span class="badge badge-primary">Received</span>
+									@elseif($order->status == 'delivering')
+										<span class="badge badge-warning">Delivering</span>
 									@elseif($order->status == 'completed')
 										<span class="badge badge-dark">Completed</span>
 									@elseif($order->status == 'cancelled')

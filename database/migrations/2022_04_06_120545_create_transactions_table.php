@@ -17,7 +17,7 @@ class CreateTransactionsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('order_id')->constrained();
-            $table->string('paymentmode');
+            $table->string('paymentmode')->nullable();
             $table->string('status')->default('pending');
             $table->timestamps();
         });
