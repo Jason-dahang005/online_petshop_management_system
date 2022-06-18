@@ -25,8 +25,8 @@
           <!-- small box -->
           <div class="small-box bg-success">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
-              <p>Bounce Rate</p>
+              <h3>&#8369;{{ number_format($sales, 2) }}</h3>
+              <p>Total Sales</p>
             </div>
             <div class="icon">
               <i class="fas fa-shopping-cart"></i>

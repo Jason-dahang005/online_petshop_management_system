@@ -24,36 +24,34 @@
           <table class="table table-striped table-sm table-bordered">
             <thead>
               <tr>
-                <th width="10%">Name</th>
-                <th width="10%">Slug</th>
-                <th width="10%">Image</th>
-                <th width="28%">Description</th>
-                <th width="10%">Price</th>
-                <th width="10%">Status</th>
-                <th width="10%">Date Added</th>
-                <th width="12%">Action</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Date Added</th>
+                <th colspan="1">Action</th>
               </tr>
             </thead>
             <tbody>
                 @if (count($goldF) > 0)
                   @foreach ($goldF as $fish)
                     <tr>
-                      <td>{{ $fish->name }}</td>
-                      <td>{{ $fish->slug }}</td>
-                      <td><img src="{{ asset('/images/image') }}/{{ $fish->image }}" alt="" style="max-width: 50px"></td>
-                      <td>{{ $fish->description }}</td>
-                      <td>₱{{ $fish->price }}</td>
-                      <td>
+                      <td style="width: 14%">{{ $fish->name }}</td>
+                      <td style="width: 10%"><img src="{{ asset('/images/image') }}/{{ $fish->image }}" alt="" style="max-width: 50px"></td>
+                      <td style="width: 40%">{{ $fish->description }}</td>
+                      <td style="width: 8%">₱{{ $fish->price }}</td>
+                      <td style="width: 5%">
                         @if ($fish->status)
                           <span class="badge badge-success">Active</span>
                         @else
                           <span class="badge badge-danger">Inactive</span>
                         @endif
                       </td>
-                      <td>{{ date('M d,Y', strtotime($fish->created_at)) }}</td>
-                      <td>
-                        <button class="btn btn-sm btn-success" wire:click="OpenViewGoldfishModal({{ $fish->id }})"><i class="fas fa-eye"></i> View</button>
-                        <button class="btn btn-sm btn-primary" wire:click="OpenEditGoldfishModal({{ $fish->id }})"><i class="fas fa-edit"></i> Update</button>
+                      <td style="width: 10%">{{ date('M d,Y', strtotime($fish->created_at)) }}</td>
+                      <td style="width: 13%">
+                        <button class="btn btn-xs btn-success" wire:click="OpenViewGoldfishModal({{ $fish->id }})"><i class="fas fa-eye"></i> View</button>
+                        <button class="btn btn-xs btn-primary" wire:click="OpenEditGoldfishModal({{ $fish->id }})"><i class="fas fa-edit"></i> Update</button>
                       </td>
                     </tr>
                   @endforeach

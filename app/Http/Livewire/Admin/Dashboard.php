@@ -17,7 +17,11 @@ class Dashboard extends Component
         $orders = Order::where('status', 'pending')->get();
         $goldfish = Goldfish::all();
         $products = Product::all();
-        return view('livewire.admin.dashboard',['users' => $users, 'products' => $products, 'orders' => $orders, 'goldfish' => $goldfish])->layout('layouts.admin', ['title'=>'Dashboard']);
+        $sales = Order::join('transactions', 'orders.id', '=', 'transactions.order_id')
+                    ->select('orders.*', 'transaction.*')
+                    ->where('transactions.status', 'completed')
+                    ->sum('orders.total');
+        return view('livewire.admin.dashboard',['sales' => $sales, 'users' => $users, 'products' => $products, 'orders' => $orders, 'goldfish' => $goldfish])->layout('layouts.admin', ['title'=>'Dashboard']);
     
     }
 }

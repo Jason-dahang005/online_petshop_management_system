@@ -3,7 +3,14 @@
         @guest{{ route('login') }}@endguest
         @auth{{ route('customer.shopping-cart') }} @endauth" class="main-btn">
         <i class="lni lni-cart"></i>
-        <span class="total-items">{{ Cart::instance('cart')->count() }}</span>
+        <span class="total-items">
+            @auth
+                {{ Cart::instance('cart')->count() }}
+            @endauth
+            @guest
+                0
+            @endguest
+        </span>
     </a>
     @auth
         {{-- <!-- Shopping Item -->

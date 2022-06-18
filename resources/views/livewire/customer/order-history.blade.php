@@ -4,7 +4,7 @@
 		<div class="card-body">
 			<div class="d-flex justify-content-between">
 				<h5><b>Order ID: </b>{{ $order->order_code }}</h5>
-				<h5><b>Date Cancelled: </b>{{ date("Y-m-d h:i a", strtotime($order->updated_at)) }}</h5>
+				<h5><b>Date Completed: </b>{{ date("Y-m-d h:i a", strtotime($order->updated_at)) }}</h5>
 			</div>
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-12">

@@ -3,7 +3,7 @@
     <section class="checkout-wrapper section">
 			<div class="container">
 				@if (Session::has('stripe_error'))
-					<div class="alert alert-succe" role="alert">
+					<div class="alert alert-danger" role="alert">
 						{{ Session::get('stripe_error') }}
 					</div>
 				@endif

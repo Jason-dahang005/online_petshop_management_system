@@ -114,8 +114,8 @@ class Checkout extends Component
                     'description' => 'Payment for order no.'.$order->id,
                 ]);
 
-                if ($charge['status'] == 'pending') {
-                    $this->makeTransaction($order->id, 'pending');
+                if ($charge['status'] == 'succeeded') {
+                    $this->makeTransaction($order->id, 'approved');
                     $this->resetCart();
                 }
                 else{

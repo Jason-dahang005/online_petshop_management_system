@@ -57,7 +57,7 @@
                       </td>
                       <td>{{ date('M d,Y', strtotime($pc->created_at)) }}</td>
                       <td>
-                        <button class="btn btn-sm btn-success"><i class="fas fa-eye"></i> Details</button>
+                        {{-- <button class="btn btn-sm btn-success"><i class="fas fa-eye"></i> Details</button> --}}
                         <button class="btn btn-sm btn-primary" wire:click="OpenEditProductCategoryModal({{ $pc->id }})"><i class="fas fa-edit"></i> Update</button>
                       </td>
                     </tr>

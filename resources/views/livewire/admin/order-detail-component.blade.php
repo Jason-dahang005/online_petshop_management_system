@@ -74,10 +74,27 @@
 
 	<div class="card">
 		<div class="card-header">
-			<h5><b>Shipping Address</b></h5>
+			<h5><b>Transaction Details</b></h5>
 		</div>
 		<div class="card-body">
-
+			<table class="table table-striped table-bordered table-sm">
+				<tbody>
+					<tr>
+						<th>Transaction Mode</td>
+						<td>
+							@if ($orders->transaction->paymentmode == 'code')
+								Cash on Delivery
+							@else
+								Online Payment (Paid)
+							@endif
+						</td>
+					</tr>
+					<tr>
+						<th>Status</td>
+						<td>{{ $orders->transaction->status }}</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </div>

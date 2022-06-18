@@ -40,15 +40,11 @@
 									</div>
 		
 									<div class="col-lg-6 col-md-6 col-6">
-										@if ($order->transaction->paymentmode ??  'Error')
-											<i class="fas fa-coins px-2"></i>
-										@else
 											<i class="fas fa-money-check-alt"></i>
-										@endif
 										<strong>Payment Mode:</strong>
 									</div>
 									<div class="col-lg-6 col-md-6 col-6">
-										@if ($order->transaction->paymentmode ??  'Error')
+										@if ($order->transaction->paymentmode ?? 'card')
 											Cash on Delivery
 										@else
 											Online Payment (Paid)
