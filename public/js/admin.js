@@ -148,6 +148,19 @@ window.addEventListener('CloseViewProductModal', function(){
   $('#OpenViewProductModal').modal('hide');
 });
 
+//ADD COUPON
+window.addEventListener('OpenAddCouponModal', function(){
+  $('#OpenAddCouponModal').find('span').html('');
+  $('#OpenAddCouponModal').modal('show');
+});
+
+window.addEventListener('CloseAddCouponModal', function(){
+  $('#OpenAddCouponModal').find('span').html('');
+  $('#OpenAddCouponModal').find('form')[0].reset();
+  $('#OpenAddCouponModal').modal('hide');
+  toastr.success("Coupon Added Successfully!");
+});
+
 // OPEN && CLOSE ADMIN MODAL CLOSE =============
 
 // ====== D A T A T A B L E 

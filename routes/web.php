@@ -17,6 +17,9 @@ use App\Http\Livewire\Admin\InventoryComponent;
 use App\Http\Livewire\Admin\SalesComponent;
 use App\http\Livewire\Admin\OrderDetailComponent;
 use App\Http\Livewire\Admin\AdminProfile;
+use App\Http\Livewire\Admin\AdminCouponsComponent;
+use App\Http\Livewire\Admin\AdminAddCouponsComponent;
+use App\Http\Livewire\Admin\AdminEditCouponsComponent;
 
 // CUSTOMER LIVEWIRE COMPONENTS
 use App\Http\Livewire\Customer\Home;
@@ -112,6 +115,8 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
     Route::get('admin/sales-component', SalesComponent::class)->name('admin.sales-component');
     Route::get('admin/order/{order_id}', OrderDetailComponent::class)->name('admin.order-detail-component');
     Route::get('admin/admin-profile', AdminProfile::class)->name('admin.admin-profile');
+    Route::get('admin/coupons', AdminCouponsComponent::class)->name('admin.coupons');
+    
 });
 
 // DELIVERY ROUTE COMPONENTS
