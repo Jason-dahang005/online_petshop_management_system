@@ -73,7 +73,7 @@
         </li>
         
         <li class="nav-item">
-          <a href="{{ url('/admin/coupons') }}" class="nav-link {{ 'admin/coupons' == request()->path() ? 'active' : '' }}">
+          <a href="{{ url('/admin/coupon') }}" class="nav-link {{ 'admin/coupons' == request()->path() ? 'active' : '' }}">
             <i class="nav-icon fas fa-clipboard"></i>
             <p>Coupons</p>
           </a>

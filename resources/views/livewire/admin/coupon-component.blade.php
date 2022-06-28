@@ -1,93 +1,127 @@
-<div>
-  <div class="card">
+<div class="card">
     <div class="card-body">
       <div class="row">
         <div class="col-lg-4 col-md-3 col-sm-12">
-          <input wire:model.debounce.300ms="search" type="text" class="form-control" placeholder="Search for category here">
+
         </div>
         <div class="col-lg-1 col-md-2 col-sm-12">
+          {{-- <select class="custom-select" wire:model="perPage">
+            <option>10</option>
+            <option>25</option>
+            <option>50</option>
+            <option>100</option> --}}
           </select>
         </div>
         <div class="col-lg-5 col-md-4 col-sm-12">
 
         </div>
         <div class="col-lg-2 col-md-3 col-sm-12">
-          <button type="button" class="btn btn-primary btn-sm btn-block h-100" wire:click="OpenCouponModal()"><i class="fas fa-plus"></i>&nbsp;&nbsp;&nbsp;Add New Coupon</button>
+          <button type="button" class="btn btn-primary btn-sm btn-block h-100" wire:click="OpenAddCouponModal()"><i class="fas fa-plus"></i>&nbsp;&nbsp;&nbsp;Add New Coupon</button>
         </div>
       </div>
       <hr>
-      <table class="table table-striped table-bordered table-sm">
+      <table class="table table-striped table-bordered table-sm" id="product_category_table">
+        <colgroup>
+          <col width="10%">
+          <col width="10%">
+          <col width="10%">
+          <col width="10%">
+          <col width="10%">
+          <col width="10%">
+          <col width="10%">
+        </colgroup>
         <thead class="bg-dark">
           <tr>
+            <th>ID #</th>
             <th>Code</th>
             <th>Type</th>
             <th>Value</th>
-            <th>Cart value</th>
+            <th>Cart Value</th>
             <th>Date Added</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          @foreach ($coupon as $c)
+            @if (count($coupons) > 0)
+            @foreach ($coupons as $coupon)
+              <tr>
+                <td>{{ $coupon->id }}</td>
+                <td>{{ $coupon->code }}</td>
+                <td>{{ $coupon->type }}</td>
+                
+                @if ($coupon->type  == 'fixed')
+                <td>&#8369; {{ $coupon->value }}</td>
+
+                @else
+                <td>{{ $coupon->value }} % </td>
+                @endif
+          
+                <td>{{ $coupon->cart_value }}</td>
+                <td>{{ date('M d,Y', strtotime($coupon->created_at)) }}</td>
+                <td>
+                  <button class="btn btn-sm btn-primary" ><i class="fas fa-edit"></i>Edit</button>
+                </td>
+              </tr>
+            @endforeach
+            @else
             <tr>
-              <td>{{ $c->code }}</td>
-              <td>{{ $c->type }}</td>
-              <td>{{ $c->value }}</td>
-              <td>{{ $c->cart_value }}</td>
-              <td>{{ date('M d,Y', strtotime($c->created_at)) }}</td>
-              <td>
-                <button class="btn btn-xs btn-success"><i class="fas fa-eye"></i></button>
-                <button class="btn btn-xs btn-primary"><i class="fas fa-edit"></i></button>
+              <td colspan="8">
+                <h4 class="text-center py-3">Table is empty</h4>
               </td>
-            </tr>  
-          @endforeach
+            </tr>
+          @endif
         </tbody>
       </table>
     </div>
-  </div>
 
-  <div class="modal fade" wire:ignore.self id="OpenCouponModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="OpenCouponModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="OpenCouponModalLabel">ADD NEW COUPON</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <form wire:submit.prevent="AddCoupon">
-          <div class="modal-body">
-            <div class="form-group">
-              <label for="">Coupon code</label>
-              <input type="text" class="form-control" wire:model="code">
-              <span class="text-danger">@error('code') {{ $message }} @enderror</span>
-            </div>
-            <div class="form-group">
-              <label for="">Coupon type</label>
+{{-- STORE COUPON --}}
+<div class="modal fade" wire:ignore.self id="OpenAddCouponModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="OpenAddCouponModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="OpenAddCouponModalLabel">ADD NEW COUPON</h5>
+      </div>
+      <form wire:submit.prevent="storeCoupon">
+        <div class="modal-body">
+          
+          <div class="form-group">
+            <label for="">Coupon Code</label>
+            <input type="text" class="form-control" placeholder="Enter coupon code" wire:model="code" >
+            <span class="text-danger">@error('code') {{ $message }} @enderror</span>
+          </div>
+
+          <div class="form-group">
+              <label for="">Coupon Type</label>
               <select class="custom-select" wire:model="type">
-                <option selected>Select coupon type</option>
+                <option value="">Select an option</option>
                 <option value="fixed">Fixed</option>
                 <option value="percent">Percent</option>
               </select>
               <span class="text-danger">@error('type') {{ $message }} @enderror</span>
             </div>
-            <div class="form-group">
-              <label for="">Coupon value</label>
-              <input type="text" class="form-control" wire:model="value">
-              <span class="text-danger">@error('value') {{ $message }} @enderror</span>
-            </div>
-            <div class="form-group">
-              <label for="">Cart value</label>
-              <input type="text" class="form-control" wire:model="cart_value">
+
+          <div class="form-group">
+            <label for="">Coupon Value</label>
+            <textarea class="form-control" placeholder="Enter value" wire:model="value"></textarea>
+            <span class="text-danger">@error('value') {{ $message }} @enderror</span>
+          </div>
+
+          <div class="form-group">
+              <label for="">Cart Value</label>
+              <textarea class="form-control" placeholder="Enter cart value" wire:model="cart_value"></textarea>
               <span class="text-danger">@error('cart_value') {{ $message }} @enderror</span>
             </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-        </form>
-      </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-sm btn-success">Submit</button>
+          <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
+
+  </div>
+
+
