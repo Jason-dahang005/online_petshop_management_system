@@ -19,6 +19,7 @@ class CreateCouponsTable extends Migration
             $table->enum('type',['fixed','percent']);
             $table->decimal('value');
             $table->decimal('cart_value');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
