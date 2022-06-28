@@ -7,34 +7,20 @@
                 <input wire:model.debounce.300ms="search" type="text" class="form-control" placeholder="Search for category here">
               </div>
               <div class="col-lg-1 col-md-2 col-sm-12">
-                {{-- <select class="custom-select" wire:model="perPage">
-                  <option>10</option>
-                  <option>25</option>
-                  <option>50</option>
-                  <option>100</option> --}}
                 </select>
               </div>
               <div class="col-lg-5 col-md-4 col-sm-12">
       
               </div>
               <div class="col-lg-2 col-md-3 col-sm-12">
-                <button type="button" class="btn btn-primary btn-sm btn-block h-100" wire:click="OpenProductCategoryModal()"><i class="fas fa-plus"></i>&nbsp;&nbsp;&nbsp;Add New Product Category</button>
+                <button type="button" class="btn btn-primary btn-sm btn-block h-100" wire:click="OpenProductCategoryModal()"><i class="fas fa-plus"></i>&nbsp;&nbsp;&nbsp;Add New Category</button>
               </div>
             </div>
             <hr>
             <table class="table table-striped table-bordered table-sm" id="product_category_table">
-              <colgroup>
-                <col width="15%">
-                <col width="10%">
-                <col width="47%">
-                <col width="5%">
-                <col width="10%">
-                <col width="13%">
-              </colgroup>
               <thead class="bg-dark">
                 <tr>
                   <th>Name</th>
-									<th>Slug</th>
                   <th>Description</th>
                   <th>Status</th>
                   <th>Date Added</th>
@@ -46,7 +32,6 @@
                   @foreach ($prod_cat as $pc)
                     <tr>
                       <td>{{ $pc->name }}</td>
-                      <td>{{ $pc->slug }}</td>
                       <td>{{ $pc->description }}</td>
                       <td>
                         @if ($pc->status == "1")
@@ -155,7 +140,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="submit" class="btn btn-sm btn-success">Update</button>
-                  <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Close</button>
                 </div>
               </form>
             </div>

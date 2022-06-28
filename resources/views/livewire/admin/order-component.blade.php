@@ -111,7 +111,6 @@
 						<div class="form-group">
 							<label for="">Order Status</label>
 							<select class="custom-select" wire:model="upd_status">
-								<option value="{{ $upd_status }}">{{ ucfirst($upd_status) }}</option>
 								<option value="approved">Approve</option>
 							</select>
 						</div>

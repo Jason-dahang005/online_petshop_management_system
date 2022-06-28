@@ -21,8 +21,8 @@
         <a href="{{ route('delivery.delivery-list') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
-     <!-- ./col -->
-     <div class="col-lg-3 col-6">
+    <!-- ./col -->
+    <div class="col-lg-3 col-6">
       <!-- small box -->
       <div class="small-box bg-info">
         <div class="inner">

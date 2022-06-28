@@ -8,7 +8,7 @@
             <h5><b>Date Delivered: </b>{{ date("Y-m-d h:i a", strtotime($d->updated_at)) }}</h5>
           </div>
           <div class="row">
-            <div class="col-lg-6 col-md-6 col-12">
+            <div class="col-lg-12 col-md-12 col-12">
               <article class="card">
                 <div class="card-body">
                   <div class="text-center">
@@ -58,8 +58,9 @@
                   </div>
                 </div>
               </article>
+              <a href="{{ route('delivery.delivery-details', ['order_id'=>$d->id]) }}" class="btn btn-outline-primary btn-block">Details</a>
             </div>
-            <div class="col-lg-6 col-md-6 col-12">
+            {{-- <div class="col-lg-6 col-md-6 col-12">
               <article class="card">
                 <div class="card-body">
                   <div class="text-center">
@@ -93,7 +94,7 @@
                   </div>
                 </div>
               </article>
-            </div>
+            </div> --}}
           </div>
         </div>
       </article>

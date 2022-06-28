@@ -1,5 +1,33 @@
 // OPEN && CLOSE ADMIN MODAL START =============
 
+// COUPON
+window.addEventListener('OpenCouponModal', function(){
+  $('#OpenCouponModal').find('span').html('');
+  $('#OpenCouponModal').find('form')[0].reset();
+  $('#OpenCouponModal').modal('show');
+});
+
+window.addEventListener('CloseCouponModal', function(){
+  $('#OpenCouponModal').find('span').html('');
+  $('#OpenCouponModal').find('form')[0].reset();
+  $('#OpenCouponModal').modal('hide');
+  toastr.success("Coupon Added Successfully!");
+});
+
+// HOME SLIDER HOME
+window.addEventListener('OpenHomeSliderModal', function(){
+  $('.OpenHomeSliderModal').find('span').html('');
+  $('.OpenHomeSliderModal').find('form')[0].reset();
+  $('.OpenHomeSliderModal').modal('show');
+});
+
+window.addEventListener('CloseHomeSliderModal', function(){
+  $('#OpenHomeSliderModal').find('span').html('');
+  $('#OpenHomeSliderModal').find('form')[0].reset();
+  $('#OpenHomeSliderModal').modal('hide');
+  toastr.success("Slider Added Successfully!");
+});
+
 // RECEIVED DELIVERY UPDATE
 window.addEventListener('ReceivedModal', function(){
   alert('hello');

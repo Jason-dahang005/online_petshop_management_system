@@ -31,6 +31,13 @@
         </li>
 
         <li class="nav-item">
+          <a href="{{ url('/admin/admin-home-slider-component') }}" class="nav-link {{  request()->routeIs('admin.admin-home-slider-component') ? 'active' : '' }}">
+            <i class="nav-icon fas fa-sliders-h"></i>
+            <p>Home Slider</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
             <a href="{{ url('/admin/user-component') }}" class="nav-link {{  request()->routeIs('admin.user-component') ? 'active' : '' }}">
             <i class="nav-icon fas fa-users"></i>
             <p>User</p>

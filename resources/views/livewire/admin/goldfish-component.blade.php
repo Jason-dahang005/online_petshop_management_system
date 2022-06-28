@@ -6,11 +6,6 @@
               <input wire:model.debounce.300ms="search" type="text" class="form-control" placeholder="Search for Goldfish here">
             </div>
             <div class="col-lg-1 col-md-2 col-sm-12">
-              {{-- <select class="custom-select" wire:model="perPage">
-                <option>10</option>
-                <option>25</option>
-                <option>50</option>
-                <option>100</option> --}}
               </select>
             </div>
             <div class="col-lg-5 col-md-4 col-sm-12">

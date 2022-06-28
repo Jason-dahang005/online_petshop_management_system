@@ -17,9 +17,7 @@ use App\Http\Livewire\Admin\InventoryComponent;
 use App\Http\Livewire\Admin\SalesComponent;
 use App\http\Livewire\Admin\OrderDetailComponent;
 use App\Http\Livewire\Admin\AdminProfile;
-use App\Http\Livewire\Admin\AdminCouponsComponent;
-use App\Http\Livewire\Admin\AdminAddCouponsComponent;
-use App\Http\Livewire\Admin\AdminEditCouponsComponent;
+use App\Http\Livewire\Admin\AdminHomeSliderComponent;
 
 // CUSTOMER LIVEWIRE COMPONENTS
 use App\Http\Livewire\Customer\Home;
@@ -48,6 +46,8 @@ use App\Http\Livewire\Delivery\DeliveryHistory;
 use App\http\Livewire\Delivery\CustomerOrderDetailComponent;
 use App\Http\Livewire\Delivery\DeliveryList;
 use App\Http\Livewire\Delivery\DeliveryProfile;
+use App\Http\Livewire\Delivery\DeliveryDetails;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -115,8 +115,8 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
     Route::get('admin/sales-component', SalesComponent::class)->name('admin.sales-component');
     Route::get('admin/order/{order_id}', OrderDetailComponent::class)->name('admin.order-detail-component');
     Route::get('admin/admin-profile', AdminProfile::class)->name('admin.admin-profile');
-    Route::get('admin/coupons', AdminCouponsComponent::class)->name('admin.coupons');
-    
+    Route::get('admin/admin-home-slider-component', AdminHomeSliderComponent::class)->name('admin.admin-home-slider-component');
+
 });
 
 // DELIVERY ROUTE COMPONENTS
@@ -126,5 +126,5 @@ Route::middleware(['auth:sanctum','verified'])->group(function () {
     Route::get('delivery/order/{order_id}', CustomerOrderDetailComponent::class)->name('delivery.customer-order-detail-component');
     Route::get('delivery/delivery-list', DeliveryList::class)->name('delivery.delivery-list');
     Route::get('delivery/delivery-profile',DeliveryProfile::class)->name('delivery.delivery-profile');
-
+    Route::get('delivery/delivery-details/{order_id}', DeliveryDetails::class)->name('delivery.delivery-details');
 });

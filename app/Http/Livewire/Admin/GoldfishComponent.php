@@ -107,9 +107,11 @@ class GoldfishComponent extends Component
         $save->slug = $this->slug;
         $save->description = $this->description;
         $save->price = $this->price;
+
         $imageName = Carbon::now()->timestamp. '.'. $this->image->extension();
         $this->image->storeAs('image', $imageName);
         $save->image = $imageName;
+        
         $p = $save->save();
         
 
