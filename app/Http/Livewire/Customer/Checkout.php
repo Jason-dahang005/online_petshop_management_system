@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Transaction;
+use App\Models\Coupon;
 use Auth;
 use Cart;
 use Stripe;
@@ -27,6 +28,13 @@ class Checkout extends Component
     public $exp_month;
     public $exp_year;
     public $cvc;
+
+    public $haveCouponCode;
+    public $couponCode;
+    public $discount;
+    public $subtotalAfterDiscount;
+    public $taxAfterDiscount;
+    public $totalAfterDiscount;
 
     public function placeOrder(){
         $this->validate([
@@ -156,8 +164,46 @@ class Checkout extends Component
         }
     }
 
+    public function applyCouponCode(){
+        $coupon = Coupon::where('code', $this->couponCode)->where('cart_value','<=', Cart::instance('cart')->subtotal())->first();
+
+        if(!$coupon){
+            session()->flash('coupon_message','Coupon code is invalid');
+            return;
+        }
+
+        session()->put('coupon',[
+            'code'          =>$coupon->code,
+            'type'          =>$coupon->type,
+            'value'         => $coupon->value,
+            'cart_value'    => $coupon->cart_value
+        ]);
+    }
+
+    public function calculateDiscounts(){
+        if(session()->has('coupon')){
+            if(session()->get('coupon')['type'] == 'fixed'){
+                $this->discount = session()->get('coupon')['value'];
+            }
+            else{
+                $this->discount = (Cart::instance('cart')->subtotal() * session()->get('coupon')['value'])/100;
+            }
+            $this->subtotalAfterDiscount = Cart::instance('cart')->subtotal() - $this->discount;
+            $this->taxAfterDiscount = ($this->subtotalAfterDiscount * config('cart.tax'))/100;
+            $this->totalAfterDiscount = $this->subtotalAfterDiscount + $this->taxAfterDiscount;
+        }
+    }
+
     public function render()
     {
+        if(session()->has('coupon')){
+            if(Cart::instance('cart')->subtotal() < session()->get('coupon')['cart_value']){
+                session()->forget('coupon');
+            }
+            else{
+                $this->calculateDiscounts();
+            }
+        }
         $this->verefiedForCheckout();
         return view('livewire.customer.checkout')->layout('layouts.customer');
     }

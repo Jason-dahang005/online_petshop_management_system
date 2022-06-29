@@ -10,4 +10,11 @@ class coupon extends Model
     use HasFactory;
 
     protected $table = 'coupons';
+
+    protected $fillable = [
+        'code',
+        'type',
+        'value',
+        'cart_value'
+    ];
 }

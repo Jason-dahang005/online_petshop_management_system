@@ -186,6 +186,7 @@
 										</div>
 									</div>
 								</div>
+			
 								@if (Session::has('checkout'))
 									<div class="checkout-sidebar-price-table mt-20">
 										<h5 class="title">Order Summary</h5>
@@ -194,21 +195,40 @@
 												<p class="value">Subtotal:</p>
 												<p class="price">₱{{ Session::get('checkout')['subtotal'] }}</p>
 											</div>
-											<div class="total-price shipping">
-												<p class="value">Tax:</p>
-												<p class="price">₱{{ Session::get('checkout')['tax'] }}</p>
-											</div>
-											<div class="total-price discount">
-												<p class="value">Shipping:</p>
-												<p class="price">Free Shipping</p>
-											</div>
-										</div>
-										<div class="total-payable">
-											<div class="payable-price">
-												<p class="value">Total:</p>
-												<p class="price">₱{{ Session::get('checkout')['total'] }}</p>
-											</div>
-										</div>
+											@if (Session::has('coupon'))
+												<div class="total-price discount">
+													<p class="value">Discount ({{ Session::get('coupon')['code'] }}):</p>
+													<p class="price">-₱{{ $discount }}</p>
+												</div>
+												<div class="total-price discount">
+													<p class="value">Tax ({{ config('cart.tax') }}%):</p>
+													<p class="price">₱{{ $taxAfterDiscount }}</p>
+												</div>
+												<div class="total-price discount">
+													<p class="value">Subtotal with Discount:</p>
+													<p class="price">₱{{ $subtotalAfterDiscount }}</p>
+												</div>
+												<div class="total-price discount">
+													<p class="value">Total:</p>
+													<p class="price">₱{{ $totalAfterDiscount }}</p>
+												</div>
+											@else
+												<div class="total-price shipping">
+													<p class="value">Tax:</p>
+													<p class="price">₱{{ Session::get('checkout')['tax'] }}</p>
+												</div>
+												<div class="total-price discount">
+													<p class="value">Shipping:</p>
+													<p class="price">Free Shipping</p>
+												</div>
+												</div>
+												<div class="total-payable">
+													<div class="payable-price">
+														<p class="value">Total:</p>
+														<p class="price">₱{{ Session::get('checkout')['total'] }}</p>
+													</div>
+												</div>
+											@endif
 										<div class="price-table-btn button">
 											<button type="submit" class="btn btn-alt w-100">Place Order</button>
 										</div>
@@ -218,6 +238,24 @@
 						</div>
 					</div>
 				</form>
+				@if (!Session::has('coupon'))		
+									<div class="checkout-sidebar-price-table">
+										<form wire:submit.prevent="applyCouponCode">
+											<label class="checkbox-field">
+												<input type="checkbox" value="1" wire:model="haveCouponCode"><h5 class="title">Have a coupon?</h5>
+											</label>
+											@if ($haveCouponCode == 1)
+											<p>
+												<input type="text" name="coupon-code" placeholder="Enter your coupon code" wire:model="couponCode">
+											</p>
+												@if(Session::has('coupon_message'))
+													<div class="alert alert-danger" role="danger">{{ Session::get('coupon_message') }}</div>
+												@endif
+											<button type="submit" class="btn btn-small" >Apply</button>
+										</form>
+											@endif
+									</div>
+								@endif
 			</div>
     </section>
     <!--====== Checkout Form Steps Part Ends ======-->
