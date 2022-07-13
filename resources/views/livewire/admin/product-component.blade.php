@@ -24,7 +24,7 @@
 			<table class="table table-striped table-bordered table-sm">
 				<thead class="bg-dark">
 					<tr>
-						<th width="15%">Name</th>
+						<th width="15%">Product name</th>
 						<th width="8%">Category</th>
 						<th width="8%">Image</th>
 						{{-- <th width="">Description</th> --}}
@@ -46,13 +46,7 @@
 								</td>
 								{{-- <td>{{ $p->description }}</td> --}}
 								<td>&#8369; {{ $p->price }}</td>
-								<td>
-									@if ($p->stock == '1')
-										In stock
-									@elseif ($p->stock == '0')
-										out of stock
-									@endif
-								</td>
+								<td>{{ $p->stock }}</td>
 								<td>
 									@if ($p->status == "1")
 										<span class="badge badge-success">Active</span>
@@ -139,10 +133,11 @@
 
 								<div class="form-group">
 									<label for="">Stock</label>
-									<select  class="custom-select" class="form-control" wire:model="stock">
+									{{-- <select  class="custom-select" class="form-control" wire:model="stock">
 										<option value="1">In stock</option>
 										<option value="0">Out of stock</option>
-									</select>
+									</select> --}}
+									<input type="text" class="form-control" wire:model="stock" placeholder="Enter stock">
 									<span class="text-danger">@error('stock') {{ $message }} @enderror</span>
 								</div>
 
@@ -223,10 +218,11 @@
 
 								<div class="form-group">
 									<label for="">Stock</label>
-									<select  class="custom-select" class="form-control" wire:model="upd_stock">
+									{{-- <select  class="custom-select" class="form-control" wire:model="upd_stock">
 										<option value="1">In stock</option>
 										<option value="0">Out of stock</option>
-									</select>
+									</select> --}}
+									<input type="text" class="form-control" wire:model="upd_stock" placeholder="Enter stock">
 									<span class="text-danger">@error('upd_stock') {{ $message }} @enderror</span>
 								</div>
 

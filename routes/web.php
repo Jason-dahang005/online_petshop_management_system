@@ -18,6 +18,7 @@ use App\Http\Livewire\Admin\SalesComponent;
 use App\http\Livewire\Admin\OrderDetailComponent;
 use App\Http\Livewire\Admin\AdminProfile;
 use App\Http\Livewire\Admin\AdminHomeSliderComponent;
+use App\Http\Livewire\Admin\AdminCouponsComponent;
 
 // CUSTOMER LIVEWIRE COMPONENTS
 use App\Http\Livewire\Customer\Home;
@@ -109,13 +110,13 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
     Route::get('admin/product-category-component', ProductCategoryComponent::class)->name('admin.product-category-component');
     Route::get('admin/users', User::class)->name('admin.users');
     Route::get('admin/user-component', UserComponent::class)->name('admin.user-component');
-    Route::get('admin/goldfish-component', GoldfishComponent::class)->name('admin.goldfish-component');
     Route::get('admin/contact-component', AdminContactComponent::class)->name('admin.contact-component');
     Route::get('admin/inventory-component', InventoryComponent::class)->name('admin.inventory-component');
     Route::get('admin/sales-component', SalesComponent::class)->name('admin.sales-component');
     Route::get('admin/order/{order_id}', OrderDetailComponent::class)->name('admin.order-detail-component');
     Route::get('admin/admin-profile', AdminProfile::class)->name('admin.admin-profile');
     Route::get('admin/admin-home-slider-component', AdminHomeSliderComponent::class)->name('admin.admin-home-slider-component');
+    Route::get('admin/admin-coupons-component', AdminCouponsComponent::class)->name('admin.admin-coupons-component');
 
 });
 

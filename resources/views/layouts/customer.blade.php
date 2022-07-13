@@ -10,14 +10,14 @@
   @livewireStyles()
 </head>
 <body>
-  <div class="preloader">
+  {{-- <div class="preloader">
     <div class="preloader-inner">
       <div class="preloader-icon">
         <span></span>
         <span></span>
       </div>
     </div>
-  </div>
+  </div> --}}
   @include('/include/customer/header')
   @if (request()->routeIs('customer.order-history') || request()->routeIs('customer.cancel-order') || request()->routeIs('customer.profile') || request()->routeIs('customer.wishlist') || request()->routeIs('customer.my-order') || request()->routeIs('customer.user-change-password'))
     <div class="my-order-container">

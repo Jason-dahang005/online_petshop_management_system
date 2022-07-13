@@ -38,7 +38,7 @@
     <div class="container">
       <div class="bottom-inner">
         <div class="row">
-          <div class="col-lg-3 col-md-6 col-12">
+          <div class="col-lg-4 col-md-6 col-12">
             <!-- Single Widget -->
             <div class="single-footer f-contact">
               <h3>Get In Touch With Us</h3>
@@ -53,7 +53,7 @@
             </div>
             <!-- End Single Widget -->
           </div>
-          <div class="col-lg-3 col-md-6 col-12">
+          <div class="col-lg-4 col-md-6 col-12">
             <!-- Single Widget -->
             <div class="single-footer our-app">
               <h3>Our Mobile App</h3>
@@ -76,7 +76,7 @@
             </div>
             <!-- End Single Widget -->
           </div>
-          <div class="col-lg-3 col-md-6 col-12">
+          <div class="col-lg-4 col-md-6 col-12">
             <!-- Single Widget -->
             <div class="single-footer f-link">
               <h3>Information</h3>
@@ -90,7 +90,7 @@
             </div>
             <!-- End Single Widget -->
           </div>
-          <div class="col-lg-3 col-md-6 col-12">
+          {{-- <div class="col-lg-3 col-md-6 col-12">
             <!-- Single Widget -->
             <div class="single-footer f-link">
               <h3>Shop Departments</h3>
@@ -103,7 +103,7 @@
               </ul>
             </div>
             <!-- End Single Widget -->
-          </div>
+          </div> --}}
         </div>
       </div>
     </div>

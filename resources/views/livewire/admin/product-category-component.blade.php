@@ -20,7 +20,7 @@
             <table class="table table-striped table-bordered table-sm" id="product_category_table">
               <thead class="bg-dark">
                 <tr>
-                  <th>Name</th>
+                  <th>Category name</th>
                   <th>Description</th>
                   <th>Status</th>
                   <th>Date Added</th>

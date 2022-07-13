@@ -13,7 +13,7 @@
 								@foreach ($product_category as $pc)
 									@if ($pc->status)
 										<li>
-											<a href="{{ route('customer.category', ['category_slug'=>$pc->slug]) }}">{{ $pc->name }}</a><span></span>
+											<a href="{{ route('customer.category', ['category_slug'=>$pc->slug]) }}" class="{{ request()->routeIs('customer.category', ['category_slug'=>$pc->slug]) ? 'text-danger' : '' }}">{{ $pc->name }}</a><span></span>
 										</li>
 									@endif
 								@endforeach
@@ -34,6 +34,7 @@
 											<option value="date">New Products</option>
 											<option value="price">Price Low to High</option>
 										</select>
+										<span></span>
 									</div>
 								</div>
 								<div class="col-lg-5 col-md-4 col-12">
@@ -55,7 +56,7 @@
 													<div class="button">
 														<div class="row">
 															<div class="col-4">
-																<a href="{{ route('product.product-details', ['slug'=>$p->slug]) }}" class="btn"><i class="lni lni-eye"></i></a>
+																<a href="{{ route('product.product-details', ['slug'=>$p->slug]) }}" class="btn"><i class="lni lni-eye" title="View More"></i></a>
 															</div>
 															<div class="col-4">
 																<a href="#" class="btn" wire:click.prevent="store({{ $p->id }}, '{{ $p->name }}', {{ $p->price }})"><i class="lni lni-cart"></i></a>
@@ -83,6 +84,9 @@
 														<li><i class="lni lni-star"></i></li>
 														<li><span>4.0 Review(s)</span></li>
 													</ul>
+													<div>
+														<span style="color: rgb(243, 123, 11)">Stock: {{ $p->stock }}</span>
+													</div>
 													<div class="price">
 														<span>₱{{ $p->price }}</span>
 													</div>

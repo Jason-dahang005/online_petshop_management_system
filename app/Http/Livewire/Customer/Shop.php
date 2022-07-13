@@ -57,7 +57,6 @@ class Shop extends Component
 
     public function render()
     {
-        $goldfish = Goldfish::all();
             
         $product_category = ProductCategory::all();
 
@@ -68,6 +67,6 @@ class Shop extends Component
         }else{
             $products = Product::where('status', 1)->paginate(12);
         }
-        return view('livewire.customer.shop', ['goldfish'=>$goldfish, 'products'=>$products, 'product_category'=>$product_category])->layout('layouts.customer');
+        return view('livewire.customer.shop', ['products'=>$products, 'product_category'=>$product_category])->layout('layouts.customer');
     }
 }

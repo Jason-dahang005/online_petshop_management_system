@@ -9,7 +9,8 @@ class UserComponent extends Component
 {
     public function render()
     {
-        $users = User::where('user_type', 'customer')->get();
-        return view('livewire.admin.user-component', ['users'=>$users])->layout('layouts.admin', ['title'=>'List of Registered Users']);
+        $customer = User::where('user_type', 'customer')->get();
+        $delivery = User::where('user_type', 'delivery')->get();
+        return view('livewire.admin.user-component', ['delivery'=>$delivery, 'customer'=>$customer])->layout('layouts.admin', ['title'=>'List of Registered Users']);
     }
 }

@@ -111,7 +111,8 @@
 						<div class="form-group">
 							<label for="">Order Status</label>
 							<select class="custom-select" wire:model="upd_status">
-								<option value="approved">Approve</option>
+								<option value="approve"></option>
+								<option value="approved">Approved</option>
 							</select>
 						</div>
 					</div>

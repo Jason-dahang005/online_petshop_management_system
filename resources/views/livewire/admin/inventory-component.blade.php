@@ -19,13 +19,7 @@
 					@foreach ($product as $p)
 						<tr>
 							<td>{{ $p->name }}</td>
-							<td>
-								@if ($p->stock == '1')
-									In stock
-								@elseif ($p->stock == '0')
-									out of stock
-								@endif
-							</td>
+							<td>{{ $p->stock }}	</td>
 							<td>&#8369; {{ $p->price }}.00</td>
 						</tr>
 					@endforeach

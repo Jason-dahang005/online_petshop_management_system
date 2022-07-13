@@ -30,26 +30,20 @@
           </a>
         </li>
 
-        <li class="nav-item">
+        {{-- <li class="nav-item">
           <a href="{{ url('/admin/admin-home-slider-component') }}" class="nav-link {{  request()->routeIs('admin.admin-home-slider-component') ? 'active' : '' }}">
             <i class="nav-icon fas fa-sliders-h"></i>
             <p>Home Slider</p>
           </a>
-        </li>
+        </li> --}}
 
         <li class="nav-item">
             <a href="{{ url('/admin/user-component') }}" class="nav-link {{  request()->routeIs('admin.user-component') ? 'active' : '' }}">
             <i class="nav-icon fas fa-users"></i>
-            <p>User</p>
+            <p>Users</p>
           </a>
         </li>
 
-        <li class="nav-item">
-            <a href="{{ url('/admin/delivery-component') }}" class="nav-link {{  request()->routeIs('admin.delivery-component') ? 'active' : '' }}">
-            <i class="nav-icon fas fa-motorcycle"></i>
-            <p>Delivery</p>
-          </a>
-        </li>
 
         <li class="nav-item">
             <a href="{{ url('/admin/product-category-component') }}" class="nav-link {{  request()->routeIs('admin.product-category-component') ? 'active' : '' }}">
@@ -64,20 +58,13 @@
             <p>Product</p>
           </a>
         </li>
-
-        <li class="nav-item">
-            <a href="{{ url('/admin/goldfish-component') }}" class="nav-link {{  request()->routeIs('admin.goldfish-component') ? 'active' : '' }}">
-            <i class="nav-icon fas fa-fish"></i>
-            <p>Goldfish</p>
-          </a>
-        </li>
         
-        <li class="nav-item">
-          <a href="{{ url('/admin/coupons') }}" class="nav-link {{ 'admin/coupons' == request()->path() ? 'active' : '' }}">
-            <i class="nav-icon fas fa-clipboard"></i>
+        {{-- <li class="nav-item">
+          <a href="{{ url('/admin/admin-coupons-component') }}" class="nav-link {{ request()->routeIs('admin.admin-coupons-component') ? 'active' : '' }}">
+            <i class="nav-icon fas fa-ticket-alt"></i>
             <p>Coupons</p>
           </a>
-        </li>
+        </li> --}}
 
         <li class="nav-item">
           <a href="{{ url('/admin/order-component') }}" class="nav-link {{ 'admin/order-component' == request()->path() ? 'active' : '' }}">

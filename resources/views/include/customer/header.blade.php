@@ -163,12 +163,12 @@
 										<span class="toggler-icon"></span>
 									</button>
 									<div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-										<ul id="nav" class="navbar-nav ms-auto">
+										<ul id="nav" class="navbar-nav">
 											<li class="nav-item"><a href="{{ route('/') }}" class=" {{  request()->routeIs('/') ? 'active' : '' }}" aria-label="Toggle navigation">Home</a></li>
 											{{-- <li class="nav-item"><a href="{{ route('customer.goldfish') }}" class=" {{  request()->routeIs('customer.goldfish') ? 'active' : '' }}" aria-label="Toggle navigation"> <i class="fas fa-home"></i> Goldfish</a></li> --}}
 											<li class="nav-item"><a href="{{ route('customer.shop') }}" class=" {{  request()->routeIs('customer.shop') ? 'active' : '' }}" aria-label="Toggle navigation">Shop</a></li>
 											<li class="nav-item"><a href="{{ route('customer.about-us') }}" class=" {{  request()->routeIs('customer.about-us') ? 'active' : '' }}" aria-label="Toggle navigation">About Us</a></li>
-											<li class="nav-item"><a href="{{ route('customer.contact-us') }}" class=" {{  request()->routeIs('customer.contact-us') ? 'active' : '' }}" aria-label="Toggle navigation">Contact Us</a></li>
+											{{-- <li class="nav-item"><a href="{{ route('customer.contact-us') }}" class=" {{  request()->routeIs('customer.contact-us') ? 'active' : '' }}" aria-label="Toggle navigation">Contact Us</a></li> --}}
 										</ul>
 									</div> <!-- navbar collapse -->
 								</nav>
@@ -178,13 +178,13 @@
 						<div class="col-lg-4 col-md-6 col-12">
 								<!-- Start Nav Social -->
 							<div class="nav-social">
-								<h5 class="title">Follow Us:</h5>
+								{{-- <h5 class="title">Follow Us:</h5>
 								<ul>
 									<li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
 									<li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
 									<li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
 									<li><a href="javascript:void(0)"><i class="lni lni-skype"></i></a></li>
-								</ul>
+								</ul> --}}
 							</div>
 							<!-- End Nav Social -->
 						</div>

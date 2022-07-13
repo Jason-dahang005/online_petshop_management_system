@@ -48,27 +48,6 @@
             <a href="{{route('admin.users')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-6">
-          <!-- small box -->
-          <div class="small-box bg-danger">
-            <div class="inner">
-              <h3>{{ count($goldfish) }}</h3>
-              <p>
-                @if (count($goldfish) > 0)
-                  Goldfish
-                @else
-                  No goldfish
-                @endif
-              </p>
-            </div>
-            <div class="icon">
-              <i class="fas fa-fish"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
         <div class="col-lg-3 col-6">
           <!-- small box -->
           <div class="small-box bg-dark" >

@@ -15,13 +15,12 @@ class Dashboard extends Component
     {   
         $users = User::where('user_type', 'customer')->get();
         $orders = Order::where('status', 'pending')->get();
-        $goldfish = Goldfish::all();
         $products = Product::all();
         $sales = Order::join('transactions', 'orders.id', '=', 'transactions.order_id')
                     ->select('orders.*', 'transaction.*')
                     ->where('transactions.status', 'completed')
                     ->sum('orders.total');
-        return view('livewire.admin.dashboard',['sales' => $sales, 'users' => $users, 'products' => $products, 'orders' => $orders, 'goldfish' => $goldfish])->layout('layouts.admin', ['title'=>'Dashboard']);
+        return view('livewire.admin.dashboard',['sales' => $sales, 'users' => $users, 'products' => $products, 'orders' => $orders])->layout('layouts.admin', ['title'=>'Dashboard']);
     
     }
 }

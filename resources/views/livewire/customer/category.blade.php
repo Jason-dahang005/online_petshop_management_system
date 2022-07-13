@@ -34,7 +34,7 @@
 											<option value="date">New Products</option>
 											<option value="price">Price Low to High</option>
 										</select>
-										<h3 class="total-show-product">Showing: <span>1 - 12 items</span></h3>
+										<h3 class="total-show-product"><span></span></h3>
 									</div>
 								</div>
 								<div class="col-lg-5 col-md-4 col-12">
@@ -50,54 +50,58 @@
 						<div class="tab-content" id="nav-tabContent">
 							<div class="tab-pane fade show active" id="nav-grid" role="tabpanel" aria-labelledby="nav-grid-tab">
 								<div class="row">
-									@foreach ($products as $p)
-										<div class="col-lg-4 col-md-6 col-12">
-											@php
-												$witems = Cart::instance('wishlist')->content()->pluck('id');
-											@endphp
-											<!-- Start Single Product -->
-											<div class="single-product">
-												<div class="product-image">
-													<img src="{{ asset('/images/images') }}/{{ $p->image }}" alt="#">
-													<div class="button">
-														<div class="row">
-															<div class="col-4">
-																<a href="{{ route('product.product-details', ['slug'=>$p->slug]) }}" class="btn"><i class="lni lni-eye"></i></a>
-															</div>
-															<div class="col-4">
-																<a href="#" class="btn" wire:click.prevent="store({{ $p->id }}, '{{ $p->name }}', {{ $p->price }})"><i class="lni lni-cart"></i></a>
-															</div>
-															<div class="col-4">
-																@if ($witems->contains($p->id))
-																	<button class="btn" wire:click.prevent="removeFromWishlist({{ $p->id }})"><i class="lni lni-heart-filled"></i></button>
-																@else
-																	<button class="btn" wire:click.prevent="AddToWishlist({{ $p->id }}, '{{ $p->name }}', {{ $p->price }})"><i class="lni lni-heart"></i></button>
-																@endif
-															</div>
+									@forelse ($products as $p)
+									<div class="col-lg-4 col-md-6 col-12">
+										@php
+											$witems = Cart::instance('wishlist')->content()->pluck('id');
+										@endphp
+										<!-- Start Single Product -->
+										<div class="single-product">
+											<div class="product-image">
+												<img src="{{ asset('/images/images') }}/{{ $p->image }}" alt="#">
+												<div class="button">
+													<div class="row">
+														<div class="col-4">
+															<a href="{{ route('product.product-details', ['slug'=>$p->slug]) }}" class="btn"><i class="lni lni-eye"></i></a>
+														</div>
+														<div class="col-4">
+															<a href="#" class="btn" wire:click.prevent="store({{ $p->id }}, '{{ $p->name }}', {{ $p->price }})"><i class="lni lni-cart"></i></a>
+														</div>
+														<div class="col-4">
+															@if ($witems->contains($p->id))
+																<button class="btn" wire:click.prevent="removeFromWishlist({{ $p->id }})"><i class="lni lni-heart-filled"></i></button>
+															@else
+																<button class="btn" wire:click.prevent="AddToWishlist({{ $p->id }}, '{{ $p->name }}', {{ $p->price }})"><i class="lni lni-heart"></i></button>
+															@endif
 														</div>
 													</div>
 												</div>
-												<div class="product-info">
-													<span class="category"></span>
-													<h4 class="title">
-														<a href="product-grids.html">{{ $p->name }}</a>
-													</h4>
-													<ul class="review">
-														<li><i class="lni lni-star-filled"></i></li>
-														<li><i class="lni lni-star-filled"></i></li>
-														<li><i class="lni lni-star-filled"></i></li>
-														<li><i class="lni lni-star-filled"></i></li>
-														<li><i class="lni lni-star"></i></li>
-														<li><span>4.0 Review(s)</span></li>
-													</ul>
-													<div class="price">
-														<span>₱{{ $p->price }}</span>
-													</div>
+											</div>
+											<div class="product-info">
+												<span class="category"></span>
+												<h4 class="title">
+													<a href="product-grids.html">{{ $p->name }}</a>
+												</h4>
+												<ul class="review">
+													<li><i class="lni lni-star-filled"></i></li>
+													<li><i class="lni lni-star-filled"></i></li>
+													<li><i class="lni lni-star-filled"></i></li>
+													<li><i class="lni lni-star-filled"></i></li>
+													<li><i class="lni lni-star"></i></li>
+													<li><span>4.0 Review(s)</span></li>
+												</ul>
+												<div class="price">
+													<span>₱{{ $p->price }}</span>
 												</div>
 											</div>
-											<!-- End Single Product -->
 										</div>
-									@endforeach
+										<!-- End Single Product -->
+									</div>
+									@empty
+										<div class="py-5">
+											<h3 class="text-center">No products in this category</h3>
+										</div>
+									@endforelse
 								</div>
 								<div class="row">
 									<div class="col-12">

@@ -46,7 +46,6 @@ class Category extends Component
 
     public function render()
     {
-        $goldfish = Goldfish::all();
             
         $category = ProductCategory::where('slug', $this->category_slug)->first();
         $category_id = $category->id;
@@ -62,6 +61,6 @@ class Category extends Component
         
         $product_category = ProductCategory::all();
 
-        return view('livewire.customer.category', ['goldfish'=>$goldfish, 'products'=>$products, 'product_category'=>$product_category, 'category_name'=>$category_name])->layout('layouts.customer');
+        return view('livewire.customer.category', ['products'=>$products, 'product_category'=>$product_category, 'category_name'=>$category_name])->layout('layouts.customer');
     }
 }
