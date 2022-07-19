@@ -665,6 +665,7 @@ class ComposerStaticInitc7d3825b17406e030d693462bab5931e
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\Contact' => __DIR__ . '/../..' . '/app/Models/Contact.php',
+        'App\\Models\\Coupon' => __DIR__ . '/../..' . '/app/Models/Coupon.php',
         'App\\Models\\Goldfish' => __DIR__ . '/../..' . '/app/Models/Goldfish.php',
         'App\\Models\\HomeSlider' => __DIR__ . '/../..' . '/app/Models/HomeSlider.php',
         'App\\Models\\Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
