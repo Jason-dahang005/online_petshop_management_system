@@ -11,9 +11,9 @@ class ProductCategoryComponent extends Component
 {
 	use WithPagination;
 	public $name;
-  	public $slug;
+  public $slug;
 	public $description;
-  	public $upd_slug;
+  public $upd_slug;
 	public $upd_name;
 	public $upd_description;
 	public $upd_id;

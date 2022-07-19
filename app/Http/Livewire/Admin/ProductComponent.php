@@ -72,16 +72,16 @@ class ProductComponent extends Component
 
 		$prod = product::find($upd_id);
 		$prod->name         						= $this->upd_name;
-    	$prod->slug        	 						= $this->upd_slug;
+    $prod->slug        	 						= $this->upd_slug;
 		$prod->description 	 						= $this->upd_description;
 		if ($this->upd_stock == 0) {
-			$prod->status       					= $this->status = 0;
-			$prod->stock      						= $this->upd_stock;
+			$prod->status       						= $this->status = 0;
+			$prod->stock      							= $this->upd_stock;
 		}
 		$prod->status       						= $this->status;
 		$prod->stock      							= $this->upd_stock;
-		$prod->product_category_id     				= $this->upd_product_category_id;
-    	$prod->price        						= $this->upd_price;
+		$prod->product_category_id      = $this->upd_product_category_id;
+    $prod->price        						= $this->upd_price;
 		if($this->upd_image){
 			$imageName = Carbon::now()->timestamp. '.'. $this->upd_image->extension();
 			$this->upd_image->storeAs('images', $imageName);

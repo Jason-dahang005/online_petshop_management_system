@@ -38,7 +38,6 @@
             <th>Value</th>
             <th>Cart Value</th>
             <th>Date Added</th>
-            <th>Status</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -58,17 +57,9 @@
                 @endif
           
                 <td>{{ $coupon->cart_value }}</td>
-
                 <td>{{ date('M d,Y', strtotime($coupon->created_at)) }}</td>
                 <td>
-                    @if ($coupon->status == "1")
-                      <span class="badge badge-success">Active</span>
-                    @else
-                      <span class="badge badge-danger">Inactive</span>
-                    @endif
-                </td>
-                <td>
-                  <button class="btn btn-sm btn-primary" wire:click="OpenEditCouponModal({{ $coupon->id }})"><i class="fas fa-edit"></i>Edit</button>
+                  <button class="btn btn-sm btn-primary" ><i class="fas fa-edit"></i>Edit</button>
                 </td>
               </tr>
             @endforeach
@@ -131,63 +122,6 @@
   </div>
 </div>
 
-{{-- EDIT COUPON --}}
-<div class="modal fade" wire:ignore.self id="OpenEditCouponModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="OpenEditCouponModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="OpenEditCouponModalLabel">EDIT COUPON</h5>
-      </div>
-      <form wire:submit.prevent="updateCoupon">
-        <input type="hidden" wire:model="upd_id">
-        <div class="modal-body">
-          
-          <div class="form-group">
-            <label for="">Coupon Code</label>
-            <input type="text" class="form-control" placeholder="Enter coupon code" wire:model="upd_code" >
-            <span class="text-danger">@error('upd_code') {{ $message }} @enderror</span>
-          </div>
-
-          <div class="form-group">
-              <label for="">Coupon Type</label>
-              <select class="custom-select" wire:model="upd_type">
-                <option value="">Select an option</option>
-                <option value="fixed">Fixed</option>
-                <option value="percent">Percent</option>
-              </select>
-              <span class="text-danger">@error('upd_type') {{ $message }} @enderror</span>
-            </div>
-
-          <div class="form-group">
-            <label for="">Coupon Value</label>
-            <textarea class="form-control" placeholder="Enter value" wire:model="upd_value"></textarea>
-            <span class="text-danger">@error('upd_value') {{ $message }} @enderror</span>
-          </div>
-
-          <div class="form-group">
-              <label for="">Cart Value</label>
-              <textarea class="form-control" placeholder="Enter cart value" wire:model="upd_cart_value"></textarea>
-              <span class="text-danger">@error('upd_cart_value') {{ $message }} @enderror</span>
-          </div>
-
-          <div class="form-group">
-            <label for="">Status</label>
-            <select class="custom-select" wire:model="status">
-              <option value="1">Active</option>
-              <option value="0">Inactive</option>
-            </select>
-            <span class="text-danger">@error('upd_status') {{ $message }} @enderror</span>
-        </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-sm btn-success">Submit</button>
-          <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </form>
-    </div>
   </div>
-</div>
-</div>
 
 

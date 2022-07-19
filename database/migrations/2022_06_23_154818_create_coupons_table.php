@@ -21,7 +21,6 @@ class CreateCouponsTable extends Migration
             $table->decimal('cart_value');
             $table->boolean('status')->default(0);
             $table->timestamps();
-        
         });
     }
 
