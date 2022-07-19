@@ -13,7 +13,7 @@
 								@foreach ($product_category as $pc)
 									@if ($pc->status)
 										<li>
-											<a href="{{ route('customer.category', ['category_slug'=>$pc->slug]) }}" class="{{ request()->routeIs('customer.category', ['category_slug'=>$pc->slug]) ? 'text-danger' : '' }}">{{ $pc->name }}</a><span></span>
+											<a href="{{ route('customer.category', ['category_slug'=>$pc->slug]) }}">{{ $pc->name }}</a><span></span>
 										</li>
 									@endif
 								@endforeach
@@ -54,21 +54,21 @@
 												<div class="product-image">
 													<img src="{{ asset('/images/images') }}/{{ $p->image }}" alt="#">
 													<div class="button">
-														<div class="row">
-															<div class="col-4">
+														{{-- <div class="row"> --}}
+															{{-- <div class="col-4">
 																<a href="{{ route('product.product-details', ['slug'=>$p->slug]) }}" class="btn"><i class="lni lni-eye" title="View More"></i></a>
-															</div>
-															<div class="col-4">
-																<a href="#" class="btn" wire:click.prevent="store({{ $p->id }}, '{{ $p->name }}', {{ $p->price }})"><i class="lni lni-cart"></i></a>
-															</div>
-															<div class="col-4">
+															</div> --}}
+															{{-- <div class="col-4"> --}}
+																<a href="#" class="btn" wire:click.prevent="store({{ $p->id }}, '{{ $p->name }}', {{ $p->price }})"><i class="lni lni-cart"></i> Add to cart</a>
+															{{-- </div> --}}
+															{{-- <div class="col-4">
 																@if ($witems->contains($p->id))
 																	<button class="btn" wire:click.prevent="removeFromWishlist({{ $p->id }})"><i class="lni lni-heart-filled"></i></button>
 																@else
 																	<button class="btn" wire:click.prevent="AddToWishlist({{ $p->id }}, '{{ $p->name }}', {{ $p->price }})"><i class="lni lni-heart"></i></button>
 																@endif
-															</div>
-														</div>
+															</div> --}}
+														{{-- </div> --}}
 													</div>
 												</div>
 												<div class="product-info">
@@ -76,16 +76,16 @@
 													<h4 class="title">
 														<a href="product-grids.html">{{ $p->name }}</a>
 													</h4>
-													<ul class="review">
+													{{-- <ul class="review">
 														<li><i class="lni lni-star-filled"></i></li>
 														<li><i class="lni lni-star-filled"></i></li>
 														<li><i class="lni lni-star-filled"></i></li>
 														<li><i class="lni lni-star-filled"></i></li>
 														<li><i class="lni lni-star"></i></li>
 														<li><span>4.0 Review(s)</span></li>
-													</ul>
+													</ul> --}}
 													<div>
-														<span style="color: rgb(243, 123, 11)">Stock: {{ $p->stock }}</span>
+														<span class="pt-2" style="color: rgb(243, 123, 11)">Stock: {{ $p->stock }}</span>
 													</div>
 													<div class="price">
 														<span>₱{{ $p->price }}</span>

@@ -126,7 +126,7 @@
                                             <option value="date">New Products</option>
                                             <option value="price">Price Low to High</option>
                                         </select>
-                                        <h3 class="total-show-product">Showing: <span>1 - 12 items</span></h3>
+                                        <h3 class="total-show-product"><span></span></h3>
                                     </div>
                                 </div>
                                 <div class="col-lg-5 col-md-4 col-12">

@@ -34,7 +34,9 @@
 											<option value="date">New Products</option>
 											<option value="price">Price Low to High</option>
 										</select>
-										<h3 class="total-show-product"><span></span></h3>
+										<h3 class="total-show-product">
+											<span></span>
+										</h3>
 									</div>
 								</div>
 								<div class="col-lg-5 col-md-4 col-12">
@@ -60,21 +62,21 @@
 											<div class="product-image">
 												<img src="{{ asset('/images/images') }}/{{ $p->image }}" alt="#">
 												<div class="button">
-													<div class="row">
-														<div class="col-4">
-															<a href="{{ route('product.product-details', ['slug'=>$p->slug]) }}" class="btn"><i class="lni lni-eye"></i></a>
-														</div>
-														<div class="col-4">
-															<a href="#" class="btn" wire:click.prevent="store({{ $p->id }}, '{{ $p->name }}', {{ $p->price }})"><i class="lni lni-cart"></i></a>
-														</div>
-														<div class="col-4">
+													{{-- <div class="row"> --}}
+														{{-- <div class="col-4">
+															<a href="{{ route('product.product-details', ['slug'=>$p->slug]) }}" class="btn"><i class="lni lni-eye" title="View More"></i></a>
+														</div> --}}
+														{{-- <div class="col-4"> --}}
+															<a href="#" class="btn" wire:click.prevent="store({{ $p->id }}, '{{ $p->name }}', {{ $p->price }})"><i class="lni lni-cart"></i> Add to cart</a>
+														{{-- </div> --}}
+														{{-- <div class="col-4">
 															@if ($witems->contains($p->id))
 																<button class="btn" wire:click.prevent="removeFromWishlist({{ $p->id }})"><i class="lni lni-heart-filled"></i></button>
 															@else
 																<button class="btn" wire:click.prevent="AddToWishlist({{ $p->id }}, '{{ $p->name }}', {{ $p->price }})"><i class="lni lni-heart"></i></button>
 															@endif
-														</div>
-													</div>
+														</div> --}}
+													{{-- </div> --}}
 												</div>
 											</div>
 											<div class="product-info">
@@ -90,6 +92,9 @@
 													<li><i class="lni lni-star"></i></li>
 													<li><span>4.0 Review(s)</span></li>
 												</ul>
+												<div>
+													<span style="color: rgb(243, 123, 11)">Stock: {{ $p->stock }}</span>
+												</div>
 												<div class="price">
 													<span>₱{{ $p->price }}</span>
 												</div>
@@ -98,22 +103,14 @@
 										<!-- End Single Product -->
 									</div>
 									@empty
-										<div class="py-5">
-											<h3 class="text-center">No products in this category</h3>
-										</div>
+										<h4 class="text-center text-secondary mt-5">No products available</h4>
 									@endforelse
 								</div>
 								<div class="row">
 									<div class="col-12">
 										<!-- Pagination -->
 										<div class="pagination left">
-											<ul class="pagination-list">
-												<li><a href="javascript:void(0)">1</a></li>
-												<li class="active"><a href="javascript:void(0)">2</a></li>
-												<li><a href="javascript:void(0)">3</a></li>
-												<li><a href="javascript:void(0)">4</a></li>
-												<li><a href="javascript:void(0)"><i class="lni lni-chevron-right"></i></a></li>
-											</ul>
+											{!! $products->links() !!}
 										</div>
 										<!--/ End Pagination -->
 									</div>

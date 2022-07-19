@@ -3400,7 +3400,7 @@ ol {
 
 .single-product .product-image .button {
   position: absolute;
-  left: 52%;
+  left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   bottom: -60px;
@@ -3408,26 +3408,26 @@ ol {
   transition: all 0.4s ease;
   opacity: 0;
   visibility: hidden;
-  width: 100%;
 }
 
 .single-product .product-image .button .btn {
   padding: 12px 20px;
   font-size: 13px;
   font-weight: 600;
+  width: 140px;
 }
 
 .single-product .product-image .button .btn i {
   font-size: 18px;
   position: relative;
   top: 2px;
-  left: 2px;
 }
 
 .single-product .product-image img {
-  width: 100%;
+  max-width: 100%;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  max-height: 300px;
 }
 
 .single-product:hover .product-image .button {
