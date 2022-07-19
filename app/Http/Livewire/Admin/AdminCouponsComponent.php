@@ -3,9 +3,9 @@
 namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
-use App\Models\coupon;
+use App\models\coupon;
 
-class CouponComponent extends Component
+class AdminCouponsComponent extends Component
 {
     public  $code,
             $type,
@@ -15,7 +15,7 @@ class CouponComponent extends Component
     public function render()
     {
         $coupons = Coupon::all();
-        return view('livewire.admin.coupon-component',['coupons' => $coupons])->layout('layouts.admin', ['title'=>'Admin Coupons']);
+        return view('livewire.admin.admin-coupons-component',['coupons' => $coupons])->layout('layouts.admin', ['title'=>'Admin Coupons']);
     }
 
 // STORE
@@ -23,13 +23,13 @@ class CouponComponent extends Component
 		$this->dispatchBrowserEvent('OpenAddCouponModal');
 	}
 
-    public function storeCoupon(){
+    public function store(){
         
 		$this->validate([
 			'code'          => 'required|unique:coupons',
             'type'          => 'required',
 			'value'         => 'required|numeric',
-            'cart_value'    => 'required|numeric'
+            'cart_value'    => 'required'
 		]);
 
 		$coupon = new Coupon();
@@ -45,4 +45,3 @@ class CouponComponent extends Component
 		}
 	}
 }
-
