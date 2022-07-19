@@ -17,7 +17,10 @@ use App\Http\Livewire\Admin\InventoryComponent;
 use App\Http\Livewire\Admin\SalesComponent;
 use App\http\Livewire\Admin\OrderDetailComponent;
 use App\Http\Livewire\Admin\AdminProfile;
+<<<<<<< HEAD
 use App\Http\Livewire\Admin\AdminHomeSliderComponent;
+=======
+>>>>>>> parent of f75378ad (adding coupons)
 
 // CUSTOMER LIVEWIRE COMPONENTS
 use App\Http\Livewire\Customer\Home;
@@ -115,8 +118,11 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
     Route::get('admin/sales-component', SalesComponent::class)->name('admin.sales-component');
     Route::get('admin/order/{order_id}', OrderDetailComponent::class)->name('admin.order-detail-component');
     Route::get('admin/admin-profile', AdminProfile::class)->name('admin.admin-profile');
+<<<<<<< HEAD
     Route::get('admin/admin-home-slider-component', AdminHomeSliderComponent::class)->name('admin.admin-home-slider-component');
 
+=======
+>>>>>>> parent of f75378ad (adding coupons)
 });
 
 // DELIVERY ROUTE COMPONENTS
